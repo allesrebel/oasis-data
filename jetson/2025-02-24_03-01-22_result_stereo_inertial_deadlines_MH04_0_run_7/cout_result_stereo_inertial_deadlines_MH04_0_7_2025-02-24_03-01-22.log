@@ -1,0 +1,751 @@
+num_seq = 1
+file name: dataset-MH04_stereo_imu
+Loading images for sequence 0...LOADED!
+Loading IMU for sequence 0...LOADED!
+
+-------
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Built with REGISTER_TIMES
+Git Commit Hash: 4caa6cb
+
+Build Type: Release
+
+Compiled with C++ version: 201703
+
+Input sensor was set to: Stereo-Inertial
+Loading settings from ./Examples/Stereo-Inertial/EuRoC_deadlines.yaml
+	-Loaded camera 1
+	-Loaded camera 2
+	-Loaded image info
+	-Loaded IMU calibration
+	-Loaded ORB settings
+	-Loaded viewer settings
+	-Loaded Atlas settings
+Deadlines enabled, will skip frames!
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 458.65399169921875 457.29598999023438 367.21499633789062 248.375 ]
+	-Camera 1 distortion parameters: [  -0.28340810537338257 0.073959067463874817 0.00019359000725671649 1.7618711353861727e-05 ]
+	-Camera 2 parameters (Pinhole: [ 457.58700561523438 456.13400268554688 379.99899291992188 255.23800659179688 ]
+	-Camera 1 distortion parameters: [  -0.2836836576461792 0.074512839317321777 -0.00010473000293131918 -3.555907096597366e-05 ]
+	-Original image size: [ 752 , 480 ]
+	-Current image size: [ 752 , 480 ]
+	-Camera 1 parameters after rectification: [  456.71499633789062 456.71499633789062 364.52615356445312 257.268798828125 ]
+	-Sequence FPS: 20
+	-Stereo baseline: 0.11007784307003021
+	-Stereo depth threshold : 60
+	-Gyro noise: 0.00016999999934341758
+	-Accelerometer noise: 0.0020000000949949026
+	-Gyro walk: 1.9392999092815444e-05
+	-Accelerometer walk: 0.0030000000260770321
+	-IMU frequency: 200
+	-Features per image: 1200
+	-ORB scale factor: 1.2000000476837158
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+SLAM Started at System Time: 1740370107.05625
+not IMU meas
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:0; Map init KF:0
+New Map created with 149 points
+Active map: 0
+Dropping frame 1403638130.2950971
+Dropping frame 1403638130.5950971
+Dropping frame 1403638130.695097
+Dropping frame 1403638130.945097
+Dropping frame 1403638131.145097
+Dropping frame 1403638131.2450969
+Dropping frame 1403638131.3450971
+Dropping frame 1403638131.5950971
+Dropping frame 1403638131.695097
+Dropping frame 1403638131.7950971
+Dropping frame 1403638131.9950972
+Dropping frame 1403638132.195097
+Dropping frame 1403638132.395097
+Dropping frame 1403638132.4950972
+Dropping frame 1403638132.645097
+Dropping frame 1403638132.8450971
+Dropping frame 1403638133.0450969
+Dropping frame 1403638133.2450969
+Dropping frame 1403638133.5450969
+Dropping frame 1403638133.8450971
+Dropping frame 1403638133.945097
+Dropping frame 1403638134.0450969
+start VIBA 1
+end VIBA 1
+Dropping frame 1403638134.2450969
+Dropping frame 1403638134.445097
+Dropping frame 1403638134.695097
+Dropping frame 1403638134.8450971
+Dropping frame 1403638135.0450969
+Dropping frame 1403638135.145097
+Dropping frame 1403638135.2450969
+Dropping frame 1403638135.445097
+Dropping frame 1403638135.5450969
+Dropping frame 1403638135.645097
+Dropping frame 1403638135.8450971
+Dropping frame 1403638135.945097
+Dropping frame 1403638136.145097
+Dropping frame 1403638136.3450971
+Dropping frame 1403638136.445097
+Dropping frame 1403638137.3450971
+Dropping frame 1403638137.445097
+Dropping frame 1403638137.695097
+Dropping frame 1403638137.7950971
+Dropping frame 1403638137.895097
+Dropping frame 1403638137.9950972
+Dropping frame 1403638138.195097
+Dropping frame 1403638138.2950971
+Dropping frame 1403638138.4950972
+Dropping frame 1403638138.5950971
+Dropping frame 1403638138.695097
+Not enough motion for initializing. Reseting...
+TRACK: Reset map because local mapper set the bad imu flag 
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 32
+mnInitialFrameId = 0
+151 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+Dropping frame 1403638139.0450969
+not enough acceleration
+not enough acceleration
+First KF:42; Map init KF:0
+New Map created with 169 points
+Active map: 0
+Dropping frame 1403638139.2450969
+Dropping frame 1403638139.3450971
+Dropping frame 1403638139.445097
+Dropping frame 1403638139.645097
+Dropping frame 1403638139.8450971
+Dropping frame 1403638140.0450969
+Dropping frame 1403638140.145097
+Dropping frame 1403638140.2450969
+Dropping frame 1403638140.445097
+Dropping frame 1403638140.645097
+Dropping frame 1403638140.7450969
+Dropping frame 1403638140.8450971
+Dropping frame 1403638141.0450969
+Dropping frame 1403638141.145097
+Dropping frame 1403638141.395097
+Dropping frame 1403638141.5950971
+Dropping frame 1403638141.695097
+Dropping frame 1403638141.8450971
+Dropping frame 1403638141.945097
+Dropping frame 1403638142.145097
+Dropping frame 1403638142.2450969
+Not enough motion for initializing. Reseting...
+Dropping frame 1403638142.3450971
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+Dropping frame 1403638142.4950972
+Dropping frame 1403638142.5950971
+Dropping frame 1403638142.695097
+Dropping frame 1403638142.7950971
+Dropping frame 1403638142.895097
+Dropping frame 1403638143.145097
+Dropping frame 1403638143.3450971
+Dropping frame 1403638143.695097
+Not enough motion for initializing. Reseting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+Dropping frame 1403638144.695097
+Not enough motion for initializing. Reseting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+Dropping frame 1403638145.0450969
+Not enough motion for initializing. Reseting...
+Dropping frame 1403638145.2450969
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+Dropping frame 1403638145.445097
+Dropping frame 1403638145.4950972
+Not enough motion for initializing. Reseting...
+TRACK: Reset map because local mapper set the bad imu flag 
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 189
+mnInitialFrameId = 183
+247 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:60; Map init KF:42
+New Map created with 184 points
+Active map: 0
+start VIBA 1
+end VIBA 1
+Dropping frame 1403638156.895097
+Dropping frame 1403638157.145097
+Dropping frame 1403638157.395097
+Dropping frame 1403638157.5450969
+Dropping frame 1403638157.645097
+Dropping frame 1403638157.7950971
+Dropping frame 1403638157.945097
+Dropping frame 1403638158.0950971
+Dropping frame 1403638158.2450969
+Dropping frame 1403638158.3450971
+Dropping frame 1403638158.4950972
+Dropping frame 1403638158.645097
+Dropping frame 1403638158.7450969
+Dropping frame 1403638158.895097
+Dropping frame 1403638158.9950972
+Dropping frame 1403638159.0950971
+Dropping frame 1403638159.195097
+Dropping frame 1403638159.2950971
+Dropping frame 1403638159.395097
+Dropping frame 1403638159.4950972
+Dropping frame 1403638159.5950971
+Dropping frame 1403638159.8450971
+Dropping frame 1403638159.9950972
+Dropping frame 1403638160.145097
+Dropping frame 1403638160.2450969
+Dropping frame 1403638160.3450971
+Dropping frame 1403638160.445097
+Dropping frame 1403638160.5950971
+Dropping frame 1403638160.695097
+Dropping frame 1403638160.7950971
+Dropping frame 1403638160.895097
+Dropping frame 1403638160.9950972
+Dropping frame 1403638161.0950971
+Dropping frame 1403638161.195097
+Dropping frame 1403638161.2950971
+Dropping frame 1403638161.395097
+Dropping frame 1403638161.5450969
+Dropping frame 1403638161.7450969
+Dropping frame 1403638161.8450971
+Dropping frame 1403638162.0450969
+Dropping frame 1403638162.145097
+Dropping frame 1403638162.2950971
+Dropping frame 1403638162.395097
+Dropping frame 1403638162.4950972
+Dropping frame 1403638162.645097
+Dropping frame 1403638162.7450969
+Dropping frame 1403638162.8450971
+Dropping frame 1403638162.945097
+Dropping frame 1403638163.0450969
+start VIBA 2
+Dropping frame 1403638163.145097
+Dropping frame 1403638163.2450969
+end VIBA 2
+Dropping frame 1403638163.3450971
+Dropping frame 1403638163.445097
+Dropping frame 1403638163.5450969
+Dropping frame 1403638163.645097
+Dropping frame 1403638163.7450969
+Dropping frame 1403638163.895097
+Dropping frame 1403638163.9950972
+Dropping frame 1403638164.145097
+Dropping frame 1403638164.395097
+Dropping frame 1403638164.895097
+Dropping frame 1403638165.0950971
+Dropping frame 1403638165.5450969
+Dropping frame 1403638165.695097
+Dropping frame 1403638166.0450969
+Dropping frame 1403638166.145097
+Dropping frame 1403638166.2450969
+Dropping frame 1403638166.395097
+Dropping frame 1403638166.4950972
+Dropping frame 1403638166.5950971
+Dropping frame 1403638166.695097
+Dropping frame 1403638166.7950971
+Dropping frame 1403638166.895097
+Dropping frame 1403638166.9950972
+Dropping frame 1403638167.0950971
+Dropping frame 1403638167.2450969
+Dropping frame 1403638167.395097
+Dropping frame 1403638167.4950972
+Dropping frame 1403638167.5950971
+Dropping frame 1403638167.9950972
+Dropping frame 1403638168.145097
+Dropping frame 1403638168.2950971
+Dropping frame 1403638168.395097
+Dropping frame 1403638168.5950971
+Dropping frame 1403638168.695097
+Dropping frame 1403638168.7950971
+Dropping frame 1403638168.895097
+Dropping frame 1403638168.9950972
+Dropping frame 1403638169.195097
+Dropping frame 1403638169.2950971
+Dropping frame 1403638169.395097
+Dropping frame 1403638169.4950972
+Dropping frame 1403638169.5950971
+Dropping frame 1403638169.695097
+Dropping frame 1403638169.7950971
+Dropping frame 1403638169.945097
+Dropping frame 1403638170.0450969
+Dropping frame 1403638170.145097
+Dropping frame 1403638170.3450971
+Dropping frame 1403638170.445097
+Dropping frame 1403638170.5450969
+Dropping frame 1403638170.645097
+Dropping frame 1403638170.8450971
+Dropping frame 1403638170.945097
+Dropping frame 1403638171.0450969
+Dropping frame 1403638171.145097
+Dropping frame 1403638171.3450971
+Dropping frame 1403638171.445097
+Dropping frame 1403638171.645097
+Dropping frame 1403638171.8450971
+Dropping frame 1403638171.945097
+Dropping frame 1403638172.145097
+Dropping frame 1403638172.2450969
+Dropping frame 1403638172.445097
+Dropping frame 1403638172.5450969
+Dropping frame 1403638172.7450969
+Dropping frame 1403638172.8450971
+Dropping frame 1403638173.0450969
+Dropping frame 1403638173.2450969
+Dropping frame 1403638173.3450971
+Dropping frame 1403638173.5450969
+Dropping frame 1403638173.7950971
+Dropping frame 1403638173.9950972
+Dropping frame 1403638174.0950971
+Dropping frame 1403638174.2950971
+Dropping frame 1403638174.4950972
+Dropping frame 1403638174.695097
+Dropping frame 1403638174.895097
+Dropping frame 1403638175.0950971
+Dropping frame 1403638175.2950971
+Dropping frame 1403638175.4950972
+Dropping frame 1403638175.695097
+Dropping frame 1403638175.7950971
+Dropping frame 1403638175.945097
+Dropping frame 1403638176.145097
+Dropping frame 1403638176.2450969
+Dropping frame 1403638176.445097
+Dropping frame 1403638176.695097
+Dropping frame 1403638176.895097
+Dropping frame 1403638177.0950971
+Dropping frame 1403638177.2950971
+Dropping frame 1403638177.395097
+Dropping frame 1403638177.5950971
+Dropping frame 1403638177.7950971
+Dropping frame 1403638177.9950972
+Dropping frame 1403638178.195097
+Dropping frame 1403638178.395097
+Dropping frame 1403638178.5950971
+Dropping frame 1403638178.7950971
+Dropping frame 1403638178.9950972
+Dropping frame 1403638179.7950971
+Dropping frame 1403638179.895097
+Dropping frame 1403638179.9950972
+Dropping frame 1403638180.195097
+Dropping frame 1403638180.395097
+Dropping frame 1403638180.4950972
+Dropping frame 1403638180.695097
+Dropping frame 1403638180.895097
+Dropping frame 1403638181.0950971
+Dropping frame 1403638181.195097
+Dropping frame 1403638181.395097
+Dropping frame 1403638181.5950971
+Dropping frame 1403638181.7950971
+Dropping frame 1403638181.9950972
+Dropping frame 1403638182.195097
+Dropping frame 1403638182.395097
+Dropping frame 1403638182.5950971
+Dropping frame 1403638182.7950971
+Dropping frame 1403638182.9950972
+Dropping frame 1403638183.195097
+Dropping frame 1403638183.395097
+Dropping frame 1403638183.5950971
+Dropping frame 1403638183.695097
+Dropping frame 1403638183.895097
+Dropping frame 1403638184.0950971
+Dropping frame 1403638184.195097
+Dropping frame 1403638184.395097
+Dropping frame 1403638184.4950972
+Dropping frame 1403638184.5950971
+Dropping frame 1403638184.695097
+Dropping frame 1403638184.895097
+Dropping frame 1403638184.9950972
+Dropping frame 1403638185.0950971
+Dropping frame 1403638185.2950971
+Dropping frame 1403638185.645097
+Dropping frame 1403638185.945097
+Dropping frame 1403638186.0450969
+Dropping frame 1403638186.145097
+Dropping frame 1403638186.2950971
+Dropping frame 1403638186.645097
+Dropping frame 1403638186.7450969
+Dropping frame 1403638186.945097
+Dropping frame 1403638187.0450969
+Dropping frame 1403638187.195097
+Dropping frame 1403638187.4950972
+Dropping frame 1403638187.695097
+Dropping frame 1403638187.895097
+Dropping frame 1403638188.145097
+Dropping frame 1403638188.3450971
+Dropping frame 1403638188.5450969
+Dropping frame 1403638188.7450969
+Dropping frame 1403638188.945097
+Dropping frame 1403638189.145097
+Dropping frame 1403638189.3450971
+Dropping frame 1403638189.5450969
+Dropping frame 1403638189.645097
+Dropping frame 1403638189.8450971
+Dropping frame 1403638189.945097
+Dropping frame 1403638190.145097
+Dropping frame 1403638190.3450971
+Dropping frame 1403638190.5450969
+Dropping frame 1403638190.7450969
+Dropping frame 1403638190.8450971
+Dropping frame 1403638191.145097
+Dropping frame 1403638191.2450969
+Dropping frame 1403638191.445097
+Dropping frame 1403638191.5450969
+Dropping frame 1403638191.7450969
+Dropping frame 1403638191.945097
+Dropping frame 1403638192.0950971
+Dropping frame 1403638192.445097
+Dropping frame 1403638192.645097
+Dropping frame 1403638192.9950972
+Dropping frame 1403638193.0950971
+Dropping frame 1403638193.195097
+Dropping frame 1403638193.395097
+Dropping frame 1403638193.5950971
+Dropping frame 1403638193.7950971
+Dropping frame 1403638193.9950972
+Dropping frame 1403638194.195097
+Dropping frame 1403638194.395097
+Dropping frame 1403638194.5950971
+Dropping frame 1403638194.8450971
+Dropping frame 1403638195.0450969
+Dropping frame 1403638195.2950971
+Dropping frame 1403638195.5450969
+Dropping frame 1403638195.7450969
+Dropping frame 1403638195.945097
+Dropping frame 1403638196.145097
+Dropping frame 1403638196.2450969
+Dropping frame 1403638196.4950972
+Dropping frame 1403638196.695097
+Dropping frame 1403638196.895097
+Dropping frame 1403638197.0950971
+Dropping frame 1403638197.195097
+Dropping frame 1403638197.2950971
+Dropping frame 1403638197.4950972
+Dropping frame 1403638197.695097
+Dropping frame 1403638197.8450971
+Dropping frame 1403638198.0450969
+Dropping frame 1403638198.3450971
+Dropping frame 1403638198.5450969
+Dropping frame 1403638198.645097
+Dropping frame 1403638198.895097
+Dropping frame 1403638199.0950971
+Dropping frame 1403638199.195097
+Dropping frame 1403638199.445097
+Dropping frame 1403638199.645097
+Dropping frame 1403638199.7450969
+Dropping frame 1403638199.9950972
+Dropping frame 1403638200.195097
+Dropping frame 1403638200.2950971
+Dropping frame 1403638200.395097
+Dropping frame 1403638200.5950971
+Dropping frame 1403638200.895097
+Dropping frame 1403638201.0950971
+Dropping frame 1403638201.195097
+Dropping frame 1403638201.445097
+Dropping frame 1403638201.5950971
+Dropping frame 1403638202.0950971
+Dropping frame 1403638202.2950971
+Dropping frame 1403638202.395097
+Dropping frame 1403638202.645097
+Dropping frame 1403638202.7450969
+Dropping frame 1403638202.9950972
+Dropping frame 1403638203.2950971
+Dropping frame 1403638203.395097
+Dropping frame 1403638203.695097
+Dropping frame 1403638203.945097
+Dropping frame 1403638204.0450969
+Dropping frame 1403638204.145097
+Dropping frame 1403638204.9950972
+Dropping frame 1403638205.0950971
+Dropping frame 1403638205.2950971
+Dropping frame 1403638205.395097
+Dropping frame 1403638205.4950972
+Dropping frame 1403638205.695097
+Dropping frame 1403638205.895097
+Dropping frame 1403638205.9950972
+Dropping frame 1403638206.2450969
+Dropping frame 1403638206.3450971
+Dropping frame 1403638206.445097
+Dropping frame 1403638206.5450969
+Dropping frame 1403638206.7450969
+Dropping frame 1403638206.8450971
+Dropping frame 1403638206.945097
+Dropping frame 1403638207.145097
+Dropping frame 1403638207.2450969
+Dropping frame 1403638207.4950972
+Dropping frame 1403638207.5950971
+Dropping frame 1403638207.695097
+Dropping frame 1403638207.895097
+Dropping frame 1403638208.0950971
+Dropping frame 1403638208.195097
+Dropping frame 1403638208.2950971
+Dropping frame 1403638208.4950972
+Dropping frame 1403638208.5950971
+Dropping frame 1403638208.8450971
+Dropping frame 1403638208.945097
+Dropping frame 1403638209.0450969
+Dropping frame 1403638209.2450969
+Dropping frame 1403638209.3450971
+Dropping frame 1403638209.445097
+Dropping frame 1403638209.645097
+Dropping frame 1403638209.7450969
+Dropping frame 1403638209.9950972
+Dropping frame 1403638210.0950971
+Dropping frame 1403638212.2950971
+Dropping frame 1403638212.5450969
+Dropping frame 1403638212.7450969
+Dropping frame 1403638212.8450971
+Dropping frame 1403638212.945097
+Dropping frame 1403638213.145097
+Dropping frame 1403638213.2450969
+Dropping frame 1403638213.3450971
+Dropping frame 1403638213.5450969
+Dropping frame 1403638213.645097
+Dropping frame 1403638213.895097
+Dropping frame 1403638214.0950971
+Dropping frame 1403638214.195097
+Dropping frame 1403638214.2950971
+Dropping frame 1403638214.4950972
+Dropping frame 1403638214.645097
+Dropping frame 1403638214.8450971
+Dropping frame 1403638214.945097
+Dropping frame 1403638215.0450969
+Dropping frame 1403638215.2450969
+Dropping frame 1403638215.5450969
+Dropping frame 1403638216.0950971
+Dropping frame 1403638216.195097
+Dropping frame 1403638216.445097
+Dropping frame 1403638216.7450969
+Dropping frame 1403638217.0450969
+Dropping frame 1403638217.3450971
+Dropping frame 1403638217.445097
+Dropping frame 1403638217.7950971
+Dropping frame 1403638218.195097
+Dropping frame 1403638218.4950972
+Dropping frame 1403638218.7450969
+Dropping frame 1403638218.945097
+Dropping frame 1403638219.0450969
+Dropping frame 1403638219.2950971
+Dropping frame 1403638219.4950972
+Dropping frame 1403638219.695097
+Dropping frame 1403638219.895097
+Dropping frame 1403638220.0450969
+Dropping frame 1403638220.2450969
+Dropping frame 1403638220.445097
+Dropping frame 1403638220.645097
+Dropping frame 1403638220.945097
+Dropping frame 1403638221.0450969
+Dropping frame 1403638221.445097
+Dropping frame 1403638221.8450971
+Dropping frame 1403638222.0450969
+Dropping frame 1403638222.2450969
+Dropping frame 1403638222.3450971
+Dropping frame 1403638222.5450969
+Dropping frame 1403638222.695097
+Dropping frame 1403638223.195097
+Dropping frame 1403638223.4950972
+Dropping frame 1403638223.695097
+Dropping frame 1403638223.945097
+Dropping frame 1403638224.5950971
+Dropping frame 1403638224.695097
+Dropping frame 1403638224.9950972
+Dropping frame 1403638225.2950971
+Dropping frame 1403638225.5950971
+Dropping frame 1403638225.7450969
+Dropping frame 1403638225.945097
+Dropping frame 1403638226.0450969
+Dropping frame 1403638226.5450969
+Dropping frame 1403638226.645097
+Dropping frame 1403638226.945097
+Dropping frame 1403638228.4950972
+Shutdown
+SLAM Finished at System Time: 1740370230.53211
+
+ TIME STATS in ms (mean$\pm$std)
+OpenCV version: 4.8.1
+---------------------------
+Tracking
+
+ORB Extraction: 20.02$\pm$2.761
+Stereo Matching: 8.351$\pm$2.0269
+IMU Preintegration: 0.20859$\pm$0.089243
+Pose Prediction: 0.52375$\pm$1.4057
+LM Track: 17.426$\pm$6.0724
+New KF decision: 0.32543$\pm$0.31668
+Total Tracking: 31.777$\pm$25.602
+
+
+
+Local Mapping
+
+KF Insertion: 13.386$\pm$4.8368
+MP Culling: 0.45839$\pm$0.19641
+MP Creation: 37.578$\pm$14.169
+LBA: 142.09$\pm$46.443
+KF Culling: 10.707$\pm$9.0927
+Total Local Mapping: 203.79$\pm$67.38
+---------------------------
+
+LBA complexity (mean$\pm$std)
+LBA Edges: 1633.9$\pm$1116
+LBA KF optimized: 6.5$\pm$2.2913
+LBA KF fixed: 1$\pm$0
+LBA MP: nan$\pm$nan
+
+LBA executions: 394
+LBA aborts: 0
+---------------------------
+
+Map complexity
+KFs in map: 168
+MPs in map: 13056
+---------------------------
+
+Place Recognition (mean$\pm$std)
+Database Query: 2.2048$\pm$1.1223
+SE3 estimation: 29.735$\pm$17.646
+Total Place Recognition: 21.961$\pm$21.213
+
+
+Loop Closing (mean$\pm$std)
+Loop Fusion: nan$\pm$nan
+Essential Graph: nan$\pm$nan
+Total Loop Closing: nan$\pm$nan
+
+Num exec: 0
+Number of KFs: nan$\pm$nan
+
+Map Merging (mean$\pm$std)
+Merge Maps: nan$\pm$nan
+Welding BA: nan$\pm$nan
+Optimization Ess.: nan$\pm$nan
+Total Map Merging: nan$\pm$nan
+
+Num exec: 0
+Number of KFs: nan$\pm$nan
+Number of MPs: nan$\pm$nan
+
+Full GBA (mean$\pm$std)
+GBA: nan$\pm$nan
+Map Update: nan$\pm$nan
+Total Full GBA: nan$\pm$nan
+
+Num exec: 0
+Num abort: 0
+Number of KFs: nan$\pm$nan
+Number of MPs: nan$\pm$nan
+
+Saving trajectory to f_dataset-MH04_stereo_imu.txt ...
+There are 1 maps in the atlas
+  Map 0 has 168 KFs
+
+End of saving trajectory to f_dataset-MH04_stereo_imu.txt ...
+
+Saving keyframe trajectory to kf_dataset-MH04_stereo_imu.txt ...
