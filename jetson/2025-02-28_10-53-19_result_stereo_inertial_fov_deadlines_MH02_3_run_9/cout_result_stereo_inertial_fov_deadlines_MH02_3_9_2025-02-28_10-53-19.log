@@ -1,0 +1,1034 @@
+num_seq = 1
+file name: dataset-MH02_stereo_imu
+Loading images for sequence 0...LOADED!
+Loading IMU for sequence 0...LOADED!
+
+-------
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Built with REGISTER_TIMES
+Git Commit Hash: 2d47524
+
+Build Type: Release
+
+Compiled with C++ version: 201703
+
+Input sensor was set to: Stereo-Inertial
+Loading settings from EuRoC_fov_deadlines_mask_3x3.yaml
+	-Loaded camera 1
+	-Loaded camera 2
+	-Loaded image info
+	-Loaded IMU calibration
+	-Loaded ORB settings
+	-Loaded viewer settings
+	-Loaded Atlas settings
+Deadlines enabled, will skip frames!
+FOV enabled
+Static mask size: 3x3
+Dumping map points enabled
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 458.65399169921875 457.29598999023438 367.21499633789062 248.375 ]
+	-Camera 1 distortion parameters: [  -0.28340810537338257 0.073959067463874817 0.00019359000725671649 1.7618711353861727e-05 ]
+	-Camera 2 parameters (Pinhole: [ 457.58700561523438 456.13400268554688 379.99899291992188 255.23800659179688 ]
+	-Camera 1 distortion parameters: [  -0.2836836576461792 0.074512839317321777 -0.00010473000293131918 -3.555907096597366e-05 ]
+	-Original image size: [ 752 , 480 ]
+	-Current image size: [ 752 , 480 ]
+	-Camera 1 parameters after rectification: [  456.71499633789062 456.71499633789062 364.52615356445312 257.268798828125 ]
+	-Sequence FPS: 20
+	-Stereo baseline: 0.11007784307003021
+	-Stereo depth threshold : 60
+	-Gyro noise: 0.00016999999934341758
+	-Accelerometer noise: 0.0020000000949949026
+	-Gyro walk: 1.9392999092815444e-05
+	-Accelerometer walk: 0.0030000000260770321
+	-IMU frequency: 200
+	-Features per image: 1200
+	-ORB scale factor: 1.2000000476837158
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+SLAM Started at System Time: 1740890294.00003
+not IMU meas
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:0; Map init KF:0
+New Map created with 90 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 8
+mnInitialFrameId = 0
+4 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+First KF:1; Map init KF:0
+New Map created with 276 points
+Active map: 0
+Dropping frame 1403636860.0516665
+Dropping frame 1403636860.2516665
+Dropping frame 1403636861.5516665
+Dropping frame 1403636861.9516664
+Dropping frame 1403636862.0516665
+start VIBA 1
+end VIBA 1
+Dropping frame 1403636866.7516665
+Dropping frame 1403636866.8516665
+Not enough motion for initializing. Reseting...
+TRACK: Reset map because local mapper set the bad imu flag 
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 15
+mnInitialFrameId = 11
+168 Frames set to lost
+not IMU meas
+First KF:49; Map init KF:1
+New Map created with 168 points
+Active map: 0
+Not enough motion for initializing. Reseting...
+TRACK: Reset map because local mapper set the bad imu flag 
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 181
+mnInitialFrameId = 179
+261 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:78; Map init KF:49
+New Map created with 198 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 306
+mnInitialFrameId = 274
+271 Frames set to lost
+not enough acceleration
+First KF:80; Map init KF:78
+New Map created with 146 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 319
+mnInitialFrameId = 315
+275 Frames set to lost
+not IMU meas
+First KF:81; Map init KF:80
+New Map created with 153 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 324
+mnInitialFrameId = 322
+282 Frames set to lost
+not IMU meas
+First KF:83; Map init KF:81
+New Map created with 144 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 332
+mnInitialFrameId = 330
+286 Frames set to lost
+not IMU meas
+not enough acceleration
+First KF:84; Map init KF:83
+New Map created with 185 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 338
+mnInitialFrameId = 335
+291 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:85; Map init KF:84
+New Map created with 149 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 350
+mnInitialFrameId = 342
+295 Frames set to lost
+not IMU meas
+First KF:86; Map init KF:85
+New Map created with 206 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 355
+mnInitialFrameId = 353
+299 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+First KF:87; Map init KF:86
+New Map created with 229 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 362
+mnInitialFrameId = 358
+302 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:88; Map init KF:87
+New Map created with 109 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 381
+mnInitialFrameId = 364
+304 Frames set to lost
+not IMU meas
+not enough acceleration
+First KF:89; Map init KF:88
+New Map created with 163 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 388
+mnInitialFrameId = 382
+306 Frames set to lost
+not IMU meas
+First KF:90; Map init KF:89
+New Map created with 149 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 391
+mnInitialFrameId = 389
+310 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:91; Map init KF:90
+New Map created with 166 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 399
+mnInitialFrameId = 394
+320 Frames set to lost
+not IMU meas
+First KF:93; Map init KF:91
+New Map created with 253 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 410
+mnInitialFrameId = 408
+324 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+First KF:94; Map init KF:93
+New Map created with 211 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 417
+mnInitialFrameId = 413
+327 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:95; Map init KF:94
+New Map created with 218 points
+Active map: 0
+Not enough motion for initializing. Reseting...
+TRACK: Reset map because local mapper set the bad imu flag 
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 426
+mnInitialFrameId = 419
+406 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:117; Map init KF:95
+New Map created with 103 points
+Active map: 0
+Dropping frame 1403636900.2516665
+Dropping frame 1403636901.0016665
+Dropping frame 1403636901.2516665
+Dropping frame 1403636901.4516664
+Dropping frame 1403636901.8016665
+Dropping frame 1403636902.1516664
+start VIBA 1
+end VIBA 1
+Dropping frame 1403636902.7516665
+Dropping frame 1403636902.8516665
+Dropping frame 1403636903.3016665
+Dropping frame 1403636903.4516664
+Dropping frame 1403636903.7516665
+Dropping frame 1403636904.1016665
+Dropping frame 1403636904.5016665
+Dropping frame 1403636904.7016666
+Dropping frame 1403636904.8016665
+Dropping frame 1403636904.9016666
+Dropping frame 1403636905.0016665
+Dropping frame 1403636905.4016666
+Dropping frame 1403636905.6516664
+Dropping frame 1403636905.7516665
+Dropping frame 1403636906.1016665
+Dropping frame 1403636906.2016666
+Dropping frame 1403636906.6016665
+Dropping frame 1403636906.7016666
+Dropping frame 1403636906.9516664
+Dropping frame 1403636907.4516664
+Dropping frame 1403636907.6516664
+Dropping frame 1403636907.8516665
+Dropping frame 1403636908.0516665
+Dropping frame 1403636908.1516664
+Dropping frame 1403636908.9016666
+Dropping frame 1403636909.1016665
+Dropping frame 1403636909.5516665
+Dropping frame 1403636909.7516665
+Dropping frame 1403636910.2516665
+Dropping frame 1403636910.4516664
+Dropping frame 1403636910.8016665
+Dropping frame 1403636910.9016666
+Dropping frame 1403636911.1016665
+Dropping frame 1403636911.5016665
+Dropping frame 1403636911.6016665
+Dropping frame 1403636911.8516665
+Dropping frame 1403636912.1516664
+Dropping frame 1403636912.4516664
+start VIBA 2
+Dropping frame 1403636912.6516664
+end VIBA 2
+Dropping frame 1403636913.5016665
+Dropping frame 1403636913.6016665
+Dropping frame 1403636913.8516665
+Dropping frame 1403636913.9516664
+Dropping frame 1403636914.4516664
+Dropping frame 1403636914.5516665
+Dropping frame 1403636914.8016665
+Dropping frame 1403636916.9016666
+Dropping frame 1403636917.4016666
+Dropping frame 1403636917.8016665
+Dropping frame 1403636918.2016666
+Dropping frame 1403636918.6016665
+Dropping frame 1403636919.6016665
+Dropping frame 1403636920.2516665
+Dropping frame 1403636920.7016666
+Dropping frame 1403636920.9016666
+Dropping frame 1403636921.0516665
+Dropping frame 1403636921.4516664
+Dropping frame 1403636922.3016665
+Dropping frame 1403636923.6016665
+Dropping frame 1403636926.5516665
+Dropping frame 1403636927.8016665
+Dropping frame 1403636928.1016665
+Dropping frame 1403636928.3516665
+Dropping frame 1403636928.8516665
+Dropping frame 1403636928.9516664
+Dropping frame 1403636929.3016665
+Dropping frame 1403636929.9016666
+Dropping frame 1403636930.0016665
+Dropping frame 1403636931.3516665
+Dropping frame 1403636935.7016666
+Dropping frame 1403636935.8016665
+Dropping frame 1403636936.0016665
+Dropping frame 1403636936.5016665
+Dropping frame 1403636937.6516664
+Dropping frame 1403636937.7516665
+Dropping frame 1403636938.6516664
+Dropping frame 1403636939.0516665
+Dropping frame 1403636939.6016665
+Dropping frame 1403636939.9016666
+Dropping frame 1403636940.1516664
+Dropping frame 1403636944.6016665
+Dropping frame 1403636945.0516665
+Dropping frame 1403636947.0016665
+Dropping frame 1403636948.6016665
+Dropping frame 1403636949.4516664
+Dropping frame 1403636949.8016665
+Dropping frame 1403636954.3516665
+Dropping frame 1403636954.9516664
+Dropping frame 1403636957.7516665
+Dropping frame 1403636958.3016665
+Dropping frame 1403636958.7016666
+Dropping frame 1403636958.8516665
+Dropping frame 1403636960.5016665
+Dropping frame 1403636966.0016665
+Dropping frame 1403636968.3016665
+Dropping frame 1403636968.4516664
+Dropping frame 1403636968.7516665
+Dropping frame 1403636969.0516665
+Dropping frame 1403636969.1516664
+Dropping frame 1403636969.6516664
+Dropping frame 1403636969.8516665
+Dropping frame 1403636970.0516665
+Dropping frame 1403636970.6016665
+Dropping frame 1403636971.7516665
+Dropping frame 1403636972.0016665
+Dropping frame 1403636972.2516665
+Dropping frame 1403636974.0016665
+Dropping frame 1403636974.3016665
+Dropping frame 1403636974.4016666
+Dropping frame 1403636974.6516664
+Dropping frame 1403636975.0516665
+Dropping frame 1403636977.2516665
+Dropping frame 1403636977.5516665
+Dropping frame 1403636977.8016665
+Dropping frame 1403636977.9516664
+Dropping frame 1403636978.6516664
+Dropping frame 1403636979.1016665
+Dropping frame 1403636979.8516665
+Dropping frame 1403636980.3516665
+Dropping frame 1403636980.4516664
+Dropping frame 1403636980.6516664
+Dropping frame 1403636980.7516665
+Dropping frame 1403636980.8516665
+Dropping frame 1403636980.9516664
+Dropping frame 1403636981.2016666
+Dropping frame 1403636981.3016665
+Dropping frame 1403636981.4016666
+Dropping frame 1403636981.5016665
+Dropping frame 1403636981.7516665
+Dropping frame 1403636981.9516664
+Dropping frame 1403636982.0516665
+Dropping frame 1403636982.1516664
+Dropping frame 1403636982.4016666
+Dropping frame 1403636982.7016666
+Dropping frame 1403636982.8016665
+Dropping frame 1403636983.0516665
+Dropping frame 1403636983.3516665
+Dropping frame 1403636983.4516664
+Dropping frame 1403636984.0516665
+Dropping frame 1403636985.3016665
+Dropping frame 1403636985.9516664
+Dropping frame 1403636987.0016665
+Dropping frame 1403636987.3516665
+Dropping frame 1403636987.9016666
+Dropping frame 1403636988.0016665
+Dropping frame 1403636988.1016665
+Dropping frame 1403636988.2016666
+Dropping frame 1403636988.4516664
+Dropping frame 1403636988.6516664
+Dropping frame 1403636988.8016665
+Dropping frame 1403636988.9016666
+Dropping frame 1403636989.1016665
+Dropping frame 1403636989.2016666
+Dropping frame 1403636989.3016665
+Dropping frame 1403636989.4016666
+Dropping frame 1403636989.8016665
+Dropping frame 1403636989.9016666
+Dropping frame 1403636990.4016666
+Dropping frame 1403636990.7516665
+Dropping frame 1403636991.0016665
+Dropping frame 1403636991.5516665
+Dropping frame 1403636992.1516664
+Dropping frame 1403636992.3516665
+Dropping frame 1403636992.4516664
+Dropping frame 1403636992.8016665
+Dropping frame 1403636992.9016666
+Dropping frame 1403636993.0016665
+Dropping frame 1403636993.2516665
+Dropping frame 1403636993.3516665
+Dropping frame 1403636994.3016665
+Dropping frame 1403636994.4016666
+Dropping frame 1403636994.9516664
+Dropping frame 1403636995.7516665
+Dropping frame 1403636996.5016665
+Dropping frame 1403636996.6016665
+Dropping frame 1403636996.7016666
+Dropping frame 1403636996.9016666
+Dropping frame 1403636997.1016665
+Dropping frame 1403636997.3016665
+Dropping frame 1403636997.5016665
+Dropping frame 1403636997.6016665
+Dropping frame 1403636997.7016666
+Dropping frame 1403636997.8016665
+Dropping frame 1403636998.0016665
+Dropping frame 1403636998.2016666
+Dropping frame 1403636998.4016666
+Dropping frame 1403636998.6016665
+Dropping frame 1403636998.7016666
+Dropping frame 1403636998.8016665
+Dropping frame 1403636998.9016666
+Dropping frame 1403636999.1016665
+Dropping frame 1403636999.2016666
+Dropping frame 1403636999.3016665
+Dropping frame 1403636999.5016665
+Dropping frame 1403636999.7016666
+Dropping frame 1403636999.9016666
+Dropping frame 1403637000.1016665
+Dropping frame 1403637000.3016665
+Dropping frame 1403637000.7016666
+Dropping frame 1403637000.9016666
+Dropping frame 1403637001.0016665
+Dropping frame 1403637001.1016665
+Dropping frame 1403637001.2016666
+Dropping frame 1403637001.4016666
+Dropping frame 1403637001.5016665
+Dropping frame 1403637001.6016665
+Dropping frame 1403637001.9016666
+Dropping frame 1403637002.1016665
+Dropping frame 1403637002.2016666
+Dropping frame 1403637002.3016665
+Dropping frame 1403637002.4016666
+Dropping frame 1403637002.6016665
+Dropping frame 1403637003.0016665
+Dropping frame 1403637003.1016665
+Dropping frame 1403637003.2016666
+Dropping frame 1403637003.3016665
+Dropping frame 1403637003.9016666
+Dropping frame 1403637004.5516665
+Dropping frame 1403637004.6516664
+Dropping frame 1403637004.7516665
+Dropping frame 1403637005.4016666
+Dropping frame 1403637005.5016665
+Dropping frame 1403637006.0516665
+Dropping frame 1403637006.2016666
+Dropping frame 1403637006.4016666
+Dropping frame 1403637006.7516665
+Dropping frame 1403637006.8516665
+Dropping frame 1403637006.9516664
+Dropping frame 1403637007.1016665
+Dropping frame 1403637007.3516665
+Dropping frame 1403637007.4516664
+Dropping frame 1403637007.5516665
+Dropping frame 1403637007.6516664
+Dropping frame 1403637007.8516665
+Dropping frame 1403637008.2016666
+Dropping frame 1403637008.4016666
+Dropping frame 1403637008.6016665
+Dropping frame 1403637008.8016665
+Dropping frame 1403637008.9016666
+Dropping frame 1403637009.0016665
+Dropping frame 1403637009.2516665
+Dropping frame 1403637009.3516665
+Dropping frame 1403637009.4516664
+Dropping frame 1403637009.6516664
+Dropping frame 1403637009.7516665
+Dropping frame 1403637009.9516664
+Dropping frame 1403637010.1516664
+Dropping frame 1403637010.2516665
+Dropping frame 1403637010.3516665
+Dropping frame 1403637010.5516665
+Shutdown
+SLAM Finished at System Time: 1740890472.78021
+
+ TIME STATS in ms (mean$\pm$std)
+OpenCV version: 4.8.1
+---------------------------
+Tracking
+
+ORB Extraction: 13.01$\pm$1.7706
+Stereo Matching: 6.498$\pm$2.1803
+IMU Preintegration: 0.2546$\pm$0.13429
+Pose Prediction: 0.51835$\pm$1.3826
+LM Track: 17.222$\pm$5.9138
+New KF decision: 1.0375$\pm$1.9492
+Total Tracking: 34.476$\pm$17.9
+
+
+
+Local Mapping
+
+KF Insertion: 11.317$\pm$4.9592
+MP Culling: 0.39736$\pm$0.17871
+MP Creation: 37.026$\pm$19.138
+LBA: 125.96$\pm$59.815
+KF Culling: 11.531$\pm$9.9081
+Total Local Mapping: 180.91$\pm$91.375
+---------------------------
+
+LBA complexity (mean$\pm$std)
+LBA Edges: 1211.2$\pm$547.38
+LBA KF optimized: 6.375$\pm$2.1615
+LBA KF fixed: 1.125$\pm$0.33072
+LBA MP: nan$\pm$nan
+
+LBA executions: 492
+LBA aborts: 0
+---------------------------
+
+Map complexity
+KFs in map: 151
+MPs in map: 13046
+---------------------------
+
+Place Recognition (mean$\pm$std)
+Database Query: 1.2516$\pm$0.66263
+SE3 estimation: 18.123$\pm$14.199
+Total Place Recognition: 13.271$\pm$15.069
+
+
+Loop Closing (mean$\pm$std)
+Loop Fusion: nan$\pm$nan
+Essential Graph: nan$\pm$nan
+Total Loop Closing: nan$\pm$nan
+
+Num exec: 0
+Number of KFs: nan$\pm$nan
+
+Map Merging (mean$\pm$std)
+Merge Maps: nan$\pm$nan
+Welding BA: nan$\pm$nan
+Optimization Ess.: nan$\pm$nan
+Total Map Merging: nan$\pm$nan
+
+Num exec: 0
+Number of KFs: nan$\pm$nan
+Number of MPs: nan$\pm$nan
+
+Full GBA (mean$\pm$std)
+GBA: nan$\pm$nan
+Map Update: nan$\pm$nan
+Total Full GBA: nan$\pm$nan
+
+Num exec: 0
+Num abort: 0
+Number of KFs: nan$\pm$nan
+Number of MPs: nan$\pm$nan
+
+Saving trajectory to f_dataset-MH02_stereo_imu.txt ...
+There are 1 maps in the atlas
+  Map 0 has 151 KFs
+
+End of saving trajectory to f_dataset-MH02_stereo_imu.txt ...
+
+Saving keyframe trajectory to kf_dataset-MH02_stereo_imu.txt ...
