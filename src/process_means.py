@@ -63,11 +63,13 @@ def main():
 
         # Construct the ground truth file path based on the dataset.
         ground_truth_file = os.path.join(orbslam3_evaluation_path, "Ground_truth", "EuRoC_left_cam", f"{dataset}_GT.txt")
+        analysis_script = os.path.join(orbslam3_evaluation_path, "evaluate_ate_scale.py")
 
         # Execute the analysis script using the f_dataset file.
-        cmd = ["python3", ground_truth_file, file_path, '--verbose']
+        cmd = ["python3", analysis_script, ground_truth_file, file_path, '--verbose']
         print(f"Processing: {file_path}")
         try:
+            print(f"Running command: {' '.join(cmd)}")
             result = subprocess.run(cmd, capture_output=True, text=True, check=True)
             output = result.stdout
         except subprocess.CalledProcessError as e:
@@ -77,8 +79,8 @@ def main():
         # Write the output to the processed folder with the specified naming convention.
         output_filename = f"{dataset}_{run_type_file}_trial_{trial}.txt"
         output_filepath = os.path.join(processed_dir, output_filename)
-        # with open(output_filepath, "w") as f_out:
-        #     f_out.write(output)
+        with open(output_filepath, "w") as f_out:
+            f_out.write(output)
         print(f"Output written to: {output_filepath}")
 
 if __name__ == "__main__":
