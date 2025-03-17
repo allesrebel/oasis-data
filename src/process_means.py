@@ -14,8 +14,8 @@ def main():
 
     # A mapping from the directory's run type to the f_dataset file's run type.
     # Replace/extend these with your actual mapping.
-    run_mapping = {
-        "stereo_inertial_deadlines": "stereo_imu",
+    sensor_mapping = {
+        "stereo_inertial": "stereo_imu",
         # Add other mappings as needed...
     }
 
@@ -24,12 +24,14 @@ def main():
     os.makedirs(processed_dir, exist_ok=True)
 
     # Define a regex pattern to match directory names.
-    # Expected format: <date>_result_<type of run>_<dataset>_#_run_<trial number>
+    # Expected format: <date>_result_<sensor_config>_<type_of_run>_<dataset>_..._run_<trial_number>
     # Example: 2025-02-28_09-03-34_result_stereo_inertial_deadlines_MH01_0_run_1
     pattern = re.compile(
-        r'^(?P<date>\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2})_result_(?P<run_type>[^_]+(?:_[^_]+)*)_(?P<dataset>[^_]+)_\d+_run_(?P<trial>\d+)$'
-    )
-
+            r'^(?P<date>\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2})_result_'
+            r'(?P<sensor_config>[^_]+_[^_]+)_'
+            r'(?P<type_of_run>.+?)_'
+            r'(?P<dataset>.+?)_.*_run_(?P<trial_number>\d+)$'
+        )
     # Iterate through all items in the platform path
     for item in os.listdir(platform_path):
         dir_path = os.path.join(platform_path, item)
@@ -42,19 +44,21 @@ def main():
             continue
 
         date = match.group("date")
-        run_type_dir = match.group("run_type")
+        sensor_config = match.group("sensor_config")
+        run_type = match.group("type_of_run")
         dataset = match.group("dataset")
-        trial = match.group("trial")
+        trial = match.group("trial_number")
 
         # Map the run type from directory to file run type.
-        if run_type_dir in run_mapping:
-            run_type_file = run_mapping[run_type_dir]
+        if sensor_config in sensor_mapping:
+            sensor_type_frame_file = sensor_mapping[sensor_config]
         else:
-            #print(f"Warning: No mapping found for run type '{run_type_dir}' in directory '{item}'. Skipping.")
+            # Uncomment below line if you want a warning
+            print(f"Warning: No mapping found for run type '{sensor_config}' in directory '{item}'. Skipping.")
             continue
 
         # Construct the expected f_dataset file name
-        expected_filename = f"f_dataset-{dataset}_{run_type_file}.txt"
+        expected_filename = f"f_dataset-{dataset}_{sensor_type_frame_file}.txt"
         file_path = os.path.join(dir_path, expected_filename)
 
         if not os.path.exists(file_path):
@@ -77,7 +81,7 @@ def main():
             continue
 
         # Write the output to the processed folder with the specified naming convention.
-        output_filename = f"{dataset}_{run_type_file}_trial_{trial}.txt"
+        output_filename = f"{platform_path}_{dataset}_{run_type}_{sensor_type_frame_file}_{trial}.txt"
         output_filepath = os.path.join(processed_dir, output_filename)
         with open(output_filepath, "w") as f_out:
             f_out.write(output)
