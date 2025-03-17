@@ -77,8 +77,8 @@ def main():
         # Write the output to the processed folder with the specified naming convention.
         output_filename = f"{dataset}_{run_type_file}_trial_{trial}.txt"
         output_filepath = os.path.join(processed_dir, output_filename)
-        with open(output_filepath, "w") as f_out:
-            f_out.write(output)
+        # with open(output_filepath, "w") as f_out:
+        #     f_out.write(output)
         print(f"Output written to: {output_filepath}")
 
 if __name__ == "__main__":
