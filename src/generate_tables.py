@@ -3,6 +3,7 @@ import os
 import sys
 import re
 import pandas as pd
+import matplotlib.pyplot as plt
 
 def extract_max_error_value(file_path):
     """
@@ -52,15 +53,15 @@ def main():
     processing_dir = sys.argv[1]
 
     # Regex to match file names of the form:
-    # {platform}_{dataset}_{run_type}_{sensor_type}_{trial}.txt
+    # {platform}_{dataset}_{run_type}_{sensor_type}_{trial}_{mask_size}.txt
     pattern = re.compile(
         r'^(?P<platform>[^_]+)_'
         r'(?P<dataset>[^_]+)_'
-        r'(?P<run_type>[^_]+)_'
-        r'(?P<sensor_type>.+)_'
-        r'(?P<trial>\d+)\.txt$'
+        r'(?P<run_type>.+?)(?=_[^_]+_[^_]+_\d+(?:_\d+)?\.txt)_'
+        r'(?P<sensor_type>[^_]+_[^_]+)_'
+        r'(?P<trial>\d+)(?:_(?P<mask_size>\d+))?\.txt$'
     )
-    
+
     data = []
     for file in os.listdir(processing_dir):
         match = pattern.match(file)
@@ -76,13 +77,14 @@ def main():
         if max_error_value is None:
             print(f"Error value not found or invalid in file: {file}")
             continue
-        
+
         # Append row data (trial is not stored in the DataFrame as per the request)
         row = {
             "platform": groups["platform"],
             "dataset": groups["dataset"],
             "run_type": groups["run_type"],
             "sensor_type": groups["sensor_type"],
+            "mask_size": groups.get("mask_size", None),
             "absolute_translational_error.max": max_error_value,
             "absolute_translational_error.mean": mean_error_value
         }
@@ -122,6 +124,40 @@ def main():
             print(f"Dataset: {row['dataset']}, Average absolute_translational_error.max: {row['absolute_translational_error.max']}")
         for _, row in grouped_mean.iterrows():
             print(f"Dataset: {row['dataset']}, Average absolute_translational_error.mean: {row['absolute_translational_error.mean']}")
+
+    print("Unique mask_size values:", df_f["mask_size"].unique())
+
+    # Only consider rows with a valid mask_size
+    df_mask = df_f[df_f["mask_size"].notnull()].copy()
+
+    for dataset in valid_datasets:
+        df_dataset = df_mask[df_mask["dataset"] == dataset].copy()  # Create an independent copy
+        if df_dataset.empty:
+            print(f"No data points with mask_size available for dataset {dataset} plotting.")
+            continue
+        # Convert mask_size to int using .loc to avoid the SettingWithCopyWarning.
+        df_dataset.loc[:, "mask_size"] = df_dataset["mask_size"].astype(int)
+        
+        # Create a new figure for each dataset so each plot is independent.
+        plt.figure()
+        plt.scatter(df_dataset["mask_size"], df_dataset["absolute_translational_error.mean"], label="Raw Data")
+        group_stats = df_dataset.groupby("mask_size")["absolute_translational_error.mean"].agg(["mean", "std"]).reset_index()
+        plt.errorbar(group_stats["mask_size"], group_stats["mean"], yerr=group_stats["std"], fmt='-o', color='red', label="Mean ± STD")
+        plt.xlabel("Mask Size (cells^2)")
+        plt.ylabel("ATE Error Mean (m)")
+        plt.title(f"ATE Error Mean vs Mask Size for {dataset}")
+        plt.grid(True)
+        plt.show()
+
+        plt.figure()
+        plt.scatter(df_dataset["mask_size"], df_dataset["absolute_translational_error.max"])
+        group_stats_max = df_dataset.groupby("mask_size")["absolute_translational_error.max"].agg(["mean", "std"]).reset_index()
+        plt.errorbar(group_stats_max["mask_size"], group_stats_max["mean"], yerr=group_stats_max["std"], fmt='-o', color='red', label="Mean ± STD")        
+        plt.xlabel("Mask Size (cells^2)")
+        plt.ylabel("ATE Error Max (m)")
+        plt.title(f"Max ATE Error vs Mask Size for {dataset}")
+        plt.grid(True)
+        plt.show()
 
 
 if __name__ == "__main__":

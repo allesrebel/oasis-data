@@ -24,14 +24,17 @@ def main():
     os.makedirs(processed_dir, exist_ok=True)
 
     # Define a regex pattern to match directory names.
-    # Expected format: <date>_result_<sensor_config>_<type_of_run>_<dataset>_..._run_<trial_number>
-    # Example: 2025-02-28_09-03-34_result_stereo_inertial_deadlines_MH01_0_run_1
+    # Expected format: <date>_result_<sensor_config>_<type_of_run>_<dataset>_<mask_size>_run_<trial_number>
+    # Example: 2025-03-23_07-13-40_result_stereo_inertial_fov_deadlines_MH05_6_run_3
     pattern = re.compile(
-            r'^(?P<date>\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2})_result_'
-            r'(?P<sensor_config>[^_]+_[^_]+)_'
-            r'(?P<type_of_run>.+?)_'
-            r'(?P<dataset>.+?)_.*_run_(?P<trial_number>\d+)$'
-        )
+        r'^(?P<date>\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2})_result_'
+        r'(?P<sensor_config>[^_]+_[^_]+)_'
+        r'(?P<type_of_run>.+?)_'
+        r'(?P<dataset>[^_]+)_'
+        r'(?P<mask_size>\d+)_run_'
+        r'(?P<trial_number>\d+)$'
+    )
+
     # Iterate through all items in the platform path
     for item in os.listdir(platform_path):
         dir_path = os.path.join(platform_path, item)
@@ -47,6 +50,7 @@ def main():
         sensor_config = match.group("sensor_config")
         run_type = match.group("type_of_run")
         dataset = match.group("dataset")
+        mask_size = match.group("mask_size")
         trial = match.group("trial_number")
 
         # Map the run type from directory to file run type.
@@ -81,11 +85,21 @@ def main():
             continue
 
         # Write the output to the processed folder with the specified naming convention.
-        output_filename = f"{platform_path}_{dataset}_{run_type}_{sensor_type_frame_file}_{trial}.txt"
-        output_filepath = os.path.join(processed_dir, output_filename)
-        with open(output_filepath, "w") as f_out:
-            f_out.write(output)
-        print(f"Output written to: {output_filepath}")
+        if(mask_size != "0"):
+            # we have a mask size to use
+            output_filename = f"{platform_path}_{dataset}_{run_type}_{sensor_type_frame_file}_{trial}_{mask_size}.txt"
+            output_filepath = os.path.join(processed_dir, output_filename)
+            with open(output_filepath, "w") as f_out:
+                f_out.write(output)
+            print(f"Output written to: {output_filepath}")
+
+        else:
+            # no mask size
+            output_filename = f"{platform_path}_{dataset}_{run_type}_{sensor_type_frame_file}_{trial}.txt"
+            output_filepath = os.path.join(processed_dir, output_filename)
+            with open(output_filepath, "w") as f_out:
+                f_out.write(output)
+            print(f"Output written to: {output_filepath}")
 
 if __name__ == "__main__":
     main()
