@@ -94,28 +94,34 @@ def main():
     # Define the fixed values and valid datasets.
     fixed_platform = "jetson"
     fixed_sensor_type = "stereo_imu"
-    fixed_run_type = "deadlines"
+    fixed_run_type = ["normal", "deadlines", "oasis"]
     valid_datasets = {"MH01", "MH02", "MH03", "MH04", "MH05"}
 
     # Filter for the fixed values.
     df_f = df[df["platform"] == fixed_platform]
     df_f = df_f[df_f["sensor_type"] == fixed_sensor_type]
-    df_f = df_f[df_f["run_type"] == fixed_run_type]
 
     
     # Filter the DataFrame to include only the datasets MH01 to MH05.
     valid_datasets = {"MH01", "MH02", "MH03", "MH04", "MH05"}
     df_f = df_f[df_f["dataset"].isin(valid_datasets)]
 
-    # Group by dataset and calculate the average max translational error.
-    grouped_max = df_f.groupby("dataset")["absolute_translational_error.max"].mean().reset_index()
-    grouped_mean = df_f.groupby("dataset")["absolute_translational_error.mean"].mean().reset_index()
+    for fixed_run in fixed_run_type:
 
-    # Print out the average error for each dataset.
-    for _, row in grouped_max.iterrows():
-        print(f"Dataset: {row['dataset']}, Average absolute_translational_error.max: {row['absolute_translational_error.max']}")
-    for _, row in grouped_mean.iterrows():
-        print(f"Dataset: {row['dataset']}, Average absolute_translational_error.mean: {row['absolute_translational_error.mean']}")
+        print(f"Table for {fixed_platform}, {fixed_run}, for {fixed_sensor_type}")
+
+        # Filter the DataFrame to include only the fixed run type.
+        df_f_run = df_f[df_f["run_type"] == fixed_run]
+
+        # Group by dataset and calculate the average max translational error.
+        grouped_max = df_f_run.groupby("dataset")["absolute_translational_error.max"].mean().reset_index()
+        grouped_mean = df_f_run.groupby("dataset")["absolute_translational_error.mean"].mean().reset_index()
+
+        # Print out the average error for each dataset.
+        for _, row in grouped_max.iterrows():
+            print(f"Dataset: {row['dataset']}, Average absolute_translational_error.max: {row['absolute_translational_error.max']}")
+        for _, row in grouped_mean.iterrows():
+            print(f"Dataset: {row['dataset']}, Average absolute_translational_error.mean: {row['absolute_translational_error.mean']}")
 
 
 if __name__ == "__main__":
