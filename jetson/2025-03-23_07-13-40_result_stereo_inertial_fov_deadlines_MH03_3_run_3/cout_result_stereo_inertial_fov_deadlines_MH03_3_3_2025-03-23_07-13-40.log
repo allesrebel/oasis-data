@@ -1,0 +1,706 @@
+num_seq = 1
+file name: dataset-MH03_stereo_imu
+Loading images for sequence 0...LOADED!
+Loading IMU for sequence 0...LOADED!
+
+-------
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Built with REGISTER_TIMES
+Git Commit Hash: 2d47524
+
+Build Type: Release
+
+Compiled with C++ version: 201703
+
+Input sensor was set to: Stereo-Inertial
+Loading settings from EuRoC_fov_deadlines_mask_3x3.yaml
+	-Loaded camera 1
+	-Loaded camera 2
+	-Loaded image info
+	-Loaded IMU calibration
+	-Loaded ORB settings
+	-Loaded viewer settings
+	-Loaded Atlas settings
+Deadlines enabled, will skip frames!
+FOV enabled
+Static mask size: 3x3
+Dumping map points enabled
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 458.65399169921875 457.29598999023438 367.21499633789062 248.375 ]
+	-Camera 1 distortion parameters: [  -0.28340810537338257 0.073959067463874817 0.00019359000725671649 1.7618711353861727e-05 ]
+	-Camera 2 parameters (Pinhole: [ 457.58700561523438 456.13400268554688 379.99899291992188 255.23800659179688 ]
+	-Camera 1 distortion parameters: [  -0.2836836576461792 0.074512839317321777 -0.00010473000293131918 -3.555907096597366e-05 ]
+	-Original image size: [ 752 , 480 ]
+	-Current image size: [ 752 , 480 ]
+	-Camera 1 parameters after rectification: [  456.71499633789062 456.71499633789062 364.52615356445312 257.268798828125 ]
+	-Sequence FPS: 20
+	-Stereo baseline: 0.11007784307003021
+	-Stereo depth threshold : 60
+	-Gyro noise: 0.00016999999934341758
+	-Accelerometer noise: 0.0020000000949949026
+	-Gyro walk: 1.9392999092815444e-05
+	-Accelerometer walk: 0.0030000000260770321
+	-IMU frequency: 200
+	-Features per image: 1200
+	-ORB scale factor: 1.2000000476837158
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+SLAM Started at System Time: 1742897411.21091
+not IMU meas
+not IMU meas
+not enough acceleration
+not enough acceleration
+First KF:0; Map init KF:0
+New Map created with 86 points
+Active map: 0
+Not enough motion for initializing. Reseting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+Not enough motion for initializing. Reseting...
+TRACK: Reset map because local mapper set the bad imu flag 
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 4
+mnInitialFrameId = 0
+53 Frames set to lost
+not IMU meas
+First KF:12; Map init KF:0
+New Map created with 93 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 59
+mnInitialFrameId = 57
+59 Frames set to lost
+not IMU meas
+First KF:14; Map init KF:12
+New Map created with 146 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 66
+mnInitialFrameId = 64
+65 Frames set to lost
+not IMU meas
+not enough acceleration
+First KF:16; Map init KF:14
+New Map created with 466 points
+Active map: 0
+Dropping frame 1403637134.5883191
+Dropping frame 1403637134.7883189
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 74
+mnInitialFrameId = 71
+79 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+First KF:19; Map init KF:16
+New Map created with 97 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 91
+mnInitialFrameId = 87
+83 Frames set to lost
+not IMU meas
+First KF:20; Map init KF:19
+New Map created with 209 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 96
+mnInitialFrameId = 94
+87 Frames set to lost
+not IMU meas
+First KF:21; Map init KF:20
+New Map created with 454 points
+Active map: 0
+Dropping frame 1403637135.9883189
+Dropping frame 1403637136.2383192
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 101
+mnInitialFrameId = 99
+101 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+First KF:24; Map init KF:21
+New Map created with 119 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 118
+mnInitialFrameId = 114
+104 Frames set to lost
+not IMU meas
+First KF:25; Map init KF:24
+New Map created with 203 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 122
+mnInitialFrameId = 120
+108 Frames set to lost
+not IMU meas
+First KF:26; Map init KF:25
+New Map created with 469 points
+Active map: 0
+Dropping frame 1403637137.7883189
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 127
+mnInitialFrameId = 125
+123 Frames set to lost
+not IMU meas
+First KF:30; Map init KF:26
+New Map created with 110 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 143
+mnInitialFrameId = 141
+128 Frames set to lost
+not IMU meas
+First KF:31; Map init KF:30
+New Map created with 175 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 149
+mnInitialFrameId = 147
+131 Frames set to lost
+not IMU meas
+First KF:32; Map init KF:31
+New Map created with 440 points
+Active map: 0
+Dropping frame 1403637139.0383191
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 153
+mnInitialFrameId = 151
+147 Frames set to lost
+not IMU meas
+Dropping frame 1403637139.3383191
+First KF:35; Map init KF:32
+New Map created with 107 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 170
+mnInitialFrameId = 168
+151 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:36; Map init KF:35
+New Map created with 54 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 179
+mnInitialFrameId = 173
+153 Frames set to lost
+not IMU meas
+not enough acceleration
+First KF:37; Map init KF:36
+New Map created with 59 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 183
+mnInitialFrameId = 180
+155 Frames set to lost
+not IMU meas
+First KF:38; Map init KF:37
+New Map created with 77 points
+Active map: 0
+Not enough motion for initializing. Reseting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+Not enough motion for initializing. Reseting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+Not enough motion for initializing. Reseting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+Not enough motion for initializing. Reseting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+Not enough motion for initializing. Reseting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+Not enough motion for initializing. Reseting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+Not enough motion for initializing. Reseting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+Not enough motion for initializing. Reseting...
+TRACK: Reset map because local mapper set the bad imu flag 
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 186
+mnInitialFrameId = 184
+284 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:56; Map init KF:38
+New Map created with 66 points
+Active map: 0
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 377
+mnInitialFrameId = 315
+296 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:58; Map init KF:56
+New Map created with 202 points
+Active map: 0
+Dropping frame 1403637151.9883189
+Dropping frame 1403637152.638319
+Dropping frame 1403637152.9383192
+Dropping frame 1403637154.0383191
+Dropping frame 1403637154.688319
+Dropping frame 1403637155.2883189
+Dropping frame 1403637155.388319
+start VIBA 1
+Dropping frame 1403637156.138319
+end VIBA 1
+Dropping frame 1403637156.9383192
+Dropping frame 1403637162.5383191
+Dropping frame 1403637163.0883191
+Dropping frame 1403637164.9883189
+start VIBA 2
+end VIBA 2
+Dropping frame 1403637176.9883189
+Dropping frame 1403637177.3383191
+Dropping frame 1403637177.688319
+Dropping frame 1403637178.3383191
+Dropping frame 1403637178.7383192
+Dropping frame 1403637178.9383192
+Dropping frame 1403637179.388319
+Dropping frame 1403637179.4883189
+Dropping frame 1403637179.8383191
+Dropping frame 1403637179.9383192
+Dropping frame 1403637180.0383191
+Dropping frame 1403637180.388319
+Dropping frame 1403637180.4883189
+Dropping frame 1403637181.188319
+Dropping frame 1403637183.2883189
+Dropping frame 1403637186.3383191
+Dropping frame 1403637186.4883189
+Dropping frame 1403637186.888319
+Dropping frame 1403637186.9883189
+Dropping frame 1403637187.0883191
+Dropping frame 1403637187.388319
+Dropping frame 1403637187.688319
+Dropping frame 1403637187.7883189
+Dropping frame 1403637187.888319
+Dropping frame 1403637187.9883189
+Dropping frame 1403637188.138319
+Dropping frame 1403637188.2383192
+Dropping frame 1403637188.4883189
+Dropping frame 1403637188.7883189
+Dropping frame 1403637189.3383191
+Dropping frame 1403637190.638319
+Dropping frame 1403637190.7383192
+Dropping frame 1403637190.9383192
+Dropping frame 1403637191.0383191
+Dropping frame 1403637191.138319
+Dropping frame 1403637191.2883189
+Dropping frame 1403637191.388319
+Dropping frame 1403637191.638319
+Dropping frame 1403637191.8383191
+Dropping frame 1403637192.0383191
+Dropping frame 1403637192.138319
+Dropping frame 1403637192.2383192
+Dropping frame 1403637192.3383191
+Dropping frame 1403637192.5883191
+Dropping frame 1403637192.688319
+Dropping frame 1403637192.8383191
+Dropping frame 1403637193.0883191
+Dropping frame 1403637193.2883189
+Dropping frame 1403637193.4883189
+Dropping frame 1403637193.688319
+Dropping frame 1403637193.7883189
+Dropping frame 1403637193.9883189
+Dropping frame 1403637194.188319
+Dropping frame 1403637194.2883189
+Dropping frame 1403637194.388319
+Dropping frame 1403637194.4883189
+Dropping frame 1403637194.688319
+Dropping frame 1403637194.7883189
+Dropping frame 1403637195.138319
+Dropping frame 1403637195.2383192
+Dropping frame 1403637195.5883191
+Dropping frame 1403637195.888319
+Dropping frame 1403637195.9883189
+Dropping frame 1403637196.0883191
+Dropping frame 1403637196.4383192
+Dropping frame 1403637197.9883189
+Dropping frame 1403637198.188319
+Dropping frame 1403637200.2883189
+Dropping frame 1403637201.7383192
+Dropping frame 1403637202.4383192
+Dropping frame 1403637206.7883189
+Dropping frame 1403637207.0883191
+Dropping frame 1403637207.188319
+Dropping frame 1403637210.0383191
+Dropping frame 1403637210.2383192
+Dropping frame 1403637210.9883189
+Dropping frame 1403637216.138319
+Dropping frame 1403637216.688319
+Dropping frame 1403637219.888319
+Dropping frame 1403637229.7883189
+Dropping frame 1403637229.888319
+Dropping frame 1403637229.9883189
+Dropping frame 1403637230.4383192
+Dropping frame 1403637230.9883189
+Dropping frame 1403637231.4883189
+Dropping frame 1403637231.688319
+Dropping frame 1403637233.4383192
+Dropping frame 1403637233.688319
+Dropping frame 1403637233.8383191
+Dropping frame 1403637233.9883189
+Dropping frame 1403637234.0883191
+Dropping frame 1403637234.4383192
+Dropping frame 1403637234.5383191
+Dropping frame 1403637234.7383192
+Dropping frame 1403637234.888319
+Dropping frame 1403637235.5883191
+Dropping frame 1403637235.7383192
+Dropping frame 1403637235.9383192
+Dropping frame 1403637236.5383191
+Dropping frame 1403637236.9383192
+Dropping frame 1403637237.0383191
+Dropping frame 1403637238.9383192
+Dropping frame 1403637239.5383191
+Dropping frame 1403637240.2883189
+Dropping frame 1403637241.138319
+Dropping frame 1403637241.3383191
+Dropping frame 1403637243.0383191
+Dropping frame 1403637243.188319
+Dropping frame 1403637243.388319
+Dropping frame 1403637244.188319
+Dropping frame 1403637244.888319
+Dropping frame 1403637244.9883189
+Dropping frame 1403637245.388319
+Dropping frame 1403637245.4883189
+Dropping frame 1403637245.9883189
+Dropping frame 1403637246.4383192
+Dropping frame 1403637247.888319
+Dropping frame 1403637248.2383192
+Dropping frame 1403637248.3383191
+Dropping frame 1403637248.5383191
+Dropping frame 1403637248.638319
+Dropping frame 1403637248.888319
+Dropping frame 1403637248.9883189
+Dropping frame 1403637249.3383191
+Dropping frame 1403637250.2883189
+Dropping frame 1403637251.2383192
+Dropping frame 1403637252.8383191
+Dropping frame 1403637253.0383191
+Dropping frame 1403637253.138319
+Dropping frame 1403637253.2883189
+Dropping frame 1403637253.9883189
+Dropping frame 1403637254.0883191
+Dropping frame 1403637258.2883189
+Dropping frame 1403637259.0883191
+Dropping frame 1403637259.2883189
+Dropping frame 1403637260.4883189
+Dropping frame 1403637260.7383192
+Dropping frame 1403637262.638319
+Dropping frame 1403637263.0383191
+Shutdown
+SLAM Finished at System Time: 1742897568.26511
+
+ TIME STATS in ms (mean$\pm$std)
+OpenCV version: 4.8.1
+---------------------------
+Tracking
+
+ORB Extraction: 12.485$\pm$1.8713
+Stereo Matching: 5.9478$\pm$2.0071
+IMU Preintegration: 0.2591$\pm$0.12008
+Pose Prediction: 0.51139$\pm$1.4564
+LM Track: 15.496$\pm$5.508
+New KF decision: 1.0116$\pm$2.0388
+Total Tracking: 35.591$\pm$14.853
+
+
+
+Local Mapping
+
+KF Insertion: 9.4819$\pm$4.2031
+MP Culling: 0.38186$\pm$0.23826
+MP Creation: 33.42$\pm$18.127
+LBA: 123.25$\pm$56.338
+KF Culling: 10.983$\pm$8.6126
+Total Local Mapping: 171.9$\pm$82.879
+---------------------------
+
+LBA complexity (mean$\pm$std)
+LBA Edges: 1088.6$\pm$742.21
+LBA KF optimized: 5.931$\pm$2.4344
+LBA KF fixed: 1$\pm$0
+LBA MP: nan$\pm$nan
+
+LBA executions: 533
+LBA aborts: 0
+---------------------------
+
+Map complexity
+KFs in map: 211
+MPs in map: 15188
+---------------------------
+
+Place Recognition (mean$\pm$std)
+Database Query: 1.3166$\pm$0.84123
+SE3 estimation: 17.643$\pm$13.434
+Total Place Recognition: 14.928$\pm$14.718
+
+
+Loop Closing (mean$\pm$std)
+Loop Fusion: nan$\pm$nan
+Essential Graph: nan$\pm$nan
+Total Loop Closing: nan$\pm$nan
+
+Num exec: 0
+Number of KFs: nan$\pm$nan
+
+Map Merging (mean$\pm$std)
+Merge Maps: nan$\pm$nan
+Welding BA: nan$\pm$nan
+Optimization Ess.: nan$\pm$nan
+Total Map Merging: nan$\pm$nan
+
+Num exec: 0
+Number of KFs: nan$\pm$nan
+Number of MPs: nan$\pm$nan
+
+Full GBA (mean$\pm$std)
+GBA: nan$\pm$nan
+Map Update: nan$\pm$nan
+Total Full GBA: nan$\pm$nan
+
+Num exec: 0
+Num abort: 0
+Number of KFs: nan$\pm$nan
+Number of MPs: nan$\pm$nan
+
+Saving trajectory to f_dataset-MH03_stereo_imu.txt ...
+There are 1 maps in the atlas
+  Map 0 has 211 KFs
+
+End of saving trajectory to f_dataset-MH03_stereo_imu.txt ...
+
+Saving keyframe trajectory to kf_dataset-MH03_stereo_imu.txt ...
