@@ -1,0 +1,805 @@
+num_seq = 1
+file name: dataset-MH01_stereo_imu
+Loading images for sequence 0...LOADED!
+Loading IMU for sequence 0...LOADED!
+
+-------
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Built with REGISTER_TIMES
+Git Commit Hash: 2d47524
+
+Build Type: Release
+
+Compiled with C++ version: 201703
+
+Input sensor was set to: Stereo-Inertial
+Loading settings from EuRoC_fov_deadlines_mask_5x5.yaml
+	-Loaded camera 1
+	-Loaded camera 2
+	-Loaded image info
+	-Loaded IMU calibration
+	-Loaded ORB settings
+	-Loaded viewer settings
+	-Loaded Atlas settings
+Deadlines enabled, will skip frames!
+FOV enabled
+Static mask size: 5x5
+Dumping map points enabled
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 458.65399169921875 457.29598999023438 367.21499633789062 248.375 ]
+	-Camera 1 distortion parameters: [  -0.28340810537338257 0.073959067463874817 0.00019359000725671649 1.7618711353861727e-05 ]
+	-Camera 2 parameters (Pinhole: [ 457.58700561523438 456.13400268554688 379.99899291992188 255.23800659179688 ]
+	-Camera 1 distortion parameters: [  -0.2836836576461792 0.074512839317321777 -0.00010473000293131918 -3.555907096597366e-05 ]
+	-Original image size: [ 752 , 480 ]
+	-Current image size: [ 752 , 480 ]
+	-Camera 1 parameters after rectification: [  456.71499633789062 456.71499633789062 364.52615356445312 257.268798828125 ]
+	-Sequence FPS: 20
+	-Stereo baseline: 0.11007784307003021
+	-Stereo depth threshold : 60
+	-Gyro noise: 0.00016999999934341758
+	-Accelerometer noise: 0.0020000000949949026
+	-Gyro walk: 1.9392999092815444e-05
+	-Accelerometer walk: 0.0030000000260770321
+	-IMU frequency: 200
+	-Features per image: 1200
+	-ORB scale factor: 1.2000000476837158
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+SLAM Started at System Time: 1743120086.38444
+not IMU meas
+not IMU meas
+not enough acceleration
+not enough acceleration
+First KF:0; Map init KF:0
+New Map created with 541 points
+Active map: 0
+Dropping frame 1403636580.0135555
+Dropping frame 1403636580.2135556
+Dropping frame 1403636581.2635555
+Dropping frame 1403636581.6635556
+Dropping frame 1403636581.9635556
+Dropping frame 1403636582.3135555
+Dropping frame 1403636582.6635556
+Dropping frame 1403636583.3135555
+Dropping frame 1403636583.5635555
+Dropping frame 1403636583.7635555
+Dropping frame 1403636583.9635556
+Dropping frame 1403636584.3635557
+Dropping frame 1403636584.4635556
+Dropping frame 1403636584.5635555
+start VIBA 1
+end VIBA 1
+Dropping frame 1403636585.7635555
+Dropping frame 1403636585.9635556
+Dropping frame 1403636586.1635556
+Dropping frame 1403636586.2635555
+Dropping frame 1403636586.5135555
+Dropping frame 1403636587.5635555
+Dropping frame 1403636587.8635557
+Dropping frame 1403636588.1635556
+Dropping frame 1403636588.6635556
+Dropping frame 1403636589.2135556
+Dropping frame 1403636589.6135554
+Dropping frame 1403636589.9135554
+Dropping frame 1403636590.1635556
+Dropping frame 1403636590.4635556
+Dropping frame 1403636590.8135555
+Dropping frame 1403636590.9135554
+Dropping frame 1403636591.0635555
+Dropping frame 1403636591.4635556
+Dropping frame 1403636591.6135554
+Dropping frame 1403636592.1635556
+Dropping frame 1403636593.3135555
+Dropping frame 1403636593.7635555
+Dropping frame 1403636593.9135554
+Dropping frame 1403636594.3635557
+Dropping frame 1403636594.6135554
+Dropping frame 1403636595.1635556
+Dropping frame 1403636595.3635557
+start VIBA 2
+end VIBA 2
+Dropping frame 1403636595.5135555
+Dropping frame 1403636596.1635556
+Dropping frame 1403636598.0135555
+Dropping frame 1403636598.4135554
+Dropping frame 1403636598.7135556
+Dropping frame 1403636598.9635556
+Dropping frame 1403636599.0635555
+Dropping frame 1403636601.5635555
+Dropping frame 1403636630.7635555
+Dropping frame 1403636631.2635555
+Dropping frame 1403636631.7135556
+Dropping frame 1403636631.8635557
+Dropping frame 1403636632.4135554
+Dropping frame 1403636632.8135555
+Dropping frame 1403636633.5635555
+Dropping frame 1403636633.6635556
+Dropping frame 1403636634.0135555
+Dropping frame 1403636634.3635557
+Dropping frame 1403636634.4635556
+Dropping frame 1403636634.7635555
+Dropping frame 1403636636.4135554
+Dropping frame 1403636636.5635555
+Dropping frame 1403636636.7135556
+Dropping frame 1403636636.8135555
+Dropping frame 1403636637.1635556
+Dropping frame 1403636637.3635557
+Dropping frame 1403636637.5635555
+Dropping frame 1403636637.8135555
+Dropping frame 1403636638.0635555
+Dropping frame 1403636638.2135556
+Dropping frame 1403636638.3135555
+Dropping frame 1403636638.5635555
+Dropping frame 1403636639.0635555
+Dropping frame 1403636639.3635557
+Dropping frame 1403636639.4635556
+Dropping frame 1403636639.5635555
+Dropping frame 1403636639.8135555
+Dropping frame 1403636639.9135554
+Dropping frame 1403636640.4135554
+Dropping frame 1403636640.6135554
+Dropping frame 1403636640.7135556
+Dropping frame 1403636640.8135555
+Dropping frame 1403636641.1635556
+Dropping frame 1403636641.2635555
+Dropping frame 1403636641.3635557
+Dropping frame 1403636641.4635556
+Dropping frame 1403636641.7635555
+Dropping frame 1403636642.3135555
+Dropping frame 1403636642.4135554
+Dropping frame 1403636642.7635555
+Dropping frame 1403636643.1135554
+Dropping frame 1403636644.2135556
+Dropping frame 1403636644.6635556
+Dropping frame 1403636644.9135554
+Dropping frame 1403636645.3135555
+Dropping frame 1403636645.6135554
+Dropping frame 1403636645.9135554
+Dropping frame 1403636646.2635555
+Dropping frame 1403636647.0135555
+Dropping frame 1403636647.1135554
+Dropping frame 1403636647.9135554
+Dropping frame 1403636648.3135555
+Dropping frame 1403636648.5135555
+Dropping frame 1403636648.7135556
+Dropping frame 1403636648.8135555
+Dropping frame 1403636648.9135554
+Dropping frame 1403636649.3135555
+Dropping frame 1403636650.1635556
+Dropping frame 1403636650.3635557
+Dropping frame 1403636650.5635555
+Dropping frame 1403636651.0135555
+Dropping frame 1403636651.2135556
+Dropping frame 1403636651.4135554
+Dropping frame 1403636651.6135554
+Dropping frame 1403636651.7135556
+Dropping frame 1403636652.0635555
+Dropping frame 1403636652.1635556
+Dropping frame 1403636652.2635555
+Dropping frame 1403636652.5135555
+Dropping frame 1403636653.0135555
+Dropping frame 1403636653.1135554
+Dropping frame 1403636653.2135556
+Dropping frame 1403636653.3135555
+Dropping frame 1403636653.4635556
+Dropping frame 1403636653.6635556
+Dropping frame 1403636654.1135554
+Dropping frame 1403636654.2135556
+Dropping frame 1403636654.3135555
+Dropping frame 1403636654.4135554
+Dropping frame 1403636654.5135555
+Dropping frame 1403636654.6135554
+Dropping frame 1403636655.0635555
+Dropping frame 1403636655.4635556
+Dropping frame 1403636655.6635556
+Dropping frame 1403636655.7635555
+Dropping frame 1403636656.2635555
+Dropping frame 1403636656.3635557
+Dropping frame 1403636656.6635556
+Dropping frame 1403636656.7635555
+Dropping frame 1403636657.2135556
+Dropping frame 1403636657.3135555
+Dropping frame 1403636657.4135554
+Dropping frame 1403636657.5635555
+Dropping frame 1403636657.7635555
+Dropping frame 1403636657.8635557
+Dropping frame 1403636658.0135555
+Dropping frame 1403636658.2635555
+Dropping frame 1403636658.7135556
+Dropping frame 1403636658.9135554
+Dropping frame 1403636659.3635557
+Dropping frame 1403636659.6635556
+Dropping frame 1403636659.9135554
+Dropping frame 1403636660.0135555
+Dropping frame 1403636660.1135554
+Dropping frame 1403636660.8635557
+Dropping frame 1403636660.9635556
+Dropping frame 1403636661.2635555
+Dropping frame 1403636661.4635556
+Dropping frame 1403636661.7635555
+Dropping frame 1403636662.2135556
+Dropping frame 1403636662.4135554
+Dropping frame 1403636662.5635555
+Dropping frame 1403636662.9635556
+Dropping frame 1403636663.0635555
+Dropping frame 1403636663.1635556
+Dropping frame 1403636664.0135555
+Dropping frame 1403636664.1135554
+Dropping frame 1403636664.3635557
+Dropping frame 1403636664.5135555
+Dropping frame 1403636664.8135555
+Dropping frame 1403636665.2635555
+Dropping frame 1403636665.4135554
+Dropping frame 1403636665.6135554
+Dropping frame 1403636665.9135554
+Dropping frame 1403636666.0135555
+Dropping frame 1403636666.2635555
+Dropping frame 1403636666.4635556
+Dropping frame 1403636666.7135556
+Dropping frame 1403636666.9635556
+Dropping frame 1403636667.3135555
+Dropping frame 1403636667.8135555
+Dropping frame 1403636668.4135554
+Dropping frame 1403636668.6135554
+Dropping frame 1403636668.8135555
+Dropping frame 1403636669.0635555
+Dropping frame 1403636669.1635556
+Dropping frame 1403636669.2635555
+Dropping frame 1403636669.4635556
+Dropping frame 1403636669.6135554
+Dropping frame 1403636670.0635555
+Dropping frame 1403636670.2635555
+Dropping frame 1403636670.4635556
+Dropping frame 1403636670.8135555
+Dropping frame 1403636671.5135555
+Dropping frame 1403636671.6135554
+Dropping frame 1403636672.0635555
+Dropping frame 1403636672.5135555
+Dropping frame 1403636673.4635556
+Dropping frame 1403636673.8135555
+Dropping frame 1403636673.9635556
+Dropping frame 1403636674.5635555
+Dropping frame 1403636675.3635557
+Dropping frame 1403636675.7635555
+Dropping frame 1403636675.9635556
+Dropping frame 1403636676.6135554
+Dropping frame 1403636677.3635557
+Dropping frame 1403636677.8635557
+Dropping frame 1403636678.2135556
+Dropping frame 1403636678.5135555
+Dropping frame 1403636679.2635555
+Dropping frame 1403636681.1635556
+Dropping frame 1403636682.0135555
+Dropping frame 1403636682.2635555
+Dropping frame 1403636682.6635556
+Dropping frame 1403636682.7635555
+Dropping frame 1403636683.4135554
+Dropping frame 1403636686.3135555
+Dropping frame 1403636686.6635556
+Dropping frame 1403636687.0135555
+Dropping frame 1403636687.1135554
+Dropping frame 1403636687.5135555
+Dropping frame 1403636687.8635557
+Dropping frame 1403636688.8135555
+Dropping frame 1403636688.9635556
+Dropping frame 1403636689.1635556
+Dropping frame 1403636689.4635556
+Dropping frame 1403636689.8135555
+Dropping frame 1403636690.0135555
+Dropping frame 1403636690.4635556
+Dropping frame 1403636690.5635555
+Dropping frame 1403636690.8135555
+Dropping frame 1403636691.3135555
+Dropping frame 1403636691.4135554
+Dropping frame 1403636691.6635556
+Dropping frame 1403636691.7635555
+Dropping frame 1403636691.8635557
+Dropping frame 1403636692.0635555
+Dropping frame 1403636692.1635556
+Dropping frame 1403636692.5635555
+Dropping frame 1403636692.6635556
+Dropping frame 1403636692.9135554
+Dropping frame 1403636693.4635556
+Dropping frame 1403636693.6635556
+Dropping frame 1403636693.7635555
+Dropping frame 1403636693.8635557
+Dropping frame 1403636693.9635556
+Dropping frame 1403636694.1635556
+Dropping frame 1403636694.4135554
+Dropping frame 1403636694.5135555
+Dropping frame 1403636694.6135554
+Dropping frame 1403636694.7135556
+Dropping frame 1403636694.8135555
+Dropping frame 1403636695.1635556
+Dropping frame 1403636695.3135555
+Dropping frame 1403636695.4135554
+Dropping frame 1403636695.9135554
+Dropping frame 1403636696.3635557
+Dropping frame 1403636696.4635556
+Dropping frame 1403636696.5635555
+Dropping frame 1403636696.6635556
+Dropping frame 1403636696.9635556
+Dropping frame 1403636697.0635555
+Dropping frame 1403636697.2635555
+Dropping frame 1403636697.3635557
+Dropping frame 1403636697.4635556
+Dropping frame 1403636697.7135556
+Dropping frame 1403636697.9135554
+Dropping frame 1403636698.7135556
+Dropping frame 1403636699.0635555
+Dropping frame 1403636699.1635556
+Dropping frame 1403636699.2635555
+Dropping frame 1403636699.3635557
+Dropping frame 1403636699.7135556
+Dropping frame 1403636699.8135555
+Dropping frame 1403636699.9135554
+Dropping frame 1403636700.1135554
+Dropping frame 1403636700.2635555
+Dropping frame 1403636700.3635557
+Dropping frame 1403636700.7135556
+Dropping frame 1403636701.0635555
+Dropping frame 1403636701.1635556
+Dropping frame 1403636701.2635555
+Dropping frame 1403636701.6635556
+Dropping frame 1403636701.7635555
+Dropping frame 1403636702.1135554
+Dropping frame 1403636702.2135556
+Dropping frame 1403636702.3135555
+Dropping frame 1403636702.7635555
+Dropping frame 1403636702.9635556
+Dropping frame 1403636703.2635555
+Dropping frame 1403636703.3635557
+Dropping frame 1403636703.5135555
+Dropping frame 1403636703.7635555
+Dropping frame 1403636703.8635557
+Dropping frame 1403636703.9635556
+Dropping frame 1403636704.2135556
+Dropping frame 1403636704.4635556
+Dropping frame 1403636704.5635555
+Dropping frame 1403636704.8635557
+Dropping frame 1403636704.9635556
+Dropping frame 1403636705.5135555
+Dropping frame 1403636706.1135554
+Dropping frame 1403636706.4635556
+Dropping frame 1403636706.8135555
+Dropping frame 1403636707.1135554
+Dropping frame 1403636707.2635555
+Dropping frame 1403636707.5635555
+Dropping frame 1403636707.9635556
+Dropping frame 1403636708.0635555
+Dropping frame 1403636708.3135555
+Dropping frame 1403636708.4635556
+Dropping frame 1403636708.6635556
+Dropping frame 1403636708.7635555
+Dropping frame 1403636708.9635556
+Dropping frame 1403636709.2635555
+Dropping frame 1403636709.4635556
+Dropping frame 1403636709.5635555
+Dropping frame 1403636709.6635556
+Dropping frame 1403636709.7635555
+Dropping frame 1403636709.9135554
+Dropping frame 1403636710.0635555
+Dropping frame 1403636710.2135556
+Dropping frame 1403636710.5135555
+Dropping frame 1403636710.6635556
+Dropping frame 1403636711.0135555
+Dropping frame 1403636711.5635555
+Dropping frame 1403636712.0135555
+Dropping frame 1403636712.1635556
+Dropping frame 1403636712.4635556
+Dropping frame 1403636712.6635556
+Dropping frame 1403636712.8135555
+Dropping frame 1403636712.9635556
+Dropping frame 1403636713.3135555
+Dropping frame 1403636713.4135554
+Dropping frame 1403636714.0635555
+Dropping frame 1403636714.1635556
+Dropping frame 1403636714.2635555
+Dropping frame 1403636714.3635557
+Dropping frame 1403636714.4635556
+Dropping frame 1403636714.5635555
+Dropping frame 1403636714.7635555
+Dropping frame 1403636714.8635557
+Dropping frame 1403636714.9635556
+Dropping frame 1403636715.3135555
+Dropping frame 1403636715.5135555
+Dropping frame 1403636715.6135554
+Dropping frame 1403636715.8135555
+Dropping frame 1403636716.1635556
+Dropping frame 1403636716.2635555
+Dropping frame 1403636716.4635556
+Dropping frame 1403636716.6635556
+Dropping frame 1403636716.7635555
+Dropping frame 1403636717.2635555
+Dropping frame 1403636717.4635556
+Dropping frame 1403636717.8635557
+Dropping frame 1403636717.9635556
+Dropping frame 1403636718.1635556
+Dropping frame 1403636718.4635556
+Dropping frame 1403636718.5635555
+Dropping frame 1403636718.9135554
+Dropping frame 1403636719.0135555
+Dropping frame 1403636719.1135554
+Dropping frame 1403636719.4635556
+Dropping frame 1403636719.5635555
+Dropping frame 1403636719.8135555
+Dropping frame 1403636719.9135554
+Dropping frame 1403636720.0135555
+Dropping frame 1403636720.2135556
+Dropping frame 1403636720.3135555
+Dropping frame 1403636720.5635555
+Dropping frame 1403636720.7635555
+Dropping frame 1403636720.8635557
+Dropping frame 1403636721.1635556
+Dropping frame 1403636721.2635555
+Dropping frame 1403636721.5635555
+Dropping frame 1403636721.8635557
+Dropping frame 1403636722.0635555
+Dropping frame 1403636722.2135556
+Dropping frame 1403636722.3135555
+Dropping frame 1403636722.5135555
+Dropping frame 1403636722.7135556
+Dropping frame 1403636722.9135554
+Dropping frame 1403636723.2135556
+Dropping frame 1403636723.4135554
+Dropping frame 1403636723.5135555
+Dropping frame 1403636723.6135554
+Dropping frame 1403636723.7135556
+Dropping frame 1403636724.0635555
+Dropping frame 1403636724.2635555
+Dropping frame 1403636724.3635557
+Dropping frame 1403636724.6635556
+Dropping frame 1403636724.8635557
+Dropping frame 1403636724.9635556
+Dropping frame 1403636725.1135554
+Dropping frame 1403636725.2635555
+Dropping frame 1403636725.5135555
+Dropping frame 1403636725.6135554
+Dropping frame 1403636725.8635557
+Dropping frame 1403636726.0635555
+Dropping frame 1403636726.2635555
+Dropping frame 1403636726.4635556
+Dropping frame 1403636726.5635555
+Dropping frame 1403636726.6635556
+Dropping frame 1403636726.8635557
+Dropping frame 1403636726.9635556
+Dropping frame 1403636727.0635555
+Dropping frame 1403636727.3135555
+Dropping frame 1403636727.5135555
+Dropping frame 1403636727.7135556
+Dropping frame 1403636727.9135554
+Dropping frame 1403636728.1135554
+Dropping frame 1403636728.2135556
+Dropping frame 1403636728.3135555
+Dropping frame 1403636728.4135554
+Dropping frame 1403636728.5135555
+Dropping frame 1403636728.9635556
+Dropping frame 1403636729.1635556
+Dropping frame 1403636729.3135555
+Dropping frame 1403636729.4635556
+Dropping frame 1403636729.5635555
+Dropping frame 1403636729.9135554
+Dropping frame 1403636730.0135555
+Dropping frame 1403636730.1135554
+Dropping frame 1403636730.2135556
+Dropping frame 1403636730.3135555
+Dropping frame 1403636730.6635556
+Dropping frame 1403636730.8635557
+Dropping frame 1403636731.0635555
+Dropping frame 1403636731.2635555
+Dropping frame 1403636731.3635557
+Dropping frame 1403636731.4635556
+Dropping frame 1403636731.5635555
+Dropping frame 1403636731.6635556
+Dropping frame 1403636731.8635557
+Dropping frame 1403636732.0635555
+Dropping frame 1403636732.1635556
+Dropping frame 1403636732.2635555
+Dropping frame 1403636732.4635556
+Dropping frame 1403636732.6635556
+Dropping frame 1403636732.8635557
+Dropping frame 1403636732.9635556
+Dropping frame 1403636733.0635555
+Dropping frame 1403636733.1635556
+Dropping frame 1403636733.3635557
+Dropping frame 1403636733.4635556
+Dropping frame 1403636733.5635555
+Dropping frame 1403636733.7635555
+Dropping frame 1403636733.8635557
+Dropping frame 1403636733.9635556
+Dropping frame 1403636734.0635555
+Dropping frame 1403636734.2135556
+Dropping frame 1403636734.6635556
+Dropping frame 1403636734.9135554
+Dropping frame 1403636735.0135555
+Dropping frame 1403636735.1135554
+Dropping frame 1403636735.2135556
+Dropping frame 1403636735.3135555
+Dropping frame 1403636735.5635555
+Dropping frame 1403636735.7635555
+Dropping frame 1403636735.9635556
+Dropping frame 1403636736.1635556
+Dropping frame 1403636736.2635555
+Dropping frame 1403636736.3635557
+Dropping frame 1403636736.4635556
+Dropping frame 1403636736.5635555
+Dropping frame 1403636736.6635556
+Dropping frame 1403636736.8635557
+Dropping frame 1403636737.0635555
+Dropping frame 1403636737.2635555
+Dropping frame 1403636737.3635557
+Dropping frame 1403636737.4635556
+Dropping frame 1403636737.6635556
+Dropping frame 1403636737.7635555
+Dropping frame 1403636737.9635556
+Dropping frame 1403636738.1635556
+Dropping frame 1403636738.2635555
+Dropping frame 1403636738.3635557
+Dropping frame 1403636738.4635556
+Dropping frame 1403636738.5635555
+Dropping frame 1403636738.6635556
+Dropping frame 1403636738.8635557
+Dropping frame 1403636738.9635556
+Dropping frame 1403636739.0635555
+Dropping frame 1403636739.1635556
+Dropping frame 1403636739.2635555
+Dropping frame 1403636739.5135555
+Dropping frame 1403636739.7135556
+Dropping frame 1403636739.9135554
+Dropping frame 1403636740.0135555
+Dropping frame 1403636740.1135554
+Dropping frame 1403636740.2135556
+Dropping frame 1403636740.3135555
+Dropping frame 1403636740.4135554
+Dropping frame 1403636740.5135555
+Dropping frame 1403636740.7135556
+Dropping frame 1403636740.9135554
+Dropping frame 1403636741.0135555
+Dropping frame 1403636741.1135554
+Dropping frame 1403636741.2135556
+Dropping frame 1403636741.3635557
+Dropping frame 1403636741.5635555
+Dropping frame 1403636741.7635555
+Dropping frame 1403636741.9635556
+Dropping frame 1403636742.0635555
+Dropping frame 1403636742.1635556
+Dropping frame 1403636742.2635555
+Dropping frame 1403636742.3635557
+Dropping frame 1403636742.5135555
+Dropping frame 1403636742.6135554
+Dropping frame 1403636742.8135555
+Dropping frame 1403636742.9135554
+Dropping frame 1403636743.1635556
+Dropping frame 1403636743.2635555
+Dropping frame 1403636743.3635557
+Dropping frame 1403636743.4635556
+Dropping frame 1403636743.7135556
+Dropping frame 1403636743.9135554
+Dropping frame 1403636744.0135555
+Dropping frame 1403636744.2135556
+Dropping frame 1403636744.3135555
+Dropping frame 1403636744.4135554
+Dropping frame 1403636744.5135555
+Dropping frame 1403636744.7135556
+Dropping frame 1403636744.9135554
+Dropping frame 1403636745.1135554
+Dropping frame 1403636745.2135556
+Dropping frame 1403636745.3135555
+Dropping frame 1403636745.4135554
+Dropping frame 1403636745.6135554
+Dropping frame 1403636745.7135556
+Dropping frame 1403636745.8135555
+Dropping frame 1403636745.9135554
+Dropping frame 1403636746.1135554
+Dropping frame 1403636746.3635557
+Dropping frame 1403636746.8635557
+Dropping frame 1403636746.9635556
+Dropping frame 1403636747.1135554
+Dropping frame 1403636747.3135555
+Dropping frame 1403636747.4135554
+Dropping frame 1403636747.5135555
+Dropping frame 1403636747.7635555
+Dropping frame 1403636747.8635557
+Dropping frame 1403636747.9635556
+Dropping frame 1403636748.0635555
+Dropping frame 1403636748.3135555
+Dropping frame 1403636748.6635556
+Dropping frame 1403636748.7635555
+Dropping frame 1403636748.8635557
+Dropping frame 1403636748.9635556
+Dropping frame 1403636749.2635555
+Dropping frame 1403636749.3635557
+Dropping frame 1403636749.4635556
+Dropping frame 1403636749.6635556
+Dropping frame 1403636749.8635557
+Dropping frame 1403636749.9635556
+Dropping frame 1403636750.0635555
+Dropping frame 1403636750.2135556
+Dropping frame 1403636750.4135554
+Dropping frame 1403636750.5135555
+Dropping frame 1403636750.7135556
+Dropping frame 1403636750.8135555
+Dropping frame 1403636750.9135554
+Dropping frame 1403636751.0135555
+Dropping frame 1403636751.1135554
+Dropping frame 1403636751.3635557
+Dropping frame 1403636751.4635556
+Dropping frame 1403636751.5635555
+Dropping frame 1403636751.9135554
+Dropping frame 1403636752.1135554
+Dropping frame 1403636752.2135556
+Dropping frame 1403636752.7135556
+Dropping frame 1403636752.8135555
+Dropping frame 1403636753.2635555
+Dropping frame 1403636753.3635557
+Dropping frame 1403636753.5635555
+Dropping frame 1403636753.7135556
+Dropping frame 1403636753.8135555
+Dropping frame 1403636753.9135554
+Dropping frame 1403636754.1135554
+Dropping frame 1403636754.2135556
+Dropping frame 1403636754.4635556
+Dropping frame 1403636754.6635556
+Dropping frame 1403636754.8635557
+Dropping frame 1403636755.0635555
+Dropping frame 1403636755.1635556
+Dropping frame 1403636755.3635557
+Dropping frame 1403636755.4635556
+Dropping frame 1403636755.6635556
+Dropping frame 1403636755.7635555
+Dropping frame 1403636755.9635556
+Dropping frame 1403636756.1135554
+Dropping frame 1403636756.2135556
+Dropping frame 1403636756.3135555
+Dropping frame 1403636756.5135555
+Dropping frame 1403636756.6135554
+Dropping frame 1403636756.8135555
+Dropping frame 1403636756.9135554
+Dropping frame 1403636757.3135555
+Dropping frame 1403636757.4135554
+Dropping frame 1403636757.5635555
+Dropping frame 1403636757.6635556
+Dropping frame 1403636757.8635557
+Dropping frame 1403636758.0135555
+Dropping frame 1403636758.2135556
+Dropping frame 1403636758.3135555
+Dropping frame 1403636758.4135554
+Dropping frame 1403636758.5135555
+Dropping frame 1403636758.6135554
+Dropping frame 1403636758.9635556
+Dropping frame 1403636759.0635555
+Dropping frame 1403636759.6135554
+Dropping frame 1403636759.7135556
+Dropping frame 1403636759.8135555
+Dropping frame 1403636760.0135555
+Dropping frame 1403636760.1135554
+Dropping frame 1403636760.3135555
+Dropping frame 1403636760.4135554
+Dropping frame 1403636760.6135554
+Dropping frame 1403636760.7135556
+Dropping frame 1403636760.8135555
+Dropping frame 1403636760.9135554
+Dropping frame 1403636761.0135555
+Dropping frame 1403636761.1135554
+Dropping frame 1403636761.3135555
+Dropping frame 1403636761.5135555
+Dropping frame 1403636761.6135554
+Dropping frame 1403636761.7135556
+Dropping frame 1403636761.8135555
+Dropping frame 1403636761.9135554
+Dropping frame 1403636762.1135554
+Dropping frame 1403636762.2135556
+Dropping frame 1403636762.4135554
+Dropping frame 1403636762.6135554
+Dropping frame 1403636762.8135555
+Dropping frame 1403636763.0135555
+Dropping frame 1403636763.2135556
+Dropping frame 1403636763.4135554
+Dropping frame 1403636763.6135554
+Dropping frame 1403636763.7135556
+Dropping frame 1403636763.8135555
+Shutdown
+SLAM Finished at System Time: 1743120307.04564
+
+ TIME STATS in ms (mean$\pm$std)
+OpenCV version: 4.8.1
+---------------------------
+Tracking
+
+ORB Extraction: 15.759$\pm$1.5871
+Stereo Matching: 6.9696$\pm$1.9693
+IMU Preintegration: 0.27354$\pm$0.12162
+Pose Prediction: 0.20075$\pm$0.58308
+LM Track: 20.33$\pm$6.5185
+New KF decision: 0.98278$\pm$1.9171
+Total Tracking: 34.984$\pm$23.988
+
+
+
+Local Mapping
+
+KF Insertion: 16.761$\pm$7.7101
+MP Culling: 0.49198$\pm$0.21038
+MP Creation: 49.465$\pm$17.808
+LBA: 164.82$\pm$59.167
+KF Culling: 18.869$\pm$12.766
+Total Local Mapping: 250.18$\pm$86.624
+---------------------------
+
+LBA complexity (mean$\pm$std)
+LBA Edges: 1838.9$\pm$783.48
+LBA KF optimized: 6.5$\pm$2.2913
+LBA KF fixed: 1$\pm$0
+LBA MP: nan$\pm$nan
+
+LBA executions: 563
+LBA aborts: 0
+---------------------------
+
+Map complexity
+KFs in map: 166
+MPs in map: 14374
+---------------------------
+
+Place Recognition (mean$\pm$std)
+Database Query: 1.6828$\pm$1.023
+SE3 estimation: 15.633$\pm$17.577
+Total Place Recognition: 15.583$\pm$18.089
+
+
+Loop Closing (mean$\pm$std)
+Loop Fusion: nan$\pm$nan
+Essential Graph: nan$\pm$nan
+Total Loop Closing: nan$\pm$nan
+
+Num exec: 0
+Number of KFs: nan$\pm$nan
+
+Map Merging (mean$\pm$std)
+Merge Maps: nan$\pm$nan
+Welding BA: nan$\pm$nan
+Optimization Ess.: nan$\pm$nan
+Total Map Merging: nan$\pm$nan
+
+Num exec: 0
+Number of KFs: nan$\pm$nan
+Number of MPs: nan$\pm$nan
+
+Full GBA (mean$\pm$std)
+GBA: nan$\pm$nan
+Map Update: nan$\pm$nan
+Total Full GBA: nan$\pm$nan
+
+Num exec: 0
+Num abort: 0
+Number of KFs: nan$\pm$nan
+Number of MPs: nan$\pm$nan
+
+Saving trajectory to f_dataset-MH01_stereo_imu.txt ...
+There are 1 maps in the atlas
+  Map 0 has 166 KFs
+
+End of saving trajectory to f_dataset-MH01_stereo_imu.txt ...
+
+Saving keyframe trajectory to kf_dataset-MH01_stereo_imu.txt ...
