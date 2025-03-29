@@ -101,5 +101,40 @@ def main():
                 f_out.write(output)
             print(f"Output written to: {output_filepath}")
 
+        # Now, search for the ExecMean.txt file in the current directory (dir_path)
+        execmean_file = os.path.join(dir_path, "ExecMean.txt")
+        if os.path.exists(execmean_file):
+            with open(execmean_file, "r") as f_exec:
+                exec_content = f_exec.read()
+            # Extract KFs and MPs using regex
+            kfs_match = re.search(r'KFs in map:\s*(\d+)', exec_content)
+            mps_match = re.search(r'MPs in map:\s*(\d+)', exec_content)
+            if kfs_match and mps_match:
+                kfs_value = kfs_match.group(1)
+                mps_value = mps_match.group(1)
+                # Append the extracted lines to the output file
+                with open(output_filepath, "a") as f_out:
+                    f_out.write("\nMap complexity\n")
+                    f_out.write(f"KFs in map: {kfs_value}\n")
+                    f_out.write(f"MPs in map: {mps_value}\n")
+                print(f"Appended ExecMean info from {execmean_file} to {output_filepath}")
+            else:
+                print("Could not extract KFs and/or MPs from ExecMean.txt")
+
+            total_tracking_match = re.search(r'Total Tracking:\s*([\d.]+)\$\\pm\$([\d.]+)', exec_content)
+            if total_tracking_match:
+                total_tracking_avg = total_tracking_match.group(1)
+                total_tracking_std = total_tracking_match.group(2)
+                # Append the Total Tracking info to the output file
+                with open(output_filepath, "a") as f_out:
+                    f_out.write("\nTotal Tracking Analysis:\n")
+                    f_out.write(f"Average Time: {total_tracking_avg}\n")
+                    f_out.write(f"Std Dev: {total_tracking_std}\n")
+                print(f"Appended Total Tracking info from {execmean_file} to {output_filepath}")
+            else:
+                print("Could not extract Total Tracking info from ExecMean.txt")
+        else:
+            print(f"ExecMean.txt not found in directory: {dir_path}")
+
 if __name__ == "__main__":
     main()
