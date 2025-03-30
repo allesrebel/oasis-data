@@ -1,7 +1,7 @@
 #!/bin/bash
 # Base directories and device-specific timestamps
 BASE_DIR=~/oasis-data
-TIMESTAMP_JETSON="2025-02-28_09-03-34_result_stereo_inertial"
+TIMESTAMP_JETSON="2025-02-28_10-53-19_result_stereo_inertial"
 TIMESTAMP_INTEL="2025-02-28_01-04-05_result_stereo_inertial"
 
 # Declare an associative array with path templates (using {scene} as placeholder)
@@ -15,7 +15,7 @@ path_templates[intel_oasis]="${BASE_DIR}/intel/${TIMESTAMP_INTEL}_oasis_{scene}_
 
 # List of scenes and devices
 scenes=("MH01" "MH02" "MH03" "MH04" "MH05")
-devices=("jetson" "intel")
+devices=("jetson" ) #"intel")
 
 for scene in "${scenes[@]}"; do
     gt="Ground_truth/EuRoC_left_cam/${scene}_GT.txt"
@@ -34,8 +34,9 @@ for scene in "${scenes[@]}"; do
 
         # Error over time plots comparing deadlines and oasis against normal
         python3 evaluate_error_over_time.py --plot "${scene,,}_normal_vs_deadlines_${device}.png" "$gt" "$deadlines" "$normal" --ymax 0.25 --title "${scene} Error Over Time (${devTitle})"
+        python3 evaluate_error_over_time.py --plot "${scene,,}_deadlines_vs_oasis_${device}.png" "$gt" "$oasis" "$deadlines" --ymax 0.25 --title "${scene} Error Over Time (${devTitle})"
         python3 evaluate_error_over_time.py --plot "${scene,,}_normal_vs_oasis_${device}.png" "$gt" "$oasis" "$normal" --ymax 0.25 --title "${scene} Error Over Time (${devTitle})"
-        
+
         # For the "all" plot, metrics are taken from the deadlines folder
         # and cellManager is taken from the oasis folder.
         deadlines_dir=$(dirname "$deadlines")
