@@ -3,6 +3,7 @@ import os
 import sys
 import re
 import subprocess
+from decimal import Decimal
 
 def main():
     if len(sys.argv) != 3:
@@ -135,6 +136,60 @@ def main():
                 print("Could not extract Total Tracking info from ExecMean.txt")
         else:
             print(f"ExecMean.txt not found in directory: {dir_path}")
+
+         # Process cellManager.txt file for FOV Mask changes.
+        cell_manager_file = os.path.join(dir_path, "cellManager.txt")
+        if os.path.exists(cell_manager_file):
+
+            def read_cell_manager_file(filename):
+                """
+                Parse the cellManager file to extract frame timestamps and FOV Mask dimensions.
+                
+                The file is expected to contain blocks like:
+                
+                    Frame 1.403640123456e+09 finished in 62.8161 ms stats:
+                    ...
+                    FOV Mask: 22x22
+                
+                This function reads the entire file and uses a regex to capture all such blocks.
+                
+                Returns:
+                    tuple: Three lists containing timestamps, FOV mask widths, and FOV mask heights.
+                """
+                with open(filename, 'r') as f:
+                    content = f.read()
+                # Regex pattern captures:
+                #  - The timestamp (with high precision) after "Frame"
+                #  - And later the FOV Mask dimensions.
+                pattern = r'Frame\s+([\d\.eE\+\-]+)\s+finished\s+in\s+[\d\.]+\s+ms\s+stats:.*?FOV Mask:\s*(\d+)\s*x\s*(\d+)'
+                matches = re.findall(pattern, content, flags=re.DOTALL)
+                timestamps = []
+                fov_widths = []
+                fov_heights = []
+                for timestamp_str, width_str, height_str in matches:
+                    try:
+                        ts = float(Decimal(timestamp_str))
+                    except Exception:
+                        ts = float(timestamp_str)
+                    timestamps.append(ts)
+                    fov_widths.append(int(width_str))
+                    fov_heights.append(int(height_str))
+                return timestamps, fov_widths, fov_heights
+
+            # Process cellManager.txt file for FOV Mask data.
+            cell_manager_file = os.path.join(dir_path, "cellManager.txt")
+            if os.path.exists(cell_manager_file):
+                try:
+                    timestamps, fov_widths, fov_heights = read_cell_manager_file(cell_manager_file)
+                    with open(output_filepath, "a") as f_out:
+                        f_out.write("\nFOV Mask Data from cellManager.txt:\n")
+                        for ts, width, height in zip(timestamps, fov_widths, fov_heights):
+                            f_out.write(f"Time: {ts}, FOV Mask: {width}x{height}\n")
+                    print(f"Appended cellManager FOV Mask data from {cell_manager_file} to {output_filepath}")
+                except Exception as e:
+                    print(f"Error processing {cell_manager_file}: {e}")
+            else:
+                print(f"cellManager.txt not found in directory: {dir_path}")
 
 if __name__ == "__main__":
     main()

@@ -89,6 +89,40 @@ def extract_timing_info(file_path):
                         timing["Std Dev"] = None
     return timing
 
+def extract_fov_mask_data(file_path):
+    """
+    Reads through the processed file and extracts the cellManager FOV Mask Data.
+    Expects a block in the file starting with:
+      FOV Mask Data from cellManager.txt:
+    followed by lines like:
+      Time: <timestamp>, FOV Mask: <width>x<height>
+    
+    Returns:
+        list of tuples: Each tuple is (timestamp, fov_width, fov_height).
+    """
+    fov_data = []
+    with open(file_path, 'r') as f:
+        content = f.read()
+    # Look for the FOV Mask Data block.
+    match = re.search(r'FOV Mask Data from cellManager\.txt:\s*\n(.*)', content, flags=re.DOTALL)
+    if match:
+        data_block = match.group(1)
+        lines = data_block.splitlines()
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue
+            m = re.match(r'Time:\s*([\d\.eE\+\-]+),\s*FOV Mask:\s*(\d+)x(\d+)', line)
+            if m:
+                try:
+                    ts = float(m.group(1))
+                except Exception:
+                    ts = None
+                width = int(m.group(2))
+                height = int(m.group(3))
+                fov_data.append((ts, width, height))
+    return fov_data
+
 def main():
     if len(sys.argv) < 2:
         print("Usage: python3 script.py <processed data path> [save]")
@@ -111,6 +145,7 @@ def main():
     )
 
     data = []
+    data_fov = []  # Will hold cellManager FOV Mask data.
     for file in os.listdir(processing_dir):
         match = pattern.match(file)
         if not match:
@@ -143,8 +178,26 @@ def main():
             "Std Dev": timing_info["Std Dev"]
         }
         data.append(row)
+
+        # Extract cellManager FOV Mask Data (if any)
+        fov_list = extract_fov_mask_data(file_path)
+        for fov in fov_list:
+            ts, width, height = fov
+            row_fov = {
+                "platform": groups["platform"],
+                "dataset": groups["dataset"],
+                "run_type": groups["run_type"],
+                "sensor_type": groups["sensor_type"],
+                "trial": groups["trial"],
+                "mask_size": groups.get("mask_size", None),
+                "cellmanager_timestamp": ts,
+                "fov_width": width,
+                "fov_height": height
+            }
+            data_fov.append(row_fov)
     
     df = pd.DataFrame(data)
+    df_fov = pd.DataFrame(data_fov)
 
     fixed_platform = "jetson"
     fixed_sensor_type = "stereo_imu"
@@ -297,6 +350,45 @@ def main():
 
         print(f"\nLaTeX Table for MPs in Map vs Mask Size for {dataset}:")
         print(group_stats_mps.to_latex(index=False, float_format="%.3f"))
+
+    if not df_fov.empty:
+        # Plot only one mask dimension (fov_width) for each dataset.
+        for dataset in valid_datasets:
+            df_dataset = df_fov[df_fov["dataset"] == dataset]
+            if df_dataset.empty:
+                print(f"No FOV Mask data available for dataset {dataset}.")
+                continue
+            
+            # Calculate average and std for fov_width.
+            avg_fov_width = df_dataset["fov_width"].mean()
+            std_fov_width = df_dataset["fov_width"].std()
+            
+            # Create a LaTeX table with the calculated values.
+            latex_table = (
+                "\\begin{tabular}{ll}\n"
+                f"Dataset & {dataset} \\\\\n"
+                f"Average FOV Width & {avg_fov_width:.3f} \\\\\n"
+                f"Std Dev & {std_fov_width:.3f} \\\\\n"
+                "\\end{tabular}"
+            )
+            print(f"\nLaTeX Table for FOV Width for {dataset}:")
+            print(latex_table)
+            
+            # Plot fov_width over time.
+            plt.figure()
+            plt.plot(df_dataset["cellmanager_timestamp"], df_dataset["fov_width"], 'o-', label="FOV Width")
+            plt.xlabel("Timestamp")
+            plt.ylabel("FOV Mask Width (cells)")
+            plt.title(f"FOV Mask Width over Time for {dataset}")
+            plt.legend()
+            plt.grid(True)
+            if save_plots:
+                filename = f"{dataset}_fov_mask_width.png"
+                plt.savefig(filename)
+                plt.close()
+                print(f"Saved plot to {filename}")
+            else:
+                plt.show()
 
 if __name__ == "__main__":
     main()
