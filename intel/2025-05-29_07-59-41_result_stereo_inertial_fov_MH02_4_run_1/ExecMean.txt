@@ -1,0 +1,71 @@
+ TIME STATS in ms (mean$\pm$std)
+OpenCV version: 4.6.0
+---------------------------
+Tracking
+
+ORB Extraction: 10.77654$\pm$1.06458
+Stereo Matching: 5.49282$\pm$1.75466
+IMU Preintegration: 0.16353$\pm$0.08401
+Pose Prediction: 0.28966$\pm$0.80937
+LM Track: 10.45841$\pm$3.74496
+New KF decision: 0.50898$\pm$0.96497
+Total Tracking: 30.07141$\pm$6.02039
+
+Local Mapping
+
+KF Insertion: 8.40533$\pm$3.19881
+MP Culling: 0.19386$\pm$0.09810
+MP Creation: 22.27229$\pm$11.73654
+LBA: 94.22402$\pm$44.19690
+KF Culling: 7.82455$\pm$7.13940
+Total Local Mapping: 130.55414$\pm$62.51135
+---------------------------
+
+LBA complexity (mean$\pm$std)
+LBA Edges: 1363.40741$\pm$767.02372
+LBA KF optimized: 5.62963$\pm$2.51143
+LBA KF fixed: 1.40741$\pm$1.17880
+LBA MP: -nan$\pm$-nan
+
+LBA executions: 551
+LBA aborts: 0
+---------------------------
+
+Map complexity
+KFs in map: 130
+MPs in map: 12750
+---------------------------
+
+Place Recognition (mean$\pm$std)
+Database Query: 1.02603$\pm$0.52642
+SE3 estimation: 11.93140$\pm$9.75925
+Total Place Recognition: 8.61590$\pm$10.14793
+
+
+Loop Closing (mean$\pm$std)
+Loop Fusion: -nan$\pm$-nan
+Essential Graph: -nan$\pm$-nan
+Total Loop Closing: -nan$\pm$-nan
+
+Numb exec: 0
+Number of KFs: -nan$\pm$-nan
+
+Map Merging (mean$\pm$std)
+Merge Maps: -nan$\pm$-nan
+Welding BA: -nan$\pm$-nan
+Optimization Ess.: -nan$\pm$-nan
+Total Map Merging: -nan$\pm$-nan
+
+Numb exec: 0
+Number of KFs: -nan$\pm$-nan
+Number of MPs: -nan$\pm$-nan
+
+Full GBA (mean$\pm$std)
+GBA: -nan$\pm$-nan
+Map Update: -nan$\pm$-nan
+Total Full GBA: -nan$\pm$-nan
+
+Numb exec: 0
+Numb abort: 0
+Number of KFs: -nan$\pm$-nan
+Number of MPs: -nan$\pm$-nan
