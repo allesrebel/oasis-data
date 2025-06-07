@@ -1,0 +1,1358 @@
+num_seq = 1
+file name: dataset-MH_04_difficult_run8
+Loading images for sequence 0...LOADED!
+Loading IMU for sequence 0...LOADED!
+
+-------
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Built with REGISTER_TIMES
+Git Commit Hash: 48ed9a3
+
+Build Type: Release
+
+Compiled with C++ version: 201703
+
+Input sensor was set to: Stereo-Inertial
+Loading settings from /tmp/slimslam_cfg_6Fm9.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+IMU.InsertKFsWhenLost optional parameter does not exist...
+	-Loaded IMU calibration
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+System.enableDeadlines optional parameter does not exist...
+System.enableFOV optional parameter does not exist...
+System.maskHeight optional parameter does not exist...
+System.maskWidth optional parameter does not exist...
+System.enableOasis optional parameter does not exist...
+System.dumpMapPoints optional parameter does not exist...
+System.enableOmegaSLAM optional parameter does not exist...
+System.enablePIDSLAM optional parameter does not exist...
+SLIM SLAM enabled!
+Will load ./slimslam_control_files/MH_04_difficult_control.txt for SlimSLAM Oracle config!
+SlimSLAM.EnableTraining optional parameter does not exist...
+System.debug_logs optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 458.65399169921875 457.29598999023438 367.21499633789062 248.375 ]
+	-Camera 1 distortion parameters: [  -0.28340810537338257 0.073959067463874817 0.00019359000725671649 1.7618711353861727e-05 ]
+	-Camera 2 parameters (Pinhole: [ 457.58700561523438 456.13400268554688 379.99899291992188 255.23800659179688 ]
+	-Camera 1 distortion parameters: [  -0.2836836576461792 0.074512839317321777 -0.00010473000293131918 -3.555907096597366e-05 ]
+	-Original image size: [ 752 , 480 ]
+	-Current image size: [ 752 , 480 ]
+	-Camera 1 parameters after rectification: [  456.71499633789062 456.71499633789062 364.52615356445312 257.268798828125 ]
+	-Sequence FPS: 20
+	-Stereo baseline: 0.11007784307003021
+	-Stereo depth threshold : 60
+	-Gyro noise: 0.00016999999934341758
+	-Accelerometer noise: 0.0020000000949949026
+	-Gyro walk: 1.9392999092815444e-05
+	-Accelerometer walk: 0.0030000000260770321
+	-IMU frequency: 200
+	-Features per image: 1200
+	-ORB scale factor: 1.2000000476837158
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+SLIMSLAM: Singleton instance created with default parameters.
+SLIMSLAM: Control file loaded successfully with 506 commands across 506 unique timestamps from: ./slimslam_control_files/MH_04_difficult_control.txt
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+SLAM Started at System Time: 1749138884.8493
+not IMU meas
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:0; Map init KF:0
+New Map created with 149 points
+Active map: 0
+start VIBA 1
+end VIBA 1
+Not enough motion for initializing. Reseting...
+TRACK: Reset map because local mapper set the bad imu flag 
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 32
+mnInitialFrameId = 0
+193 Frames set to lost
+not IMU meas
+not enough acceleration
+First KF:43; Map init KF:0
+New Map created with 168 points
+Active map: 0
+Not enough motion for initializing. Reseting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+Not enough motion for initializing. Reseting...
+TRACK: Reset map because local mapper set the bad imu flag 
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 228
+mnInitialFrameId = 225
+251 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:55; Map init KF:43
+New Map created with 186 points
+Active map: 0
+Not enough motion for initializing. Reseting...
+TRACK: Reset map because local mapper set the bad imu flag 
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 303
+mnInitialFrameId = 286
+307 Frames set to lost
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:66; Map init KF:55
+New Map created with 184 points
+Active map: 0
+SLIMSLAM: Found commands for timestamp 1403638147.8450971
+  Applying: Skip_Frames = 1
+Dropping frame 1403638147.895097
+SLIMSLAM: Found commands for timestamp 1403638148.395097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638148.445097
+Dropping frame 1403638148.4950972
+SLIMSLAM: Found commands for timestamp 1403638148.695097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638148.7450969
+Dropping frame 1403638148.7950971
+SLIMSLAM: Found commands for timestamp 1403638148.8450971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638148.895097
+Dropping frame 1403638148.945097
+SLIMSLAM: Found commands for timestamp 1403638149.145097
+  Applying: Skip_Frames = 1
+Dropping frame 1403638149.195097
+SLIMSLAM: Found commands for timestamp 1403638149.2450969
+  Applying: Skip_Frames = 3
+Dropping frame 1403638149.2950971
+Dropping frame 1403638149.3450971
+Dropping frame 1403638149.395097
+SLIMSLAM: Found commands for timestamp 1403638149.5950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638149.645097
+Dropping frame 1403638149.695097
+SLIMSLAM: Found commands for timestamp 1403638149.895097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638149.945097
+Dropping frame 1403638149.9950972
+SLIMSLAM: Found commands for timestamp 1403638150.0450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638150.0950971
+Dropping frame 1403638150.145097
+SLIMSLAM: Found commands for timestamp 1403638150.195097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638150.2450969
+Dropping frame 1403638150.2950971
+SLIMSLAM: Found commands for timestamp 1403638150.4950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638150.5450969
+Dropping frame 1403638150.5950971
+SLIMSLAM: Found commands for timestamp 1403638150.8450971
+  Applying: Skip_Frames = 3
+Dropping frame 1403638150.895097
+Dropping frame 1403638150.945097
+Dropping frame 1403638150.9950972
+SLIMSLAM: Found commands for timestamp 1403638151.0950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638151.145097
+Dropping frame 1403638151.195097
+SLIMSLAM: Found commands for timestamp 1403638151.395097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638151.445097
+Dropping frame 1403638151.4950972
+SLIMSLAM: Found commands for timestamp 1403638151.695097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638151.7450969
+Dropping frame 1403638151.7950971
+SLIMSLAM: Found commands for timestamp 1403638151.9950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638152.0450969
+Dropping frame 1403638152.0950971
+SLIMSLAM: Found commands for timestamp 1403638152.2950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638152.3450971
+Dropping frame 1403638152.395097
+SLIMSLAM: Found commands for timestamp 1403638152.5950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638152.645097
+Dropping frame 1403638152.695097
+SLIMSLAM: Found commands for timestamp 1403638152.895097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638152.945097
+Dropping frame 1403638152.9950972
+SLIMSLAM: Found commands for timestamp 1403638153.195097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638153.2450969
+start VIBA 1
+Dropping frame 1403638153.2950971
+SLIMSLAM: Found commands for timestamp 1403638153.3450971
+  Applying: Skip_Frames = 1
+end VIBA 1
+Dropping frame 1403638153.395097
+SLIMSLAM: Found commands for timestamp 1403638153.4950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638153.5450969
+Dropping frame 1403638153.5950971
+SLIMSLAM: Found commands for timestamp 1403638153.7950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638153.8450971
+Dropping frame 1403638153.895097
+SLIMSLAM: Found commands for timestamp 1403638154.0950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638154.145097
+Dropping frame 1403638154.195097
+SLIMSLAM: Found commands for timestamp 1403638154.395097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638154.445097
+Dropping frame 1403638154.4950972
+SLIMSLAM: Found commands for timestamp 1403638154.695097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638154.7450969
+Dropping frame 1403638154.7950971
+SLIMSLAM: Found commands for timestamp 1403638154.9950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638155.0450969
+Dropping frame 1403638155.0950971
+SLIMSLAM: Found commands for timestamp 1403638155.2950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638155.3450971
+Dropping frame 1403638155.395097
+SLIMSLAM: Found commands for timestamp 1403638155.5950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638155.645097
+Dropping frame 1403638155.695097
+SLIMSLAM: Found commands for timestamp 1403638155.895097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638155.945097
+Dropping frame 1403638155.9950972
+SLIMSLAM: Found commands for timestamp 1403638156.195097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638156.2450969
+Dropping frame 1403638156.2950971
+SLIMSLAM: Found commands for timestamp 1403638156.4950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638156.5450969
+Dropping frame 1403638156.5950971
+SLIMSLAM: Found commands for timestamp 1403638156.7950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638156.8450971
+Dropping frame 1403638156.895097
+SLIMSLAM: Found commands for timestamp 1403638157.0950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638157.145097
+Dropping frame 1403638157.195097
+SLIMSLAM: Found commands for timestamp 1403638157.395097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638157.445097
+Dropping frame 1403638157.4950972
+SLIMSLAM: Found commands for timestamp 1403638157.695097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638157.7450969
+Dropping frame 1403638157.7950971
+SLIMSLAM: Found commands for timestamp 1403638157.9950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638158.0450969
+Dropping frame 1403638158.0950971
+SLIMSLAM: Found commands for timestamp 1403638158.2950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638158.3450971
+Dropping frame 1403638158.395097
+SLIMSLAM: Found commands for timestamp 1403638158.5950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638158.645097
+Dropping frame 1403638158.695097
+SLIMSLAM: Found commands for timestamp 1403638160.695097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638160.7450969
+Dropping frame 1403638160.7950971
+SLIMSLAM: Found commands for timestamp 1403638160.9950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638161.0450969
+Dropping frame 1403638161.0950971
+SLIMSLAM: Found commands for timestamp 1403638161.2950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638161.3450971
+Dropping frame 1403638161.395097
+SLIMSLAM: Found commands for timestamp 1403638161.5950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638161.645097
+Dropping frame 1403638161.695097
+SLIMSLAM: Found commands for timestamp 1403638161.895097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638161.945097
+Dropping frame 1403638161.9950972
+SLIMSLAM: Found commands for timestamp 1403638162.195097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638162.2450969
+Dropping frame 1403638162.2950971
+SLIMSLAM: Found commands for timestamp 1403638162.4950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638162.5450969
+Dropping frame 1403638162.5950971
+SLIMSLAM: Found commands for timestamp 1403638162.7950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638162.8450971
+Dropping frame 1403638162.895097
+SLIMSLAM: Found commands for timestamp 1403638163.0950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638163.145097
+start VIBA 2
+Dropping frame 1403638163.195097
+SLIMSLAM: Found commands for timestamp 1403638163.395097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638163.445097
+Dropping frame 1403638163.4950972
+end VIBA 2
+SLIMSLAM: Found commands for timestamp 1403638163.695097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638163.7450969
+Dropping frame 1403638163.7950971
+SLIMSLAM: Found commands for timestamp 1403638163.9950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638164.0450969
+Dropping frame 1403638164.0950971
+SLIMSLAM: Found commands for timestamp 1403638164.2950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638164.3450971
+Dropping frame 1403638164.395097
+SLIMSLAM: Found commands for timestamp 1403638164.445097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638164.4950972
+Dropping frame 1403638164.5450969
+SLIMSLAM: Found commands for timestamp 1403638164.5950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638164.645097
+Dropping frame 1403638164.695097
+SLIMSLAM: Found commands for timestamp 1403638164.895097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638164.945097
+Dropping frame 1403638164.9950972
+SLIMSLAM: Found commands for timestamp 1403638165.195097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638165.2450969
+Dropping frame 1403638165.2950971
+SLIMSLAM: Found commands for timestamp 1403638165.4950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638165.5450969
+Dropping frame 1403638165.5950971
+SLIMSLAM: Found commands for timestamp 1403638165.7950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638165.8450971
+Dropping frame 1403638165.895097
+SLIMSLAM: Found commands for timestamp 1403638166.0950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638166.145097
+Dropping frame 1403638166.195097
+SLIMSLAM: Found commands for timestamp 1403638166.2450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638166.2950971
+Dropping frame 1403638166.3450971
+SLIMSLAM: Found commands for timestamp 1403638166.395097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638166.445097
+Dropping frame 1403638166.4950972
+SLIMSLAM: Found commands for timestamp 1403638166.5450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638166.5950971
+Dropping frame 1403638166.645097
+SLIMSLAM: Found commands for timestamp 1403638166.695097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638166.7450969
+Dropping frame 1403638166.7950971
+SLIMSLAM: Found commands for timestamp 1403638166.8450971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638166.895097
+Dropping frame 1403638166.945097
+SLIMSLAM: Found commands for timestamp 1403638166.9950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638167.0450969
+Dropping frame 1403638167.0950971
+SLIMSLAM: Found commands for timestamp 1403638167.145097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638167.195097
+Dropping frame 1403638167.2450969
+SLIMSLAM: Found commands for timestamp 1403638167.2950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638167.3450971
+Dropping frame 1403638167.395097
+SLIMSLAM: Found commands for timestamp 1403638167.445097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638167.4950972
+Dropping frame 1403638167.5450969
+SLIMSLAM: Found commands for timestamp 1403638167.5950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638167.645097
+Dropping frame 1403638167.695097
+SLIMSLAM: Found commands for timestamp 1403638167.7450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638167.7950971
+Dropping frame 1403638167.8450971
+SLIMSLAM: Found commands for timestamp 1403638167.895097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638167.945097
+Dropping frame 1403638167.9950972
+SLIMSLAM: Found commands for timestamp 1403638168.0450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638168.0950971
+Dropping frame 1403638168.145097
+SLIMSLAM: Found commands for timestamp 1403638168.195097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638168.2450969
+Dropping frame 1403638168.2950971
+SLIMSLAM: Found commands for timestamp 1403638168.3450971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638168.395097
+Dropping frame 1403638168.445097
+SLIMSLAM: Found commands for timestamp 1403638168.4950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638168.5450969
+Dropping frame 1403638168.5950971
+SLIMSLAM: Found commands for timestamp 1403638168.645097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638168.695097
+Dropping frame 1403638168.7450969
+SLIMSLAM: Found commands for timestamp 1403638168.7950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638168.8450971
+Dropping frame 1403638168.895097
+SLIMSLAM: Found commands for timestamp 1403638168.945097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638168.9950972
+Dropping frame 1403638169.0450969
+SLIMSLAM: Found commands for timestamp 1403638169.0950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638169.145097
+Dropping frame 1403638169.195097
+SLIMSLAM: Found commands for timestamp 1403638169.2450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638169.2950971
+Dropping frame 1403638169.3450971
+SLIMSLAM: Found commands for timestamp 1403638169.395097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638169.445097
+Dropping frame 1403638169.4950972
+SLIMSLAM: Found commands for timestamp 1403638169.5450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638169.5950971
+Dropping frame 1403638169.645097
+SLIMSLAM: Found commands for timestamp 1403638169.695097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638169.7450969
+Dropping frame 1403638169.7950971
+SLIMSLAM: Found commands for timestamp 1403638169.8450971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638169.895097
+Dropping frame 1403638169.945097
+SLIMSLAM: Found commands for timestamp 1403638169.9950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638170.0450969
+Dropping frame 1403638170.0950971
+SLIMSLAM: Found commands for timestamp 1403638170.145097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638170.195097
+Dropping frame 1403638170.2450969
+SLIMSLAM: Found commands for timestamp 1403638170.2950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638170.3450971
+Dropping frame 1403638170.395097
+SLIMSLAM: Found commands for timestamp 1403638170.445097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638170.4950972
+Dropping frame 1403638170.5450969
+SLIMSLAM: Found commands for timestamp 1403638170.5950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638170.645097
+Dropping frame 1403638170.695097
+SLIMSLAM: Found commands for timestamp 1403638170.7450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638170.7950971
+Dropping frame 1403638170.8450971
+SLIMSLAM: Found commands for timestamp 1403638170.895097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638170.945097
+Dropping frame 1403638170.9950972
+SLIMSLAM: Found commands for timestamp 1403638171.0450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638171.0950971
+Dropping frame 1403638171.145097
+SLIMSLAM: Found commands for timestamp 1403638171.195097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638171.2450969
+Dropping frame 1403638171.2950971
+SLIMSLAM: Found commands for timestamp 1403638171.3450971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638171.395097
+Dropping frame 1403638171.445097
+SLIMSLAM: Found commands for timestamp 1403638171.4950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638171.5450969
+Dropping frame 1403638171.5950971
+SLIMSLAM: Found commands for timestamp 1403638171.7950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638171.8450971
+Dropping frame 1403638171.895097
+SLIMSLAM: Found commands for timestamp 1403638172.0950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638172.145097
+Dropping frame 1403638172.195097
+SLIMSLAM: Found commands for timestamp 1403638172.395097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638172.445097
+Dropping frame 1403638172.4950972
+SLIMSLAM: Found commands for timestamp 1403638172.695097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638172.7450969
+Dropping frame 1403638172.7950971
+SLIMSLAM: Found commands for timestamp 1403638172.9950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638173.0450969
+Dropping frame 1403638173.0950971
+SLIMSLAM: Found commands for timestamp 1403638173.2950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638173.3450971
+Dropping frame 1403638173.395097
+SLIMSLAM: Found commands for timestamp 1403638173.5950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638173.645097
+Dropping frame 1403638173.695097
+SLIMSLAM: Found commands for timestamp 1403638173.895097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638173.945097
+Dropping frame 1403638173.9950972
+SLIMSLAM: Found commands for timestamp 1403638174.0450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638174.0950971
+Dropping frame 1403638174.145097
+SLIMSLAM: Found commands for timestamp 1403638174.195097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638174.2450969
+Dropping frame 1403638174.2950971
+SLIMSLAM: Found commands for timestamp 1403638174.3450971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638174.395097
+Dropping frame 1403638174.445097
+SLIMSLAM: Found commands for timestamp 1403638174.4950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638174.5450969
+Dropping frame 1403638174.5950971
+SLIMSLAM: Found commands for timestamp 1403638174.7950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638174.8450971
+Dropping frame 1403638174.895097
+SLIMSLAM: Found commands for timestamp 1403638175.0950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638175.145097
+Dropping frame 1403638175.195097
+SLIMSLAM: Found commands for timestamp 1403638175.395097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638175.445097
+Dropping frame 1403638175.4950972
+SLIMSLAM: Found commands for timestamp 1403638175.695097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638175.7450969
+Dropping frame 1403638175.7950971
+SLIMSLAM: Found commands for timestamp 1403638175.9950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638176.0450969
+Dropping frame 1403638176.0950971
+SLIMSLAM: Found commands for timestamp 1403638176.2950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638176.3450971
+Dropping frame 1403638176.395097
+SLIMSLAM: Found commands for timestamp 1403638176.5950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638176.645097
+Dropping frame 1403638176.695097
+SLIMSLAM: Found commands for timestamp 1403638176.895097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638176.945097
+Dropping frame 1403638176.9950972
+SLIMSLAM: Found commands for timestamp 1403638177.195097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638177.2450969
+Dropping frame 1403638177.2950971
+SLIMSLAM: Found commands for timestamp 1403638177.4950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638177.5450969
+Dropping frame 1403638177.5950971
+SLIMSLAM: Found commands for timestamp 1403638177.7950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638177.8450971
+Dropping frame 1403638177.895097
+SLIMSLAM: Found commands for timestamp 1403638178.0950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638178.145097
+Dropping frame 1403638178.195097
+SLIMSLAM: Found commands for timestamp 1403638178.395097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638178.445097
+Dropping frame 1403638178.4950972
+SLIMSLAM: Found commands for timestamp 1403638178.695097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638178.7450969
+Dropping frame 1403638178.7950971
+SLIMSLAM: Found commands for timestamp 1403638200.0450969
+  Applying: Skip_Frames = 3
+Dropping frame 1403638200.0950971
+Dropping frame 1403638200.145097
+Dropping frame 1403638200.195097
+SLIMSLAM: Found commands for timestamp 1403638200.2950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638200.3450971
+Dropping frame 1403638200.395097
+SLIMSLAM: Found commands for timestamp 1403638200.445097
+  Applying: Skip_Frames = 3
+Dropping frame 1403638200.4950972
+Dropping frame 1403638200.5450969
+Dropping frame 1403638200.5950971
+SLIMSLAM: Found commands for timestamp 1403638200.645097
+  Applying: Skip_Frames = 3
+Dropping frame 1403638200.695097
+Dropping frame 1403638200.7450969
+Dropping frame 1403638200.7950971
+SLIMSLAM: Found commands for timestamp 1403638200.8450971
+  Applying: Skip_Frames = 1
+Dropping frame 1403638200.895097
+SLIMSLAM: Found commands for timestamp 1403638200.945097
+  Applying: Skip_Frames = 1
+Dropping frame 1403638200.9950972
+SLIMSLAM: Found commands for timestamp 1403638201.0450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638201.0950971
+Dropping frame 1403638201.145097
+SLIMSLAM: Found commands for timestamp 1403638201.195097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638201.2450969
+Dropping frame 1403638201.2950971
+SLIMSLAM: Found commands for timestamp 1403638201.3450971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638201.395097
+Dropping frame 1403638201.445097
+SLIMSLAM: Found commands for timestamp 1403638201.4950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638201.5450969
+Dropping frame 1403638201.5950971
+SLIMSLAM: Found commands for timestamp 1403638201.645097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638201.695097
+Dropping frame 1403638201.7450969
+SLIMSLAM: Found commands for timestamp 1403638201.7950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638201.8450971
+Dropping frame 1403638201.895097
+SLIMSLAM: Found commands for timestamp 1403638201.945097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638201.9950972
+Dropping frame 1403638202.0450969
+SLIMSLAM: Found commands for timestamp 1403638202.0950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638202.145097
+Dropping frame 1403638202.195097
+SLIMSLAM: Found commands for timestamp 1403638202.2450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638202.2950971
+Dropping frame 1403638202.3450971
+SLIMSLAM: Found commands for timestamp 1403638202.395097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638202.445097
+Dropping frame 1403638202.4950972
+SLIMSLAM: Found commands for timestamp 1403638202.5450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638202.5950971
+Dropping frame 1403638202.645097
+SLIMSLAM: Found commands for timestamp 1403638202.695097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638202.7450969
+Dropping frame 1403638202.7950971
+SLIMSLAM: Found commands for timestamp 1403638202.8450971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638202.895097
+Dropping frame 1403638202.945097
+SLIMSLAM: Found commands for timestamp 1403638202.9950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638203.0450969
+Dropping frame 1403638203.0950971
+SLIMSLAM: Found commands for timestamp 1403638203.145097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638203.195097
+Dropping frame 1403638203.2450969
+SLIMSLAM: Found commands for timestamp 1403638203.2950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638203.3450971
+Dropping frame 1403638203.395097
+SLIMSLAM: Found commands for timestamp 1403638203.445097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638203.4950972
+Dropping frame 1403638203.5450969
+SLIMSLAM: Found commands for timestamp 1403638203.5950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638203.645097
+Dropping frame 1403638203.695097
+SLIMSLAM: Found commands for timestamp 1403638203.7450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638203.7950971
+Dropping frame 1403638203.8450971
+SLIMSLAM: Found commands for timestamp 1403638203.895097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638203.945097
+Dropping frame 1403638203.9950972
+SLIMSLAM: Found commands for timestamp 1403638204.195097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638204.2450969
+Dropping frame 1403638204.2950971
+SLIMSLAM: Found commands for timestamp 1403638204.4950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638204.5450969
+Dropping frame 1403638204.5950971
+SLIMSLAM: Found commands for timestamp 1403638204.7950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638204.8450971
+Dropping frame 1403638204.895097
+SLIMSLAM: Found commands for timestamp 1403638205.0950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638205.145097
+Dropping frame 1403638205.195097
+SLIMSLAM: Found commands for timestamp 1403638205.395097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638205.445097
+Dropping frame 1403638205.4950972
+SLIMSLAM: Found commands for timestamp 1403638205.695097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638205.7450969
+Dropping frame 1403638205.7950971
+SLIMSLAM: Found commands for timestamp 1403638205.9950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638206.0450969
+Dropping frame 1403638206.0950971
+SLIMSLAM: Found commands for timestamp 1403638206.145097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638206.195097
+Dropping frame 1403638206.2450969
+SLIMSLAM: Found commands for timestamp 1403638206.2950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638206.3450971
+Dropping frame 1403638206.395097
+SLIMSLAM: Found commands for timestamp 1403638206.445097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638206.4950972
+Dropping frame 1403638206.5450969
+SLIMSLAM: Found commands for timestamp 1403638206.5950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638206.645097
+Dropping frame 1403638206.695097
+SLIMSLAM: Found commands for timestamp 1403638206.7450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638206.7950971
+Dropping frame 1403638206.8450971
+SLIMSLAM: Found commands for timestamp 1403638206.895097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638206.945097
+Dropping frame 1403638206.9950972
+SLIMSLAM: Found commands for timestamp 1403638207.0450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638207.0950971
+Dropping frame 1403638207.145097
+SLIMSLAM: Found commands for timestamp 1403638207.195097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638207.2450969
+Dropping frame 1403638207.2950971
+SLIMSLAM: Found commands for timestamp 1403638207.3450971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638207.395097
+Dropping frame 1403638207.445097
+SLIMSLAM: Found commands for timestamp 1403638207.4950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638207.5450969
+Dropping frame 1403638207.5950971
+SLIMSLAM: Found commands for timestamp 1403638207.645097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638207.695097
+Dropping frame 1403638207.7450969
+SLIMSLAM: Found commands for timestamp 1403638207.7950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638207.8450971
+Dropping frame 1403638207.895097
+SLIMSLAM: Found commands for timestamp 1403638207.945097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638207.9950972
+Dropping frame 1403638208.0450969
+SLIMSLAM: Found commands for timestamp 1403638208.0950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638208.145097
+Dropping frame 1403638208.195097
+SLIMSLAM: Found commands for timestamp 1403638208.2450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638208.2950971
+Dropping frame 1403638208.3450971
+SLIMSLAM: Found commands for timestamp 1403638208.395097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638208.445097
+Dropping frame 1403638208.4950972
+SLIMSLAM: Found commands for timestamp 1403638208.5450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638208.5950971
+Dropping frame 1403638208.645097
+SLIMSLAM: Found commands for timestamp 1403638208.695097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638208.7450969
+Dropping frame 1403638208.7950971
+SLIMSLAM: Found commands for timestamp 1403638208.8450971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638208.895097
+Dropping frame 1403638208.945097
+SLIMSLAM: Found commands for timestamp 1403638208.9950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638209.0450969
+Dropping frame 1403638209.0950971
+SLIMSLAM: Found commands for timestamp 1403638209.145097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638209.195097
+Dropping frame 1403638209.2450969
+SLIMSLAM: Found commands for timestamp 1403638209.2950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638209.3450971
+Dropping frame 1403638209.395097
+SLIMSLAM: Found commands for timestamp 1403638209.445097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638209.4950972
+Dropping frame 1403638209.5450969
+SLIMSLAM: Found commands for timestamp 1403638209.5950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638209.645097
+Dropping frame 1403638209.695097
+SLIMSLAM: Found commands for timestamp 1403638209.7450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638209.7950971
+Dropping frame 1403638209.8450971
+SLIMSLAM: Found commands for timestamp 1403638209.895097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638209.945097
+Dropping frame 1403638209.9950972
+SLIMSLAM: Found commands for timestamp 1403638210.0450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638210.0950971
+Dropping frame 1403638210.145097
+SLIMSLAM: Found commands for timestamp 1403638210.195097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638210.2450969
+Dropping frame 1403638210.2950971
+SLIMSLAM: Found commands for timestamp 1403638210.3450971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638210.395097
+Dropping frame 1403638210.445097
+SLIMSLAM: Found commands for timestamp 1403638210.4950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638210.5450969
+Dropping frame 1403638210.5950971
+SLIMSLAM: Found commands for timestamp 1403638210.645097
+  Applying: Skip_Frames = 3
+Dropping frame 1403638210.695097
+Dropping frame 1403638210.7450969
+Dropping frame 1403638210.7950971
+SLIMSLAM: Found commands for timestamp 1403638210.8450971
+  Applying: Skip_Frames = 3
+Dropping frame 1403638210.895097
+Dropping frame 1403638210.945097
+Dropping frame 1403638210.9950972
+SLIMSLAM: Found commands for timestamp 1403638211.0450969
+  Applying: Skip_Frames = 3
+Dropping frame 1403638211.0950971
+Dropping frame 1403638211.145097
+Dropping frame 1403638211.195097
+SLIMSLAM: Found commands for timestamp 1403638211.2450969
+  Applying: Skip_Frames = 3
+Dropping frame 1403638211.2950971
+Dropping frame 1403638211.3450971
+Dropping frame 1403638211.395097
+SLIMSLAM: Found commands for timestamp 1403638211.445097
+  Applying: Skip_Frames = 3
+Dropping frame 1403638211.4950972
+Dropping frame 1403638211.5450969
+Dropping frame 1403638211.5950971
+SLIMSLAM: Found commands for timestamp 1403638211.645097
+  Applying: Skip_Frames = 3
+Dropping frame 1403638211.695097
+Dropping frame 1403638211.7450969
+Dropping frame 1403638211.7950971
+SLIMSLAM: Found commands for timestamp 1403638211.8450971
+  Applying: Skip_Frames = 3
+Dropping frame 1403638211.895097
+Dropping frame 1403638211.945097
+Dropping frame 1403638211.9950972
+SLIMSLAM: Found commands for timestamp 1403638212.0450969
+  Applying: Skip_Frames = 3
+Dropping frame 1403638212.0950971
+Dropping frame 1403638212.145097
+Dropping frame 1403638212.195097
+SLIMSLAM: Found commands for timestamp 1403638212.2450969
+  Applying: Skip_Frames = 3
+Dropping frame 1403638212.2950971
+Dropping frame 1403638212.3450971
+Dropping frame 1403638212.395097
+SLIMSLAM: Found commands for timestamp 1403638212.445097
+  Applying: Skip_Frames = 3
+Dropping frame 1403638212.4950972
+Dropping frame 1403638212.5450969
+Dropping frame 1403638212.5950971
+SLIMSLAM: Found commands for timestamp 1403638212.645097
+  Applying: Skip_Frames = 3
+Dropping frame 1403638212.695097
+Dropping frame 1403638212.7450969
+Dropping frame 1403638212.7950971
+SLIMSLAM: Found commands for timestamp 1403638212.8450971
+  Applying: Skip_Frames = 3
+Dropping frame 1403638212.895097
+Dropping frame 1403638212.945097
+Dropping frame 1403638212.9950972
+SLIMSLAM: Found commands for timestamp 1403638213.0450969
+  Applying: Skip_Frames = 3
+Dropping frame 1403638213.0950971
+Dropping frame 1403638213.145097
+Dropping frame 1403638213.195097
+SLIMSLAM: Found commands for timestamp 1403638213.2450969
+  Applying: Skip_Frames = 3
+Dropping frame 1403638213.2950971
+Dropping frame 1403638213.3450971
+Dropping frame 1403638213.395097
+SLIMSLAM: Found commands for timestamp 1403638213.445097
+  Applying: Skip_Frames = 3
+Dropping frame 1403638213.4950972
+Dropping frame 1403638213.5450969
+Dropping frame 1403638213.5950971
+SLIMSLAM: Found commands for timestamp 1403638213.645097
+  Applying: Skip_Frames = 3
+Dropping frame 1403638213.695097
+Dropping frame 1403638213.7450969
+Dropping frame 1403638213.7950971
+SLIMSLAM: Found commands for timestamp 1403638213.8450971
+  Applying: Skip_Frames = 3
+Dropping frame 1403638213.895097
+Dropping frame 1403638213.945097
+Dropping frame 1403638213.9950972
+SLIMSLAM: Found commands for timestamp 1403638214.0450969
+  Applying: Skip_Frames = 3
+Dropping frame 1403638214.0950971
+Dropping frame 1403638214.145097
+Dropping frame 1403638214.195097
+SLIMSLAM: Found commands for timestamp 1403638214.2450969
+  Applying: Skip_Frames = 3
+Dropping frame 1403638214.2950971
+Dropping frame 1403638214.3450971
+Dropping frame 1403638214.395097
+SLIMSLAM: Found commands for timestamp 1403638214.445097
+  Applying: Skip_Frames = 3
+Dropping frame 1403638214.4950972
+Dropping frame 1403638214.5450969
+Dropping frame 1403638214.5950971
+SLIMSLAM: Found commands for timestamp 1403638214.645097
+  Applying: Skip_Frames = 3
+Dropping frame 1403638214.695097
+Dropping frame 1403638214.7450969
+Dropping frame 1403638214.7950971
+SLIMSLAM: Found commands for timestamp 1403638214.9950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638215.0450969
+Dropping frame 1403638215.0950971
+SLIMSLAM: Found commands for timestamp 1403638215.145097
+  Applying: Skip_Frames = 1
+Dropping frame 1403638215.195097
+SLIMSLAM: Found commands for timestamp 1403638215.2950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638215.3450971
+Dropping frame 1403638215.395097
+SLIMSLAM: Found commands for timestamp 1403638215.5950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638215.645097
+Dropping frame 1403638215.695097
+SLIMSLAM: Found commands for timestamp 1403638215.895097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638215.945097
+Dropping frame 1403638215.9950972
+SLIMSLAM: Found commands for timestamp 1403638216.195097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638216.2450969
+Dropping frame 1403638216.2950971
+SLIMSLAM: Found commands for timestamp 1403638216.4950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638216.5450969
+Dropping frame 1403638216.5950971
+SLIMSLAM: Found commands for timestamp 1403638216.7950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638216.8450971
+Dropping frame 1403638216.895097
+SLIMSLAM: Found commands for timestamp 1403638217.0950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638217.145097
+Dropping frame 1403638217.195097
+SLIMSLAM: Found commands for timestamp 1403638217.395097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638217.445097
+Dropping frame 1403638217.4950972
+SLIMSLAM: Found commands for timestamp 1403638217.5450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638217.5950971
+Dropping frame 1403638217.645097
+SLIMSLAM: Found commands for timestamp 1403638217.695097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638217.7450969
+Dropping frame 1403638217.7950971
+SLIMSLAM: Found commands for timestamp 1403638219.145097
+  Applying: Skip_Frames = 1
+Dropping frame 1403638219.195097
+SLIMSLAM: Found commands for timestamp 1403638219.645097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638219.695097
+Dropping frame 1403638219.7450969
+SLIMSLAM: Found commands for timestamp 1403638219.7950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638219.8450971
+Dropping frame 1403638219.895097
+SLIMSLAM: Found commands for timestamp 1403638220.2450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638220.2950971
+Dropping frame 1403638220.3450971
+SLIMSLAM: Found commands for timestamp 1403638220.395097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638220.445097
+Dropping frame 1403638220.4950972
+SLIMSLAM: Found commands for timestamp 1403638222.195097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638222.2450969
+Dropping frame 1403638222.2950971
+SLIMSLAM: Found commands for timestamp 1403638222.4950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638222.5450969
+Dropping frame 1403638222.5950971
+SLIMSLAM: Found commands for timestamp 1403638222.7950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638222.8450971
+Dropping frame 1403638222.895097
+SLIMSLAM: Found commands for timestamp 1403638223.0950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638223.145097
+Dropping frame 1403638223.195097
+SLIMSLAM: Found commands for timestamp 1403638223.395097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638223.445097
+Dropping frame 1403638223.4950972
+SLIMSLAM: Found commands for timestamp 1403638223.5450969
+  Applying: Skip_Frames = 1
+Dropping frame 1403638223.5950971
+SLIMSLAM: Found commands for timestamp 1403638223.695097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638223.7450969
+Dropping frame 1403638223.7950971
+SLIMSLAM: Found commands for timestamp 1403638223.9950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638224.0450969
+Dropping frame 1403638224.0950971
+SLIMSLAM: Found commands for timestamp 1403638224.145097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638224.195097
+Dropping frame 1403638224.2450969
+SLIMSLAM: Found commands for timestamp 1403638224.2950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638224.3450971
+Dropping frame 1403638224.395097
+SLIMSLAM: Found commands for timestamp 1403638224.445097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638224.4950972
+Dropping frame 1403638224.5450969
+SLIMSLAM: Found commands for timestamp 1403638224.5950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638224.645097
+Dropping frame 1403638224.695097
+SLIMSLAM: Found commands for timestamp 1403638224.7450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638224.7950971
+Dropping frame 1403638224.8450971
+SLIMSLAM: Found commands for timestamp 1403638224.895097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638224.945097
+Dropping frame 1403638224.9950972
+SLIMSLAM: Found commands for timestamp 1403638225.0450969
+  Applying: Skip_Frames = 2
+Dropping frame 1403638225.0950971
+Dropping frame 1403638225.145097
+SLIMSLAM: Found commands for timestamp 1403638225.195097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638225.2450969
+Dropping frame 1403638225.2950971
+SLIMSLAM: Found commands for timestamp 1403638225.3450971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638225.395097
+Dropping frame 1403638225.445097
+SLIMSLAM: Found commands for timestamp 1403638225.4950972
+  Applying: Skip_Frames = 2
+Dropping frame 1403638225.5450969
+Dropping frame 1403638225.5950971
+SLIMSLAM: Found commands for timestamp 1403638225.645097
+  Applying: Skip_Frames = 2
+Dropping frame 1403638225.695097
+Dropping frame 1403638225.7450969
+SLIMSLAM: Found commands for timestamp 1403638225.7950971
+  Applying: Skip_Frames = 2
+Dropping frame 1403638225.8450971
+Dropping frame 1403638225.895097
+SLIMSLAM: Found commands for timestamp 1403638226.0450969
+  Applying: Skip_Frames = 3
+Dropping frame 1403638226.0950971
+Dropping frame 1403638226.145097
+Dropping frame 1403638226.195097
+SLIMSLAM: Found commands for timestamp 1403638226.445097
+  Applying: Skip_Frames = 3
+Dropping frame 1403638226.4950972
+Dropping frame 1403638226.5450969
+Dropping frame 1403638226.5950971
+SLIMSLAM: Found commands for timestamp 1403638226.645097
+  Applying: Skip_Frames = 3
+Dropping frame 1403638226.695097
+Dropping frame 1403638226.7450969
+Dropping frame 1403638226.7950971
+SLIMSLAM: Found commands for timestamp 1403638226.8450971
+  Applying: Skip_Frames = 3
+Dropping frame 1403638226.895097
+Dropping frame 1403638226.945097
+Dropping frame 1403638226.9950972
+SLIMSLAM: Found commands for timestamp 1403638227.0450969
+  Applying: Skip_Frames = 3
+Dropping frame 1403638227.0950971
+Dropping frame 1403638227.145097
+Dropping frame 1403638227.195097
+SLIMSLAM: Found commands for timestamp 1403638227.2450969
+  Applying: Skip_Frames = 3
+Dropping frame 1403638227.2950971
+Dropping frame 1403638227.3450971
+Dropping frame 1403638227.395097
+SLIMSLAM: Found commands for timestamp 1403638227.445097
+  Applying: Skip_Frames = 3
+Dropping frame 1403638227.4950972
+Dropping frame 1403638227.5450969
+Dropping frame 1403638227.5950971
+SLIMSLAM: Found commands for timestamp 1403638227.645097
+  Applying: Skip_Frames = 3
+Dropping frame 1403638227.695097
+Dropping frame 1403638227.7450969
+Dropping frame 1403638227.7950971
+Shutdown
+SLAM Finished at System Time: 1749139008.64535
+
+ TIME STATS in ms (mean$\pm$std)
+OpenCV version: 4.8.1
+---------------------------
+Tracking
+
+ORB Extraction: 19.724$\pm$2.7562
+Stereo Matching: 8.4765$\pm$2.4563
+IMU Preintegration: 0.19482$\pm$0.090514
+Pose Prediction: 0.69249$\pm$1.6517
+LM Track: 16.591$\pm$6.462
+New KF decision: 0.34295$\pm$0.39085
+Total Tracking: 29.202$\pm$25.609
+
+
+
+Local Mapping
+
+KF Insertion: 14.212$\pm$4.9807
+MP Culling: 0.50914$\pm$0.26303
+MP Creation: 40.557$\pm$17.72
+LBA: 131.52$\pm$45.68
+KF Culling: 9.5155$\pm$8.283
+Total Local Mapping: 195.52$\pm$71.85
+---------------------------
+
+LBA complexity (mean$\pm$std)
+LBA Edges: 1528.9$\pm$1015.2
+LBA KF optimized: 6.5$\pm$2.2913
+LBA KF fixed: 1$\pm$0
+LBA MP: nan$\pm$nan
+
+LBA executions: 369
+LBA aborts: 0
+---------------------------
+
+Map complexity
+KFs in map: 176
+MPs in map: 13166
+---------------------------
+
+Place Recognition (mean$\pm$std)
+Database Query: 2.3531$\pm$1.1412
+SE3 estimation: 28.722$\pm$15.663
+Total Place Recognition: 20.795$\pm$19.842
+
+
+Loop Closing (mean$\pm$std)
+Loop Fusion: nan$\pm$nan
+Essential Graph: nan$\pm$nan
+Total Loop Closing: nan$\pm$nan
+
+Num exec: 0
+Number of KFs: nan$\pm$nan
+
+Map Merging (mean$\pm$std)
+Merge Maps: nan$\pm$nan
+Welding BA: nan$\pm$nan
+Optimization Ess.: nan$\pm$nan
+Total Map Merging: nan$\pm$nan
+
+Num exec: 0
+Number of KFs: nan$\pm$nan
+Number of MPs: nan$\pm$nan
+
+Full GBA (mean$\pm$std)
+GBA: nan$\pm$nan
+Map Update: nan$\pm$nan
+Total Full GBA: nan$\pm$nan
+
+Num exec: 0
+Num abort: 0
+Number of KFs: nan$\pm$nan
+Number of MPs: nan$\pm$nan
+
+Saving trajectory to f_dataset-MH_04_difficult_run8.txt ...
+There are 1 maps in the atlas
+  Map 0 has 176 KFs
+
+End of saving trajectory to f_dataset-MH_04_difficult_run8.txt ...
+
+Saving keyframe trajectory to kf_dataset-MH_04_difficult_run8.txt ...
