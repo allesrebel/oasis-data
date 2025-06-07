@@ -1,0 +1,515 @@
+num_seq = 1
+file name: dataset-V1_02_medium_run7
+Loading images for sequence 0...LOADED!
+Loading IMU for sequence 0...LOADED!
+
+-------
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Built with REGISTER_TIMES
+Git Commit Hash: 48ed9a3
+
+Build Type: Release
+
+Compiled with C++ version: 201703
+
+Input sensor was set to: Stereo-Inertial
+Loading settings from /tmp/slimslam_cfg_rv3Q.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+IMU.InsertKFsWhenLost optional parameter does not exist...
+	-Loaded IMU calibration
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+System.enableDeadlines optional parameter does not exist...
+System.enableFOV optional parameter does not exist...
+System.maskHeight optional parameter does not exist...
+System.maskWidth optional parameter does not exist...
+System.enableOasis optional parameter does not exist...
+System.dumpMapPoints optional parameter does not exist...
+System.enableOmegaSLAM optional parameter does not exist...
+System.enablePIDSLAM optional parameter does not exist...
+SLIM SLAM enabled!
+Will load ./slimslam_control_files/V1_02_medium_control.txt for SlimSLAM Oracle config!
+SlimSLAM.EnableTraining optional parameter does not exist...
+System.debug_logs optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 458.65399169921875 457.29598999023438 367.21499633789062 248.375 ]
+	-Camera 1 distortion parameters: [  -0.28340810537338257 0.073959067463874817 0.00019359000725671649 1.7618711353861727e-05 ]
+	-Camera 2 parameters (Pinhole: [ 457.58700561523438 456.13400268554688 379.99899291992188 255.23800659179688 ]
+	-Camera 1 distortion parameters: [  -0.2836836576461792 0.074512839317321777 -0.00010473000293131918 -3.555907096597366e-05 ]
+	-Original image size: [ 752 , 480 ]
+	-Current image size: [ 752 , 480 ]
+	-Camera 1 parameters after rectification: [  456.71499633789062 456.71499633789062 364.52615356445312 257.268798828125 ]
+	-Sequence FPS: 20
+	-Stereo baseline: 0.11007784307003021
+	-Stereo depth threshold : 60
+	-Gyro noise: 0.00016999999934341758
+	-Accelerometer noise: 0.0020000000949949026
+	-Gyro walk: 1.9392999092815444e-05
+	-Accelerometer walk: 0.0030000000260770321
+	-IMU frequency: 200
+	-Features per image: 1200
+	-ORB scale factor: 1.2000000476837158
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+SLIMSLAM: Singleton instance created with default parameters.
+SLIMSLAM: Control file loaded successfully with 110 commands across 110 unique timestamps from: ./slimslam_control_files/V1_02_medium_control.txt
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+SLAM Started at System Time: 1749117841.16443
+not IMU meas
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:0; Map init KF:0
+New Map created with 59 points
+Active map: 0
+start VIBA 1
+end VIBA 1
+SLIMSLAM: Found commands for timestamp 1403715536.5621431
+  Applying: KP_max = 60
+SLIMSLAM: Found commands for timestamp 1403715539.612143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715539.662143
+Dropping frame 1403715539.7121432
+SLIMSLAM: Found commands for timestamp 1403715539.7621429
+  Applying: Skip_Frames = 2
+Dropping frame 1403715539.8121431
+Dropping frame 1403715539.862143
+SLIMSLAM: Found commands for timestamp 1403715539.912143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715539.9621429
+Dropping frame 1403715540.0121431
+SLIMSLAM: Found commands for timestamp 1403715540.0621431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715540.112143
+Dropping frame 1403715540.162143
+SLIMSLAM: Found commands for timestamp 1403715540.2621429
+  Applying: Skip_Frames = 1
+Dropping frame 1403715540.3121431
+SLIMSLAM: Found commands for timestamp 1403715540.362143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715540.412143
+Dropping frame 1403715540.4621429
+SLIMSLAM: Found commands for timestamp 1403715540.5121431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715540.5621431
+Dropping frame 1403715540.612143
+SLIMSLAM: Found commands for timestamp 1403715540.8121431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715540.862143
+Dropping frame 1403715540.912143
+start VIBA 2
+end VIBA 2
+SLIMSLAM: Found commands for timestamp 1403715546.362143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715546.412143
+Dropping frame 1403715546.4621429
+SLIMSLAM: Found commands for timestamp 1403715546.5121431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715546.5621431
+Dropping frame 1403715546.612143
+SLIMSLAM: Found commands for timestamp 1403715546.662143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715546.7121432
+Dropping frame 1403715546.7621429
+SLIMSLAM: Found commands for timestamp 1403715546.8121431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715546.862143
+Dropping frame 1403715546.912143
+SLIMSLAM: Found commands for timestamp 1403715552.4621429
+  Applying: Skip_Frames = 1
+Dropping frame 1403715552.5121431
+SLIMSLAM: Found commands for timestamp 1403715552.5621431
+  Applying: Skip_Frames = 1
+Dropping frame 1403715552.612143
+SLIMSLAM: Found commands for timestamp 1403715552.662143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715552.7121432
+Dropping frame 1403715552.7621429
+SLIMSLAM: Found commands for timestamp 1403715552.8121431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715552.862143
+Dropping frame 1403715552.912143
+SLIMSLAM: Found commands for timestamp 1403715552.9621429
+  Applying: Skip_Frames = 2
+Dropping frame 1403715553.0121431
+Dropping frame 1403715553.0621431
+SLIMSLAM: Found commands for timestamp 1403715555.7621429
+  Applying: Skip_Frames = 1
+Dropping frame 1403715555.8121431
+SLIMSLAM: Found commands for timestamp 1403715555.862143
+  Applying: Skip_Frames = 1
+Dropping frame 1403715555.912143
+SLIMSLAM: Found commands for timestamp 1403715555.9621429
+  Applying: Skip_Frames = 2
+Dropping frame 1403715556.0121431
+Dropping frame 1403715556.0621431
+SLIMSLAM: Found commands for timestamp 1403715556.112143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715556.162143
+Dropping frame 1403715556.2121432
+SLIMSLAM: Found commands for timestamp 1403715556.2621429
+  Applying: Skip_Frames = 2
+Dropping frame 1403715556.3121431
+Dropping frame 1403715556.362143
+SLIMSLAM: Found commands for timestamp 1403715556.412143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715556.4621429
+Dropping frame 1403715556.5121431
+SLIMSLAM: Found commands for timestamp 1403715556.5621431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715556.612143
+Dropping frame 1403715556.662143
+SLIMSLAM: Found commands for timestamp 1403715556.7121432
+  Applying: Skip_Frames = 2
+Dropping frame 1403715556.7621429
+Dropping frame 1403715556.8121431
+SLIMSLAM: Found commands for timestamp 1403715556.862143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715556.912143
+Dropping frame 1403715556.9621429
+SLIMSLAM: Found commands for timestamp 1403715557.0121431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715557.0621431
+Dropping frame 1403715557.112143
+SLIMSLAM: Found commands for timestamp 1403715557.162143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715557.2121432
+Dropping frame 1403715557.2621429
+SLIMSLAM: Found commands for timestamp 1403715557.3121431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715557.362143
+Dropping frame 1403715557.412143
+SLIMSLAM: Found commands for timestamp 1403715557.4621429
+  Applying: Skip_Frames = 2
+Dropping frame 1403715557.5121431
+Dropping frame 1403715557.5621431
+SLIMSLAM: Found commands for timestamp 1403715561.162143
+  Applying: Skip_Frames = 1
+Dropping frame 1403715561.2121432
+SLIMSLAM: Found commands for timestamp 1403715561.2621429
+  Applying: Skip_Frames = 1
+Dropping frame 1403715561.3121431
+SLIMSLAM: Found commands for timestamp 1403715561.362143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715561.412143
+Dropping frame 1403715561.4621429
+SLIMSLAM: Found commands for timestamp 1403715561.5121431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715561.5621431
+Dropping frame 1403715561.612143
+SLIMSLAM: Found commands for timestamp 1403715561.662143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715561.7121432
+Dropping frame 1403715561.7621429
+SLIMSLAM: Found commands for timestamp 1403715564.5621431
+  Applying: Skip_Frames = 1
+Dropping frame 1403715564.612143
+SLIMSLAM: Found commands for timestamp 1403715565.112143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715565.162143
+Dropping frame 1403715565.2121432
+SLIMSLAM: Found commands for timestamp 1403715567.2121432
+  Applying: Skip_Frames = 2
+Dropping frame 1403715567.2621429
+Dropping frame 1403715567.3121431
+PR: Loop detected with Reffine Sim3
+SLIMSLAM: Found commands for timestamp 1403715567.362143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715567.412143
+Dropping frame 1403715567.4621429
+SLIMSLAM: Found commands for timestamp 1403715567.5121431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715567.5621431
+Dropping frame 1403715567.612143
+SLIMSLAM: Found commands for timestamp 1403715571.162143
+  Applying: Skip_Frames = 1
+Dropping frame 1403715571.2121432
+SLIMSLAM: Found commands for timestamp 1403715571.2621429
+  Applying: Skip_Frames = 2
+Dropping frame 1403715571.3121431
+Dropping frame 1403715571.362143
+SLIMSLAM: Found commands for timestamp 1403715571.412143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715571.4621429
+Dropping frame 1403715571.5121431
+SLIMSLAM: Found commands for timestamp 1403715571.7121432
+  Applying: Skip_Frames = 2
+Dropping frame 1403715571.7621429
+Dropping frame 1403715571.8121431
+SLIMSLAM: Found commands for timestamp 1403715572.0121431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715572.0621431
+Dropping frame 1403715572.112143
+SLIMSLAM: Found commands for timestamp 1403715572.3121431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715572.362143
+Dropping frame 1403715572.412143
+*Loop detected
+phi =  0.0046873126755198943  0.0051202672531441154 -0.0029606236589246248
+Local Mapping STOP
+Local Mapping RELEASE
+Local Mapping STOP
+SLIMSLAM: Found commands for timestamp 1403715577.662143
+  Applying: Skip_Frames = 1
+Local Mapping RELEASE
+Dropping frame 1403715577.7121432
+SLIMSLAM: Found commands for timestamp 1403715577.9621429
+  Applying: Skip_Frames = 1
+Dropping frame 1403715578.0121431
+SLIMSLAM: Found commands for timestamp 1403715578.0621431
+  Applying: Skip_Frames = 1
+Dropping frame 1403715578.112143
+SLIMSLAM: Found commands for timestamp 1403715578.3121431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715578.362143
+Dropping frame 1403715578.412143
+SLIMSLAM: Found commands for timestamp 1403715579.5121431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715579.5621431
+Dropping frame 1403715579.612143
+SLIMSLAM: Found commands for timestamp 1403715579.662143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715579.7121432
+Dropping frame 1403715579.7621429
+SLIMSLAM: Found commands for timestamp 1403715579.8121431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715579.862143
+Dropping frame 1403715579.912143
+SLIMSLAM: Found commands for timestamp 1403715579.9621429
+  Applying: Skip_Frames = 2
+Dropping frame 1403715580.0121431
+Dropping frame 1403715580.0621431
+SLIMSLAM: Found commands for timestamp 1403715586.4621429
+  Applying: Skip_Frames = 1
+Dropping frame 1403715586.5121431
+SLIMSLAM: Found commands for timestamp 1403715591.2121432
+  Applying: Skip_Frames = 2
+Dropping frame 1403715591.2621429
+Dropping frame 1403715591.3121431
+SLIMSLAM: Found commands for timestamp 1403715591.5121431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715591.5621431
+Dropping frame 1403715591.612143
+SLIMSLAM: Found commands for timestamp 1403715591.662143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715591.7121432
+Dropping frame 1403715591.7621429
+SLIMSLAM: Found commands for timestamp 1403715595.162143
+  Applying: Skip_Frames = 1
+Dropping frame 1403715595.2121432
+SLIMSLAM: Found commands for timestamp 1403715595.2621429
+  Applying: Skip_Frames = 2
+Dropping frame 1403715595.3121431
+Dropping frame 1403715595.362143
+SLIMSLAM: Found commands for timestamp 1403715595.412143
+  Applying: Skip_Frames = 2
+Dropping frame 1403715595.4621429
+Dropping frame 1403715595.5121431
+SLIMSLAM: Found commands for timestamp 1403715595.5621431
+  Applying: Skip_Frames = 2
+Dropping frame 1403715595.612143
+Dropping frame 1403715595.662143
+SLIMSLAM: Found commands for timestamp 1403715595.7121432
+  Applying: Skip_Frames = 2
+Dropping frame 1403715595.7621429
+Dropping frame 1403715595.8121431
+Shutdown
+SLAM Finished at System Time: 1749117937.03172
+
+ TIME STATS in ms (mean$\pm$std)
+OpenCV version: 4.6.0
+---------------------------
+Tracking
+
+ORB Extraction: 14.058$\pm$1.245
+Stereo Matching: 6.2127$\pm$2.1664
+IMU Preintegration: 0.13149$\pm$0.052378
+Pose Prediction: 0.12773$\pm$0.50586
+LM Track: 10.535$\pm$2.7397
+New KF decision: 0.22189$\pm$0.26856
+Total Tracking: 29.851$\pm$12.156
+
+
+
+Local Mapping
+
+KF Insertion: 8.0979$\pm$2.5152
+MP Culling: 0.29804$\pm$0.14333
+MP Creation: 22.276$\pm$8.187
+LBA: 111.47$\pm$33.227
+KF Culling: 8.802$\pm$6.4231
+Total Local Mapping: 151.01$\pm$43.372
+---------------------------
+
+LBA complexity (mean$\pm$std)
+LBA Edges: 1785.8$\pm$1130.9
+LBA KF optimized: 6.5$\pm$2.2913
+LBA KF fixed: 1$\pm$0
+LBA MP: -nan$\pm$-nan
+
+LBA executions: 365
+LBA aborts: 0
+---------------------------
+
+Map complexity
+KFs in map: 118
+MPs in map: 10570
+---------------------------
+
+Place Recognition (mean$\pm$std)
+Database Query: 1.1836$\pm$0.55612
+SE3 estimation: 15.806$\pm$11.836
+Total Place Recognition: 13.27$\pm$12.839
+
+
+Loop Closing (mean$\pm$std)
+Loop Fusion: 53.126$\pm$0
+Essential Graph: 56.443$\pm$0
+Total Loop Closing: 112.59$\pm$0
+
+Num exec: 1
+Number of KFs: -nan$\pm$-nan
+
+Map Merging (mean$\pm$std)
+Merge Maps: -nan$\pm$-nan
+Welding BA: -nan$\pm$-nan
+Optimization Ess.: -nan$\pm$-nan
+Total Map Merging: -nan$\pm$-nan
+
+Num exec: 0
+Number of KFs: -nan$\pm$-nan
+Number of MPs: -nan$\pm$-nan
+
+Full GBA (mean$\pm$std)
+GBA: 808.68$\pm$0
+Map Update: 18.155$\pm$0
+Total Full GBA: 826.83$\pm$0
+
+Num exec: 1
+Num abort: 0
+Number of KFs: 102$\pm$0
+Number of MPs: 11172$\pm$0
+
+Saving trajectory to f_dataset-V1_02_medium_run7.txt ...
+There are 1 maps in the atlas
+  Map 0 has 118 KFs
+
+End of saving trajectory to f_dataset-V1_02_medium_run7.txt ...
+
+Saving keyframe trajectory to kf_dataset-V1_02_medium_run7.txt ...

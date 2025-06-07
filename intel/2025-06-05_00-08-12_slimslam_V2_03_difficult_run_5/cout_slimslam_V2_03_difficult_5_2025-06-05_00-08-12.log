@@ -1,0 +1,390 @@
+num_seq = 1
+file name: dataset-V2_03_difficult_run5
+Loading images for sequence 0...LOADED!
+Loading IMU for sequence 0...LOADED!
+
+-------
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Built with REGISTER_TIMES
+Git Commit Hash: 48ed9a3
+
+Build Type: Release
+
+Compiled with C++ version: 201703
+
+Input sensor was set to: Stereo-Inertial
+Loading settings from /tmp/slimslam_cfg_dpaN.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+IMU.InsertKFsWhenLost optional parameter does not exist...
+	-Loaded IMU calibration
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+System.enableDeadlines optional parameter does not exist...
+System.enableFOV optional parameter does not exist...
+System.maskHeight optional parameter does not exist...
+System.maskWidth optional parameter does not exist...
+System.enableOasis optional parameter does not exist...
+System.dumpMapPoints optional parameter does not exist...
+System.enableOmegaSLAM optional parameter does not exist...
+System.enablePIDSLAM optional parameter does not exist...
+SLIM SLAM enabled!
+Will load ./slimslam_control_files/V2_03_difficult_control.txt for SlimSLAM Oracle config!
+SlimSLAM.EnableTraining optional parameter does not exist...
+System.debug_logs optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 458.65399169921875 457.29598999023438 367.21499633789062 248.375 ]
+	-Camera 1 distortion parameters: [  -0.28340810537338257 0.073959067463874817 0.00019359000725671649 1.7618711353861727e-05 ]
+	-Camera 2 parameters (Pinhole: [ 457.58700561523438 456.13400268554688 379.99899291992188 255.23800659179688 ]
+	-Camera 1 distortion parameters: [  -0.2836836576461792 0.074512839317321777 -0.00010473000293131918 -3.555907096597366e-05 ]
+	-Original image size: [ 752 , 480 ]
+	-Current image size: [ 752 , 480 ]
+	-Camera 1 parameters after rectification: [  456.71499633789062 456.71499633789062 364.52615356445312 257.268798828125 ]
+	-Sequence FPS: 20
+	-Stereo baseline: 0.11007784307003021
+	-Stereo depth threshold : 60
+	-Gyro noise: 0.00016999999934341758
+	-Accelerometer noise: 0.0020000000949949026
+	-Gyro walk: 1.9392999092815444e-05
+	-Accelerometer walk: 0.0030000000260770321
+	-IMU frequency: 200
+	-Features per image: 1200
+	-ORB scale factor: 1.2000000476837158
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+SLIMSLAM: Singleton instance created with default parameters.
+SLIMSLAM: Control file loaded successfully with 12 commands across 12 unique timestamps from: ./slimslam_control_files/V2_03_difficult_control.txt
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+SLAM Started at System Time: 1749122742.61192
+not IMU meas
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:0; Map init KF:0
+New Map created with 425 points
+Active map: 0
+SLIMSLAM: Found commands for timestamp 1413394887.3057606
+  Applying: KP_max = 60
+SLIMSLAM: Found commands for timestamp 1413394887.7057605
+  Applying: Skip_Frames = 2
+Dropping frame 1413394887.7557604
+Dropping frame 1413394887.8057606
+SLIMSLAM: Found commands for timestamp 1413394887.8557603
+  Applying: Processing_Frames = 1
+Dropping frame 1413394887.9057605
+Dropping frame 1413394887.9557605
+SLIMSLAM: Found commands for timestamp 1413394888.0057604
+  Applying: Skip_Frames = 2
+Dropping frame 1413394888.0557604
+Dropping frame 1413394888.1057606
+SLIMSLAM: Found commands for timestamp 1413394888.1557603
+  Applying: Skip_Frames = 2
+Dropping frame 1413394888.2057605
+Dropping frame 1413394888.2557604
+SLIMSLAM: Found commands for timestamp 1413394889.2557604
+  Applying: Skip_Frames = 1
+Dropping frame 1413394889.3057606
+SLIMSLAM: Found commands for timestamp 1413394889.3557603
+  Applying: Skip_Frames = 2
+Dropping frame 1413394889.4057605
+Dropping frame 1413394889.4557605
+SLIMSLAM: Found commands for timestamp 1413394889.5057604
+  Applying: Skip_Frames = 2
+Dropping frame 1413394889.5557604
+Dropping frame 1413394889.6057606
+virtual int g2o::SparseOptimizer::optimize(int, bool): 0 vertices to optimize, maybe forgot to call initializeOptimization()
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 109
+mnInitialFrameId = 0
+40 Frames set to lost
+not IMU meas
+First KF:9; Map init KF:0
+New Map created with 306 points
+Active map: 0
+start VIBA 1
+end VIBA 1
+start VIBA 2
+end VIBA 2
+*Loop detected
+phi = -0.010426381624089402 -0.016113430883370913  0.021366232492465345
+BAD LOOP!!!
+*Loop detected
+phi = -0.0030833674608675755   0.015070474394181171 -0.0094132778921677835
+BAD LOOP!!!
+*Loop detected
+phi = -0.0034342328667574741   0.013795819839938245  -0.025844085548709761
+BAD LOOP!!!
+*Loop detected
+phi = 0.0021147361310918651  0.043092921249794261   -0.1625407320585967
+BAD LOOP!!!
+*Loop detected
+phi = 0.0061246911448415353  0.099554021245605709  -0.17663133383756732
+BAD LOOP!!!
+*Loop detected
+phi = -0.0046337064507380801   -0.17928637429238409   0.040248748323841399
+BAD LOOP!!!
+*Loop detected
+phi = 0.0021454863344755755   0.10520671860357114 -0.047126977073385881
+BAD LOOP!!!
+*Loop detected
+phi = 0.010030725341362028  0.17448081331231952 -0.13251972271288148
+BAD LOOP!!!
+*Loop detected
+phi =  0.014754785474175072   0.11972179463850947 -0.075249688611105786
+BAD LOOP!!!
+*Loop detected
+phi =  0.016719584501013792 -0.013804234302310234  -0.10466178828773039
+BAD LOOP!!!
+*Loop detected
+phi =   0.01578230162266385 -0.020417812840989317  -0.10541497347714644
+BAD LOOP!!!
+*Loop detected
+phi =  0.011269429222126415 -0.010566530910660123 -0.060135731234497808
+BAD LOOP!!!
+*Loop detected
+phi =  0.013333312989158937 -0.020084178921845917 -0.081959926914224726
+BAD LOOP!!!
+*Loop detected
+phi = -0.0085778141399349295 -0.0069262450128103102   0.019595990922103141
+BAD LOOP!!!
+*Loop detected
+phi =   0.010462140359544025 0.00077000758041070167  -0.024235792591117484
+BAD LOOP!!!
+*Loop detected
+phi = -0.0018687040330670477    0.02394883148835119  0.0013756293163432617
+BAD LOOP!!!
+*Loop detected
+phi = -0.0023304667551700946   0.012952036317289362  0.0047500362834540615
+BAD LOOP!!!
+*Loop detected
+phi = -0.0030663907241628174 -0.0031208688354112976 0.00064690940342247943
+Local Mapping STOP
+Local Mapping RELEASE
+SLIMSLAM: Found commands for timestamp 1413394971.8557603
+  Applying: Skip_Frames = 1
+Dropping frame 1413394971.9557605
+Shutdown
+SLAM Finished at System Time: 1749122870.18909
+
+ TIME STATS in ms (mean$\pm$std)
+OpenCV version: 4.6.0
+---------------------------
+Tracking
+
+ORB Extraction: 13.322$\pm$1.3317
+Stereo Matching: 6.2487$\pm$2.3846
+IMU Preintegration: 0.11507$\pm$0.047907
+Pose Prediction: 0.16361$\pm$0.60452
+LM Track: 8.5109$\pm$3.1062
+New KF decision: 0.22787$\pm$0.22455
+Total Tracking: 30.876$\pm$6.7375
+
+
+
+Local Mapping
+
+KF Insertion: 6.7503$\pm$2.4505
+MP Culling: 0.19907$\pm$0.10157
+MP Creation: 18.099$\pm$7.715
+LBA: 66.874$\pm$25.017
+KF Culling: 4.9983$\pm$3.7088
+Total Local Mapping: 97.049$\pm$34.51
+---------------------------
+
+LBA complexity (mean$\pm$std)
+LBA Edges: 2170.9$\pm$755.44
+LBA KF optimized: 6.2667$\pm$2.1746
+LBA KF fixed: 1$\pm$0
+LBA MP: -nan$\pm$-nan
+
+LBA executions: 762
+LBA aborts: 0
+---------------------------
+
+Map complexity
+KFs in map: 248
+MPs in map: 12459
+---------------------------
+
+Place Recognition (mean$\pm$std)
+Database Query: 1.3855$\pm$0.78622
+SE3 estimation: 11.827$\pm$9.1137
+Total Place Recognition: 11.39$\pm$9.9329
+
+
+Loop Closing (mean$\pm$std)
+Loop Fusion: 97.196$\pm$0
+Essential Graph: 90.413$\pm$0
+Total Loop Closing: 201.39$\pm$0
+
+Num exec: 1
+Number of KFs: -nan$\pm$-nan
+
+Map Merging (mean$\pm$std)
+Merge Maps: -nan$\pm$-nan
+Welding BA: -nan$\pm$-nan
+Optimization Ess.: -nan$\pm$-nan
+Total Map Merging: -nan$\pm$-nan
+
+Num exec: 0
+Number of KFs: -nan$\pm$-nan
+Number of MPs: -nan$\pm$-nan
+
+Full GBA (mean$\pm$std)
+GBA: -nan$\pm$-nan
+Map Update: -nan$\pm$-nan
+Total Full GBA: -nan$\pm$-nan
+
+Num exec: 0
+Num abort: 0
+Number of KFs: -nan$\pm$-nan
+Number of MPs: -nan$\pm$-nan
+
+Saving trajectory to f_dataset-V2_03_difficult_run5.txt ...
+There are 1 maps in the atlas
+  Map 0 has 248 KFs
+
+End of saving trajectory to f_dataset-V2_03_difficult_run5.txt ...
+
+Saving keyframe trajectory to kf_dataset-V2_03_difficult_run5.txt ...
