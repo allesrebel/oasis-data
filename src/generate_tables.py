@@ -264,6 +264,53 @@ def main():
 
     df, df_fov = pd.DataFrame(rows), pd.DataFrame(rows_fov)
 
+    if not df_fov.empty:
+        # --- iterate over all datasets that actually appear in the frame ---
+        for dataset, df_dataset in df_fov.groupby("dataset", sort=True):
+            if df_dataset.empty:        # shouldn’t occur, but keeps the old guard
+                print(f"No FOV Mask data available for dataset {dataset}.")
+                continue
+
+            out_csv = f"{df_fov['platform'][0]}_{dataset}_fov_mask_width.csv"
+
+            # 1. Order rows by timestamp so indices increase chronologically
+            df_tmp = (
+                df_dataset
+                .sort_values("cellmanager_timestamp", kind="mergesort")  # stable sort
+                .reset_index(drop=True)
+            )
+
+            # 2. Build a mapping:  timestamp  →  dense index (0,1,2,…)
+            unique_ts = df_tmp["cellmanager_timestamp"].drop_duplicates()
+            ts_to_idx = {ts: idx for idx, ts in enumerate(unique_ts)}
+
+            # 3. Apply mapping to create the new column
+            df_tmp.insert(0, "frame_index", df_tmp["cellmanager_timestamp"].map(ts_to_idx))
+
+            # 4. Rename + export the three columns pgfplots needs
+            (df_tmp
+                .rename(columns={"cellmanager_timestamp": "timestamp"})
+                .loc[:, ["frame_index", "timestamp", "fov_width"]]
+                .to_csv(out_csv, index=False, float_format="%.6f")
+            )
+
+            print(f"Saved CSV to {out_csv}")
+
+            out_csv_stats = f"{df_fov['platform'][0]}_{dataset}_fov_mask_width_stats.csv"
+
+            # statistics for the cell manager
+            df_stats = (
+                df_tmp
+                .groupby("frame_index")                       # collapse duplicates
+                .agg(timestamp=("frame_index", "first"),        # identical within group
+                    fov_mean =("fov_width", "mean"),
+                    fov_std  =("fov_width", "std"))
+                .reset_index(drop=True)                       # throw away frame_index
+                .loc[:, ["timestamp", "fov_mean", "fov_std"]] # keep just these three
+            )
+            df_stats.to_csv(out_csv_stats, index=False, float_format="%3.3f")
+            print(f"Saved stats CSV to {out_csv_stats}")
+
     # ───────── produce LaTeX table ─────────────────────────────────────────
     if not df.empty:
         produce_latex(df, df_fov)
