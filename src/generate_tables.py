@@ -1,15 +1,24 @@
 #!/usr/bin/env python3
 """
-postprocess_ate_results.py — collect ATE logs, build summary tables & plots.
+generate_tables.py  –  collect ATE logs, build summary plots *and*
+emit a professional-looking LaTeX table for the paper.
 
-• Works with both “old” and “new” evaluator file-name styles.
-• No hard-coded platform / sensor / run-type / dataset filters:
-  every unique value present in the logs is included.
+Minimal changes relative to the previous version:
+• parse “Effective FPS Analysis” lines (frames, dropped, fps)
+• store them in the dataframe
+• aggregate {normal baseline vs oasis} and write table_results.tex
 """
 # ─────────────────────────────────────────────────────────────────────────────
-import os, sys, re
+import os, sys, re, math
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+
+TOTAL_FRAMES = {
+    "MH01": 3682, "MH02": 3040, "MH03": 2700, "MH04": 2033, "MH05": 2273,
+    "V101": 2912, "V102": 1710, "V103": 2149,
+    "V201": 2280, "V202": 2348, "V203": 1922,
+}
 
 # ───────────────────────── helper extractors ────────────────────────────────
 def _scan_for(prefix, path, cast):
@@ -20,8 +29,8 @@ def _scan_for(prefix, path, cast):
                 except Exception:   return None
     return None
 
-def extract_max(path):   return _scan_for("absolute_translational_error.max",   path, float)
-def extract_mean(path):  return _scan_for("absolute_translational_error.mean",  path, float)
+def extract_max(path):   return _scan_for("absolute_translational_error.max",  path, float)
+def extract_mean(path):  return _scan_for("absolute_translational_error.mean", path, float)
 
 def extract_complexity(path):
     return {"KFs in map": _scan_for("KFs in map:", path, int),
@@ -45,6 +54,31 @@ def extract_fov_mask(path):
             out.append((ts, int(mm.group(2)), int(mm.group(3))))
     return out
 
+
+# ─────────── NEW: canonical frame counts ────────────────────────────────────
+TOTAL_FRAMES = {
+    "MH01": 3682, "MH02": 3040, "MH03": 2700, "MH04": 2033, "MH05": 2273,
+    "V101": 2912, "V102": 1710, "V103": 2149,
+    "V201": 2280, "V202": 2348, "V203": 1922,
+}
+
+def extract_fps_block(path):
+    """Parse the optional 'Effective FPS Analysis' block."""
+    frames = drops = fps = None
+    with open(path) as fh:
+        for ln in fh:
+            ln = ln.strip()
+            if ln.startswith("Frames processed:"):
+                try: frames = int(ln.split(":")[1].strip())
+                except Exception: pass
+            elif ln.startswith("Dropped frames:"):
+                try: drops = int(ln.split(":")[1].strip())
+                except Exception: pass
+            elif ln.startswith("Effective FPS:"):
+                try: fps = float(ln.split(":")[1].strip())
+                except Exception: pass
+    return frames, drops, fps
+
 # ─────────────────────────── filename regexes ───────────────────────────────
 primary = re.compile(  # legacy style (has sensor_type)
     r'^(?P<platform>[^_]+)_(?P<dataset>[^_]+)_(?P<run_type>.+?)_'
@@ -58,9 +92,128 @@ fallback = re.compile( # new style (no sensor_type)
 
 DEFAULT_SENSOR = "stereo_imu"
 # ─────────────────────────────────────────────────────────────────────────────
+def bold(val, cond):
+    """Wrap val in \\textbf{} if cond is True."""
+    return f"\\textbf{{{val}}}" if cond else val
+
+# ───────────────────────── LaTeX generation (UPDATED) ───────────────────────
+def produce_latex(df: pd.DataFrame, df_fov: pd.DataFrame,
+                  baseline_tag="deadlines", oasis_tag="oasis",
+                  out_file="table_results.tex") -> None:
+
+    datasets = sorted(set(df["dataset"]))
+    rows_tex, agg = [], {k: [] for k in (
+        "bl_drop", "bl_drop_pct", "fps", "mask_mean", "mask_std",
+        "ate_rt", "ate_oa", "amax_rt", "amax_oa", "imp_mean", "imp_max")}
+
+    for d in datasets:
+        base  = df[(df["dataset"] == d) & (df["run_type"] == baseline_tag)]
+        oasis = df[(df["dataset"] == d) & (df["run_type"] == oasis_tag)]
+        if base.empty or oasis.empty:
+            continue
+
+        total_frames = TOTAL_FRAMES.get(d)
+        if total_frames is None:
+            # Fallback to what we can infer if dataset not in lookup
+            print(f'Falling Back! {d} not found')
+            total_frames = base["frames_processed"].sum() + base["dropped_frames"].sum()
+
+        frames_rt = base["frames_processed"].mean()
+        frames_oa = oasis["frames_processed"].mean()
+
+        drops_rt = base["dropped_frames"].mean()
+        drops_oa = oasis["dropped_frames"].mean()
+        drop_pct_rt = 100 * drops_rt / total_frames
+        drop_pct_oa = 100 * drops_oa / total_frames
+
+        fps_rt = base["effective_fps"].mean()
+
+        ate_mean_rt = base["absolute_translational_error.mean"].mean()
+        ate_mean_oa = oasis["absolute_translational_error.mean"].mean()
+        ate_max_rt  = base["absolute_translational_error.max"].mean()
+        ate_max_oa  = oasis["absolute_translational_error.max"].mean()
+
+        imp_mean = (1 - ate_mean_oa / ate_mean_rt) * 100
+        imp_max  = (1 - ate_max_oa  / ate_max_rt) * 100
+
+        fov = df_fov[(df_fov["dataset"] == d) & (df_fov["run_type"] == oasis_tag)]
+        m_mean, m_std = fov["fov_width"].mean(), fov["fov_width"].std()
+        mask = "--" if np.isnan(m_mean) else f"${m_mean:.2f} \\pm {m_std:.2f}$"
+
+        row_tex = (
+            f"{d} & {total_frames} & "
+            f"{drops_rt} ({drop_pct_rt:.2f}\\%) & {fps_rt:.2f} & "
+            f"{mask} & {bold(f'{drops_oa} ({drop_pct_oa:.2f}\\%)', drops_oa < drops_rt)} & "
+            f"{bold(f'{ate_mean_rt:.5f}', ate_mean_rt < ate_mean_oa)} & "
+            f"{bold(f'{ate_mean_oa:.5f}', ate_mean_oa < ate_mean_rt)} & "
+            f"{bold(f'{ate_max_rt:.5f}', ate_max_rt < ate_max_oa)} & "
+            f"{bold(f'{ate_max_oa:.5f}', ate_max_oa < ate_max_rt)} & "
+            f"{bold(f'{imp_mean:.1f}\\%', True)} & {bold(f'{imp_max:.1f}\\%', True)} \\\\"
+        )
+        rows_tex.append(row_tex)
+
+        agg["bl_drop"].append(drops_rt)
+        agg["bl_drop_pct"].append(drop_pct_rt)
+        agg["fps"].append(fps_rt)
+        if not np.isnan(m_mean):
+            agg["mask_mean"].append(m_mean)
+            agg["mask_std"].append(m_std)
+        agg["ate_rt"].append(ate_mean_rt)
+        agg["ate_oa"].append(ate_mean_oa)
+        agg["amax_rt"].append(ate_max_rt)
+        agg["amax_oa"].append(ate_max_oa)
+        agg["imp_mean"].append(imp_mean)
+        agg["imp_max"].append(imp_max)
+
+    def avg(x): return float(np.mean(x)) if x else float('nan')
+    avg_row = (
+        f"\\textbf{{Average}} & -- & "
+        f"{avg(agg['bl_drop']):.1f} ({avg(agg['bl_drop_pct']):.1f}\\%) & "
+        f"{avg(agg['fps']):.2f} & "
+        f"${avg(agg['mask_mean']):.2f} \\pm {avg(agg['mask_std']):.2f}$\" & "
+        f"\\textbf{{0 (0.00\\%)}} & "
+        f"{avg(agg['ate_rt']):.5f} & "
+        f"\\textbf{{{avg(agg['ate_oa']):.5f}}} & "
+        f"{avg(agg['amax_rt']):.5f} & "
+        f"\\textbf{{{avg(agg['amax_oa']):.5f}}} & "
+        f"\\textbf{{{avg(agg['imp_mean']):.1f}\\%}} & "
+        f"\\textbf{{{avg(agg['imp_max']):.1f}\\%}} \\\\"
+    )
+
+    header = r"""\begin{table}[htbp]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l|c|cc|cc|cc|cc|cc}
+\hline
+\multirow{2}{*}{\textbf{Dataset}} &
+\multicolumn{3}{c|}{\textbf{Realtime Baseline}} &
+\multicolumn{2}{c|}{\textbf{OASIS}} &
+\multicolumn{2}{c|}{\textbf{Mean ATE (m)}} &
+\multicolumn{2}{c|}{\textbf{Max ATE (m)}} &
+\multicolumn{2}{c}{\textbf{Improvement (\%)}} \\
+\cline{2-12}
+ & \textbf{Frames} & \textbf{Dropped (\%)} & \textbf{FPS} &
+ \textbf{Mask (Mean ± Std)} & \textbf{Dropped (\%)} &
+ \textbf{Realtime} & \textbf{OASIS} &
+ \textbf{Realtime} & \textbf{OASIS} &
+ \textbf{Mean ATE} & \textbf{Max ATE} \\
+\hline
+"""
+    footer = r"""\hline
+\end{tabular}}
+\caption{Comparison of Realtime Baseline (deadlines) and OASIS on EuRoC MAV datasets. Canonical frame counts are used to compute dropped-frame percentages; bold values denote better performance.}
+\label{tab:super_table_results}
+\end{table}
+"""
+    tex = header + "\n".join(rows_tex) + "\n\\hline\n" + avg_row + "\n\\hline\n" + footer
+    with open(out_file, "w") as fh: 
+        fh.write(tex)
+        print(f"LaTeX table written to {out_file}")
+
+# ─────────────────────────────────────────────────────────────────────────────
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python3 postprocess_ate_results.py <log_dir> [save] [show]")
+        print("Usage: python3 generate_tables.py <log_dir>  [save] [show]")
         sys.exit(1)
 
     log_dir, save_plots = sys.argv[1], len(sys.argv) > 2 and sys.argv[2].lower()=="save"
@@ -71,17 +224,27 @@ def main():
         path = os.path.join(log_dir, fname)
         m = primary.match(fname) or fallback.match(fname)
         if not m:
-            print(f"skip: {fname} (unmatched)"); continue
+            continue
         g = m.groupdict()
+        ## 
+        # Use this to filter out and generate a table you want!
+        # Filter out the data we don't want to consider for this table
+        if g["platform"].lower() != "jetson":           # keep Jetson only
+            continue
+        if g["run_type"] not in {"deadlines", "oasis"}: # keep wanted configs
+            continue
         g["sensor_type"] = g.get("sensor_type") or DEFAULT_SENSOR
 
         max_e = extract_max(path)
         mean_e= extract_mean(path)
         if max_e is None:
-            print(f"ATE max missing in {fname}"); continue
+            continue
+
+        print(f"✔ using {fname}")                       # ← NEW diagnostics line
 
         comp = extract_complexity(path)
         time = extract_timing(path)
+        frames, drops, fps = extract_fps_block(path)
 
         rows.append({
             "platform":g["platform"], "dataset":g["dataset"], "run_type":g["run_type"],
@@ -90,7 +253,8 @@ def main():
             "absolute_translational_error.max":max_e,
             "absolute_translational_error.mean":mean_e,
             "KFs in map":comp["KFs in map"], "MPs in map":comp["MPs in map"],
-            "Average Time":time["Average Time"], "Std Dev":time["Std Dev"]
+            "Average Time":time["Average Time"], "Std Dev":time["Std Dev"],
+            "frames_processed":frames, "dropped_frames":drops, "effective_fps":fps
         })
 
         for ts,w,h in extract_fov_mask(path):
@@ -100,68 +264,9 @@ def main():
 
     df, df_fov = pd.DataFrame(rows), pd.DataFrame(rows_fov)
 
-    # ───────── summary tables for every platform / sensor / run_type ───────
-    for (plat,sens), sub in df.groupby(["platform","sensor_type"]):
-        for rtype in sub["run_type"].unique():
-            run = sub[sub["run_type"]==rtype]
-            print(f"\n── {plat} / {sens} / {rtype} ──")
-            gmax  = run.groupby("dataset")["absolute_translational_error.max"].mean()
-            gmean = run.groupby("dataset")["absolute_translational_error.mean"].mean()
-            for d,v in gmax.items():  print(f"{d}: avg max = {v:.3f} m")
-            for d,v in gmean.items(): print(f"{d}: avg mean = {v:.3f} m")
-
-    # ───────── mask-size-dependent plots (all datasets present) ────────────
-    df_mask = df[df["mask_size"].notnull()].copy()
-    if not df_mask.empty:
-        df_mask["mask_size"] = df_mask["mask_size"].astype(int)
-        for dataset in df_mask["dataset"].unique():
-            dset = df_mask[df_mask["dataset"]==dataset]
-
-            # -------- mean error vs mask size --------------------------------
-            plt.figure()
-            plt.scatter(dset["mask_size"], dset["absolute_translational_error.mean"])
-            grp = dset.groupby("mask_size")["absolute_translational_error.mean"].agg(["mean","std"]).reset_index()
-            plt.errorbar(grp["mask_size"], grp["mean"], yerr=grp["std"],
-                         fmt='-o', label="Mean ± STD")
-            plt.title(f"ATE mean vs mask ({dataset})")
-            plt.xlabel("Mask size (cells²)"); plt.ylabel("ATE mean (m)")
-            plt.grid(True); plt.legend()
-            if save_plots:
-                fn = f"{dataset}_ate_mean_vs_mask.png"; plt.savefig(fn); plt.close()
-                grp.to_csv(f"{dataset}_ate_mean_vs_mask.csv", index=False, float_format="%.6f")
-                print(f"saved {fn}")
-            else: plt.show() if show_plots else None
-
-            # -------- max error vs mask size ---------------------------------
-            plt.figure()
-            plt.scatter(dset["mask_size"], dset["absolute_translational_error.max"])
-            grp2 = dset.groupby("mask_size")["absolute_translational_error.max"].agg(["mean","std"]).reset_index()
-            plt.errorbar(grp2["mask_size"], grp2["mean"], yerr=grp2["std"],
-                         fmt='-o', label="Mean ± STD")
-            plt.title(f"ATE max vs mask ({dataset})")
-            plt.xlabel("Mask size (cells²)"); plt.ylabel("ATE max (m)")
-            plt.grid(True); plt.legend()
-            if save_plots:
-                fn = f"{dataset}_ate_max_vs_mask.png"; plt.savefig(fn); plt.close()
-                grp2.to_csv(f"{dataset}_ate_max_vs_mask.csv", index=False, float_format="%.6f")
-                print(f"saved {fn}")
-            else: plt.show() if show_plots else None
-
-    # ───────── optional FOV-mask width plots (all datasets) ────────────────
-    if not df_fov.empty:
-        for dataset in df_fov["dataset"].unique():
-            dset = df_fov[df_fov["dataset"]==dataset]
-            plt.figure()
-            plt.plot(dset["cellmanager_timestamp"], dset["fov_width"], 'o-')
-            plt.title(f"FOV width over time ({dataset})")
-            plt.xlabel("timestamp"); plt.ylabel("mask width (cells)")
-            plt.grid(True)
-            if save_plots:
-                fn = f"{dataset}_fov_width.png"; plt.savefig(fn); plt.close()
-                dset[["cellmanager_timestamp","fov_width"]].to_csv(
-                    f"{dataset}_fov_width.csv", index=False, float_format="%.6f")
-                print(f"saved {fn}")
-            else: plt.show() if show_plots else None
+    # ───────── produce LaTeX table ─────────────────────────────────────────
+    if not df.empty:
+        produce_latex(df, df_fov)
 
 if __name__ == "__main__":
     main()
