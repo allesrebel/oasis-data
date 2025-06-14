@@ -1,195 +1,279 @@
 #!/usr/bin/env python3
-import os
-import sys
-import re
-import subprocess
+"""
+process_data_with_eval.py  (multiprocess edition)
+─────────────────────────────────────────────────
+Walk   ~/oasis-data/{intel,jetson}/**   → find run folders
+Run   evaluate_ate_scale.py            → write summaries to ./processed/
+
+It now uses all available CPU cores (or --workers N) to evaluate runs in
+parallel.  The work is embarrassingly parallel because each run folder is
+completely independent.
+
+Usage
+-----
+    python3 process_data_with_eval.py <ORBSLAM3_evaluation_root> [--workers N]
+
+Example
+-------
+    python3 process_data_with_eval.py ~/code/ORB-SLAM3-evaluation --workers 8
+"""
+from __future__ import annotations
+import argparse, os, re, subprocess, sys
 from decimal import Decimal
+from functools import partial
+from multiprocessing import Pool, cpu_count
+from pathlib import Path
+from typing import NamedTuple
 
-def main():
-    if len(sys.argv) != 3:
-        print("Usage: python3 script.py <dataset_platform_path> <ORBSLAM3_evaluation_path>")
-        sys.exit(1)
 
-    platform_path = sys.argv[1]
-    orbslam3_evaluation_path = sys.argv[2]
+# ─────────────────────────────────────────────────────────────────────────
+ROOT_DIR     = Path("~/oasis-data").expanduser()
+ALLOWED_DEVS = {"intel", "jetson"}
+PROCESSED    = Path.cwd() / "processed"
+PROCESSED.mkdir(exist_ok=True)
 
-    # A mapping from the directory's run type to the f_dataset file's run type.
-    # Replace/extend these with your actual mapping.
-    sensor_mapping = {
-        "stereo_inertial": "stereo_imu",
-        # Add other mappings as needed...
-    }
 
-    # Ensure that the processed output folder exists.
-    processed_dir = os.path.join(os.getcwd(), "processed")
-    os.makedirs(processed_dir, exist_ok=True)
+# ────────────────────────── regex helpers ───────────────────────────────
+SLIM_DIR_RE = re.compile(
+    r'^(?P<date>\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}).*?'
+    r'(?P<run_type>slimslam(?:_deadlines)?)_'
+    r'(?P<dataset>[A-Za-z0-9_]+)_'
+    r'(?P<difficulty>[^_/]+)_run_(?P<trial>\d+)$'
+)
 
-    # Define a regex pattern to match directory names.
-    # Expected format: <date>_result_<sensor_config>_<type_of_run>_<dataset>_<mask_size>_run_<trial_number>
-    # Example: 2025-03-23_07-13-40_result_stereo_inertial_fov_deadlines_MH05_6_run_3
-    pattern = re.compile(
-        r'^(?P<date>\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2})_result_'
-        r'(?P<sensor_config>[^_]+_[^_]+)_'
-        r'(?P<type_of_run>.+?)_'
-        r'(?P<dataset>[^_]+)_'
-        r'(?P<mask_size>\d+)_run_'
-        r'(?P<trial_number>\d+)$'
+OLD_DIR_RE = re.compile(
+    r'^(?P<date>\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2})_result_'
+    r'(?P<sensor_config>[^_]+_[^_]+)_'
+    r'(?P<run_type>.+?)_'
+    r'(?P<dataset>[^_]+)_'
+    r'(?P<mask_size>\d+)_run_'
+    r'(?P<trial>\d+)$'
+)
+
+
+# ───────────────────────── data container ───────────────────────────────
+class Task(NamedTuple):
+    device:     str
+    run_dir:    Path
+    run_type:   str
+    dataset:    str          # MH01 / V103 …
+    dataset_raw:str          # MH_01 etc.
+    mask_size:  str          # '0' for none
+    trial:      str
+    sensor_tag: str          # stereo_imu / slimslam_easy …
+    traj_file:  Path
+    gt_file:    Path
+    analysis_py:Path
+
+
+# ───────────────────────── helper fns ───────────────────────────────────
+def first_traj_file(d: Path) -> Path | None:
+    for patt in ("f_dataset-*.txt", "kf_dataset-*.txt"):
+        files = sorted(d.glob(patt))
+        if files:
+            return files[0]
+    return None
+
+
+def normalise_dataset(raw: str) -> str:
+    return raw.replace("_", "")
+
+
+def discover_tasks(eval_root: Path) -> list[Task]:
+    """Walk ~/oasis-data and return a list of Task objects ready for execution."""
+    tasks: list[Task] = []
+    analysis_py = eval_root / "evaluate_ate_scale.py"
+    gt_root     = eval_root / "Ground_truth" / "EuRoC_left_cam"
+
+    for device in ALLOWED_DEVS:
+        dev_dir = ROOT_DIR / device
+        if not dev_dir.is_dir():
+            print(f"⚠️  {device} folder not found under {ROOT_DIR}")
+            continue
+
+        for dirpath, subdirs, _ in os.walk(dev_dir):
+            run_dir = Path(dirpath)
+            if run_dir == dev_dir:
+                continue
+
+            dname = run_dir.name
+            m_old  = OLD_DIR_RE.match(dname)
+            m_slim = None if m_old else SLIM_DIR_RE.match(dname)
+            if not (m_old or m_slim):
+                continue
+
+            if m_old:
+                g            = m_old.groupdict()
+                run_type     = g["run_type"]
+                dataset_raw  = g["dataset"]
+                dataset      = normalise_dataset(dataset_raw)
+                mask_size    = g["mask_size"]
+                trial        = g["trial"]
+                sensor_tag   = "stereo_imu"
+                traj_file    = run_dir / f"f_dataset-{dataset_raw}_{sensor_tag}.txt"
+                if not traj_file.exists():
+                    continue
+            else:
+                g            = m_slim.groupdict()
+                run_type     = g["run_type"]
+                dataset_raw  = g["dataset"]
+                dataset      = normalise_dataset(dataset_raw)
+                mask_size    = "0"
+                trial        = g["trial"]
+                traj_file    = first_traj_file(run_dir)
+                if not traj_file:
+                    continue
+                sensor_tag   = traj_file.stem.split(f"{dataset_raw}_", 1)[-1]
+
+            gt_file = gt_root / f"{dataset}_GT.txt"
+            if not gt_file.exists():
+                continue
+
+            tasks.append(Task(device, run_dir, run_type, dataset,
+                              dataset_raw, mask_size, trial,
+                              sensor_tag, traj_file, gt_file,
+                              analysis_py))
+    return tasks
+
+
+def run_task(task: Task) -> str:
+    """Execute evaluate_ate_scale.py for one run folder. Return a status line."""
+    out_name = (
+        f"{task.device}_{task.dataset}_{task.run_type}_{task.sensor_tag}_{task.trial}"
+        + (f"_{task.mask_size}" if task.mask_size != '0' else "")
+        + ".txt"
     )
+    out_file = PROCESSED / out_name
 
-    # Iterate through all items in the platform path
-    for item in os.listdir(platform_path):
-        dir_path = os.path.join(platform_path, item)
-        if not os.path.isdir(dir_path):
-            continue
+    # Skip if output already exists (idempotent runs)
+    if out_file.exists():
+        return f"SKIP {out_name}"
 
-        match = pattern.match(item)
-        if not match:
-            print(f"Skipping directory (pattern not matched): {item}")
-            continue
+    cmd = ["python3", str(task.analysis_py),
+           str(task.gt_file), str(task.traj_file), "--verbose"]
 
-        date = match.group("date")
-        sensor_config = match.group("sensor_config")
-        run_type = match.group("type_of_run")
-        dataset = match.group("dataset")
-        mask_size = match.group("mask_size")
-        trial = match.group("trial_number")
+    try:
+        res = subprocess.run(cmd, capture_output=True, text=True, check=True)
+        summary = res.stdout
+    except subprocess.CalledProcessError as e:
+        return f"FAIL {out_name}: {e}"
 
-        # Map the run type from directory to file run type.
-        if sensor_config in sensor_mapping:
-            sensor_type_frame_file = sensor_mapping[sensor_config]
+    # Write main summary --------------------------------------------------
+    out_file.write_text(summary)
+
+    # ExecMean parsing ----------------------------------------------------
+    execmean = task.run_dir / "ExecMean.txt"
+    if execmean.exists():
+        text = execmean.read_text()
+        kfs  = re.search(r"KFs in map:\s*(\d+)", text)
+        mps  = re.search(r"MPs in map:\s*(\d+)", text)
+        ttrk = re.search(r"Total Tracking:\s*([\d.]+)\$\\pm\$([\d.]+)", text)
+        with out_file.open("a") as f:
+            if kfs and mps:
+                f.write("\nMap complexity\n")
+                f.write(f"KFs in map: {kfs.group(1)}\n")
+                f.write(f"MPs in map: {mps.group(1)}\n")
+            if ttrk:
+                f.write("\nTotal Tracking Analysis:\n")
+                f.write(f"Average Time: {ttrk.group(1)}\n")
+                f.write(f"Std Dev: {ttrk.group(2)}\n")
+
+    # ───────── Effective-FPS + dropped-frame analysis (nominal-FPS method) ─────────
+    tracking_stats = task.run_dir / "TrackingTimeStats.txt"
+    NOMINAL_FPS   = 20.0                      # <<< change if your camera rate differs
+
+    if tracking_stats.exists() and task.traj_file.exists():
+
+        # ---------- helper ---------------------------------------------------
+        def _parse_ns(ts_str: str):
+            """Return nanosecond timestamp (int) or None on failure."""
+            try:
+                return int(ts_str.split(".")[0])
+            except ValueError:
+                return None
+
+        # ---------- 1. last timestamp in f_*.txt -----------------------------
+        last_ts = None
+        with task.traj_file.open() as f_traj:
+            for line in f_traj:
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                ts = _parse_ns(line.split()[0])
+                if ts is not None:
+                    last_ts = ts                       # keep latest valid value
+
+        if last_ts is None:
+            print(f"[WARN] {task.traj_file} contained no numeric timestamps – skipping FPS calc")
         else:
-            # Uncomment below line if you want a warning
-            print(f"Warning: No mapping found for run type '{sensor_config}' in directory '{item}'. Skipping.")
-            continue
+            # ---------- 2. collect timestamps from TrackingTimeStats.txt -----
+            ts_all = []
+            with tracking_stats.open() as f_track:
+                for row in f_track:
+                    row = row.strip()
+                    if not row or row.startswith("#"):
+                        continue
+                    ts = _parse_ns(row.split(",")[0])
+                    if ts is not None:
+                        ts_all.append(ts)
 
-        # Construct the expected f_dataset file name
-        expected_filename = f"f_dataset-{dataset}_{sensor_type_frame_file}.txt"
-        file_path = os.path.join(dir_path, expected_filename)
+            if ts_all:
+                # frames inside the valid time window
+                frames_processed = sum(ts <= last_ts for ts in ts_all)
+                dropped_frames  = len(ts_all) - frames_processed
 
-        if not os.path.exists(file_path):
-            print(f"File not found: {file_path}. Skipping directory '{item}'.")
-            continue
+                if frames_processed:
+                    eff_fps = NOMINAL_FPS * frames_processed / (frames_processed + dropped_frames)
 
-        # Construct the ground truth file path based on the dataset.
-        ground_truth_file = os.path.join(orbslam3_evaluation_path, "Ground_truth", "EuRoC_left_cam", f"{dataset}_GT.txt")
-        analysis_script = os.path.join(orbslam3_evaluation_path, "evaluate_ate_scale.py")
+                    # ---------- 3. write results -----------------------------
+                    with out_file.open("a") as f:
+                        f.write("\nEffective FPS Analysis:\n")
+                        f.write(f"Frames processed: {frames_processed}\n")
+                        f.write(f"Dropped frames:   {dropped_frames}\n")
+                        f.write(f"Nominal FPS:      {NOMINAL_FPS:.2f}\n")
+                        f.write(f"Effective FPS:    {eff_fps:.2f}\n")
+                else:
+                    print(f"[WARN] No valid TrackingTimeStats rows ≤ {last_ts} for {task.run_dir}")
 
-        # Execute the analysis script using the f_dataset file.
-        cmd = ["python3", analysis_script, ground_truth_file, file_path, '--verbose']
-        print(f"Processing: {file_path}")
-        try:
-            print(f"Running command: {' '.join(cmd)}")
-            result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-            output = result.stdout
-        except subprocess.CalledProcessError as e:
-            print(f"Error processing {file_path}: {e}")
-            continue
-
-        # Write the output to the processed folder with the specified naming convention.
-        if(mask_size != "0"):
-            # we have a mask size to use
-            output_filename = f"{platform_path}_{dataset}_{run_type}_{sensor_type_frame_file}_{trial}_{mask_size}.txt"
-            output_filepath = os.path.join(processed_dir, output_filename)
-            with open(output_filepath, "w") as f_out:
-                f_out.write(output)
-            print(f"Output written to: {output_filepath}")
-
-        else:
-            # no mask size
-            output_filename = f"{platform_path}_{dataset}_{run_type}_{sensor_type_frame_file}_{trial}.txt"
-            output_filepath = os.path.join(processed_dir, output_filename)
-            with open(output_filepath, "w") as f_out:
-                f_out.write(output)
-            print(f"Output written to: {output_filepath}")
-
-        # Now, search for the ExecMean.txt file in the current directory (dir_path)
-        execmean_file = os.path.join(dir_path, "ExecMean.txt")
-        if os.path.exists(execmean_file):
-            with open(execmean_file, "r") as f_exec:
-                exec_content = f_exec.read()
-            # Extract KFs and MPs using regex
-            kfs_match = re.search(r'KFs in map:\s*(\d+)', exec_content)
-            mps_match = re.search(r'MPs in map:\s*(\d+)', exec_content)
-            if kfs_match and mps_match:
-                kfs_value = kfs_match.group(1)
-                mps_value = mps_match.group(1)
-                # Append the extracted lines to the output file
-                with open(output_filepath, "a") as f_out:
-                    f_out.write("\nMap complexity\n")
-                    f_out.write(f"KFs in map: {kfs_value}\n")
-                    f_out.write(f"MPs in map: {mps_value}\n")
-                print(f"Appended ExecMean info from {execmean_file} to {output_filepath}")
-            else:
-                print("Could not extract KFs and/or MPs from ExecMean.txt")
-
-            total_tracking_match = re.search(r'Total Tracking:\s*([\d.]+)\$\\pm\$([\d.]+)', exec_content)
-            if total_tracking_match:
-                total_tracking_avg = total_tracking_match.group(1)
-                total_tracking_std = total_tracking_match.group(2)
-                # Append the Total Tracking info to the output file
-                with open(output_filepath, "a") as f_out:
-                    f_out.write("\nTotal Tracking Analysis:\n")
-                    f_out.write(f"Average Time: {total_tracking_avg}\n")
-                    f_out.write(f"Std Dev: {total_tracking_std}\n")
-                print(f"Appended Total Tracking info from {execmean_file} to {output_filepath}")
-            else:
-                print("Could not extract Total Tracking info from ExecMean.txt")
-        else:
-            print(f"ExecMean.txt not found in directory: {dir_path}")
-
-         # Process cellManager.txt file for FOV Mask changes.
-        cell_manager_file = os.path.join(dir_path, "cellManager.txt")
-        if os.path.exists(cell_manager_file):
-
-            def read_cell_manager_file(filename):
-                """
-                Parse the cellManager file to extract frame timestamps and FOV Mask dimensions.
-                
-                The file is expected to contain blocks like:
-                
-                    Frame 1.403640123456e+09 finished in 62.8161 ms stats:
-                    ...
-                    FOV Mask: 22x22
-                
-                This function reads the entire file and uses a regex to capture all such blocks.
-                
-                Returns:
-                    tuple: Three lists containing timestamps, FOV mask widths, and FOV mask heights.
-                """
-                with open(filename, 'r') as f:
-                    content = f.read()
-                # Regex pattern captures:
-                #  - The timestamp (with high precision) after "Frame"
-                #  - And later the FOV Mask dimensions.
-                pattern = r'Frame\s+([\d\.eE\+\-]+)\s+finished\s+in\s+[\d\.]+\s+ms\s+stats:.*?FOV Mask:\s*(\d+)\s*x\s*(\d+)'
-                matches = re.findall(pattern, content, flags=re.DOTALL)
-                timestamps = []
-                fov_widths = []
-                fov_heights = []
-                for timestamp_str, width_str, height_str in matches:
+    # cellManager parsing -------------------------------------------------
+    cm = task.run_dir / "cellManager.txt"
+    if cm.exists():
+        cm_pat = r"Frame\s+([\d\.eE+\-]+).*?FOV Mask:\s*(\d+)\s*x\s*(\d+)"
+        matches = re.findall(cm_pat, cm.read_text(), flags=re.DOTALL)
+        if matches:
+            with out_file.open("a") as f:
+                f.write("\nFOV Mask Data from cellManager.txt:\n")
+                for ts_s, w, h in matches:
                     try:
-                        ts = float(Decimal(timestamp_str))
+                        ts = float(Decimal(ts_s))
                     except Exception:
-                        ts = float(timestamp_str)
-                    timestamps.append(ts)
-                    fov_widths.append(int(width_str))
-                    fov_heights.append(int(height_str))
-                return timestamps, fov_widths, fov_heights
+                        ts = float(ts_s)
+                    f.write(f"Time: {ts}, FOV Mask: {w}x{h}\n")
 
-            # Process cellManager.txt file for FOV Mask data.
-            cell_manager_file = os.path.join(dir_path, "cellManager.txt")
-            if os.path.exists(cell_manager_file):
-                try:
-                    timestamps, fov_widths, fov_heights = read_cell_manager_file(cell_manager_file)
-                    with open(output_filepath, "a") as f_out:
-                        f_out.write("\nFOV Mask Data from cellManager.txt:\n")
-                        for ts, width, height in zip(timestamps, fov_widths, fov_heights):
-                            f_out.write(f"Time: {ts}, FOV Mask: {width}x{height}\n")
-                    print(f"Appended cellManager FOV Mask data from {cell_manager_file} to {output_filepath}")
-                except Exception as e:
-                    print(f"Error processing {cell_manager_file}: {e}")
-            else:
-                print(f"cellManager.txt not found in directory: {dir_path}")
+    return f"OK   {out_name}"
+
+
+# ───────────────────────── entrypoint ────────────────────────────────────
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("evaluation_root",
+                    help="Path to ORB-SLAM3 evaluation repo (contains evaluate_ate_scale.py)")
+    ap.add_argument("--workers", "-j", type=int, default=cpu_count(),
+                    help="Number of parallel workers (default: all logical CPUs)")
+    args = ap.parse_args()
+
+    eval_root = Path(args.evaluation_root).expanduser().resolve()
+    tasks     = discover_tasks(eval_root)
+    if not tasks:
+        sys.exit("No runnable folders found.")
+
+    print(f"▶  {len(tasks)} run folders queued  •  {args.workers} workers\n")
+
+    # Pool.map is safe because each task is independent and writes its own file
+    with Pool(processes=args.workers) as pool:
+        for status in pool.imap_unordered(run_task, tasks):
+            print(status, flush=True)
+
 
 if __name__ == "__main__":
     main()
