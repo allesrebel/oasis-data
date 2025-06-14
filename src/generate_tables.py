@@ -1,319 +1,394 @@
 #!/usr/bin/env python3
-"""
-generate_tables.py  –  collect ATE logs, build summary plots *and*
-emit a professional-looking LaTeX table for the paper.
-
-Minimal changes relative to the previous version:
-• parse “Effective FPS Analysis” lines (frames, dropped, fps)
-• store them in the dataframe
-• aggregate {normal baseline vs oasis} and write table_results.tex
-"""
-# ─────────────────────────────────────────────────────────────────────────────
-import os, sys, re, math
-import numpy as np
+import os
+import sys
+import re
 import pandas as pd
 import matplotlib.pyplot as plt
 
-TOTAL_FRAMES = {
-    "MH01": 3682, "MH02": 3040, "MH03": 2700, "MH04": 2033, "MH05": 2273,
-    "V101": 2912, "V102": 1710, "V103": 2149,
-    "V201": 2280, "V202": 2348, "V203": 1922,
-}
-
-# ───────────────────────── helper extractors ────────────────────────────────
-def _scan_for(prefix, path, cast):
-    with open(path) as fh:
-        for ln in fh:
-            if ln.startswith(prefix):
-                try:   return cast(ln.split()[1])
-                except Exception:   return None
+def extract_max_error_value(file_path):
+    """
+    Reads through the file and returns the float value associated with 
+    'absolute_translational_error.max' if found.
+    """
+    with open(file_path, 'r') as f:
+        for line in f:
+            line = line.strip()
+            if line.startswith("absolute_translational_error.max"):
+                parts = line.split()
+                if len(parts) >= 2:
+                    try:
+                        return float(parts[1])
+                    except ValueError:
+                        return None
     return None
 
-def extract_max(path):   return _scan_for("absolute_translational_error.max",  path, float)
-def extract_mean(path):  return _scan_for("absolute_translational_error.mean", path, float)
+def extract_mean_error_value(file_path):
+    """
+    Reads through the file and returns the float value associated with 
+    'absolute_translational_error.mean' if found.
+    """
+    with open(file_path, 'r') as f:
+        for line in f:
+            line = line.strip()
+            if line.startswith("absolute_translational_error.mean"):
+                parts = line.split()
+                if len(parts) >= 2:
+                    try:
+                        return float(parts[1])
+                    except ValueError:
+                        return None
+    return None
 
-def extract_complexity(path):
-    return {"KFs in map": _scan_for("KFs in map:", path, int),
-            "MPs in map": _scan_for("MPs in map:", path, int)}
+def extract_map_complexity(file_path):
+    """
+    Reads through the file and extracts the map complexity information.
+    Returns a dictionary with keys 'KFs in map' and 'MPs in map'.
+    """
+    complexity = {"KFs in map": None, "MPs in map": None}
+    with open(file_path, 'r') as f:
+        for line in f:
+            line = line.strip()
+            if line.startswith("KFs in map:"):
+                parts = line.split(":")
+                if len(parts) >= 2:
+                    try:
+                        complexity["KFs in map"] = int(parts[1].strip())
+                    except ValueError:
+                        complexity["KFs in map"] = None
+            elif line.startswith("MPs in map:"):
+                parts = line.split(":")
+                if len(parts) >= 2:
+                    try:
+                        complexity["MPs in map"] = int(parts[1].strip())
+                    except ValueError:
+                        complexity["MPs in map"] = None
+    return complexity
 
-def extract_timing(path):
-    return {"Average Time": _scan_for("Average Time:", path, float),
-            "Std Dev":      _scan_for("Std Dev:",      path, float)}
+def extract_timing_info(file_path):
+    """
+    Reads through the file and extracts timing information.
+    Returns a dictionary with keys 'Average Time' and 'Std Dev'.
+    """
+    timing = {"Average Time": None, "Std Dev": None}
+    with open(file_path, 'r') as f:
+        for line in f:
+            line = line.strip()
+            if line.startswith("Average Time:"):
+                parts = line.split(":")
+                if len(parts) >= 2:
+                    try:
+                        timing["Average Time"] = float(parts[1].strip())
+                    except ValueError:
+                        timing["Average Time"] = None
+            elif line.startswith("Std Dev:"):
+                parts = line.split(":")
+                if len(parts) >= 2:
+                    try:
+                        timing["Std Dev"] = float(parts[1].strip())
+                    except ValueError:
+                        timing["Std Dev"] = None
+    return timing
 
-def extract_fov_mask(path):
-    """Return list of (timestamp, w, h) tuples."""
-    with open(path) as f: text = f.read()
-    m = re.search(r'FOV Mask Data from cellManager\.txt:\s*\n(.*)', text, re.DOTALL)
-    if not m: return []
-    out = []
-    for ln in m.group(1).splitlines():
-        mm = re.match(r'Time:\s*([\d.eE\+\-]+),\s*FOV Mask:\s*(\d+)x(\d+)', ln)
-        if mm:
-            try:    ts = float(mm.group(1))
-            except: ts = None
-            out.append((ts, int(mm.group(2)), int(mm.group(3))))
-    return out
+def extract_fov_mask_data(file_path):
+    """
+    Reads through the processed file and extracts the cellManager FOV Mask Data.
+    Expects a block in the file starting with:
+      FOV Mask Data from cellManager.txt:
+    followed by lines like:
+      Time: <timestamp>, FOV Mask: <width>x<height>
+    
+    Returns:
+        list of tuples: Each tuple is (timestamp, fov_width, fov_height).
+    """
+    fov_data = []
+    with open(file_path, 'r') as f:
+        content = f.read()
+    # Look for the FOV Mask Data block.
+    match = re.search(r'FOV Mask Data from cellManager\.txt:\s*\n(.*)', content, flags=re.DOTALL)
+    if match:
+        data_block = match.group(1)
+        lines = data_block.splitlines()
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue
+            m = re.match(r'Time:\s*([\d\.eE\+\-]+),\s*FOV Mask:\s*(\d+)x(\d+)', line)
+            if m:
+                try:
+                    ts = float(m.group(1))
+                except Exception:
+                    ts = None
+                width = int(m.group(2))
+                height = int(m.group(3))
+                fov_data.append((ts, width, height))
+    return fov_data
 
-
-# ─────────── NEW: canonical frame counts ────────────────────────────────────
-TOTAL_FRAMES = {
-    "MH01": 3682, "MH02": 3040, "MH03": 2700, "MH04": 2033, "MH05": 2273,
-    "V101": 2912, "V102": 1710, "V103": 2149,
-    "V201": 2280, "V202": 2348, "V203": 1922,
-}
-
-def extract_fps_block(path):
-    """Parse the optional 'Effective FPS Analysis' block."""
-    frames = drops = fps = None
-    with open(path) as fh:
-        for ln in fh:
-            ln = ln.strip()
-            if ln.startswith("Frames processed:"):
-                try: frames = int(ln.split(":")[1].strip())
-                except Exception: pass
-            elif ln.startswith("Dropped frames:"):
-                try: drops = int(ln.split(":")[1].strip())
-                except Exception: pass
-            elif ln.startswith("Effective FPS:"):
-                try: fps = float(ln.split(":")[1].strip())
-                except Exception: pass
-    return frames, drops, fps
-
-# ─────────────────────────── filename regexes ───────────────────────────────
-primary = re.compile(  # legacy style (has sensor_type)
-    r'^(?P<platform>[^_]+)_(?P<dataset>[^_]+)_(?P<run_type>.+?)_'
-    r'(?P<sensor_type>[^_]+_[^_]+)_(?P<trial>\d+)(?:_(?P<mask_size>\d+))?'
-    r'\.(?:txt|log|out)$')
-
-fallback = re.compile( # new style (no sensor_type)
-    r'^(?P<platform>[^_]+)_(?P<dataset>[^_]+)_(?P<run_type>.+?)_'
-    r'(?P<trial>\d+)(?:_(?P<mask_size>\d+))?'
-    r'\.(?:txt|log|out)$')
-
-DEFAULT_SENSOR = "stereo_imu"
-# ─────────────────────────────────────────────────────────────────────────────
-def bold(val, cond):
-    """Wrap val in \\textbf{} if cond is True."""
-    return f"\\textbf{{{val}}}" if cond else val
-
-# ───────────────────────── LaTeX generation (UPDATED) ───────────────────────
-def produce_latex(df: pd.DataFrame, df_fov: pd.DataFrame,
-                  baseline_tag="deadlines", oasis_tag="oasis",
-                  out_file="table_results.tex") -> None:
-
-    datasets = sorted(set(df["dataset"]))
-    rows_tex, agg = [], {k: [] for k in (
-        "bl_drop", "bl_drop_pct", "fps", "mask_mean", "mask_std",
-        "ate_rt", "ate_oa", "amax_rt", "amax_oa", "imp_mean", "imp_max")}
-
-    for d in datasets:
-        base  = df[(df["dataset"] == d) & (df["run_type"] == baseline_tag)]
-        oasis = df[(df["dataset"] == d) & (df["run_type"] == oasis_tag)]
-        if base.empty or oasis.empty:
-            continue
-
-        total_frames = TOTAL_FRAMES.get(d)
-        if total_frames is None:
-            # Fallback to what we can infer if dataset not in lookup
-            print(f'Falling Back! {d} not found')
-            total_frames = base["frames_processed"].sum() + base["dropped_frames"].sum()
-
-        frames_rt = base["frames_processed"].mean()
-        frames_oa = oasis["frames_processed"].mean()
-
-        drops_rt = base["dropped_frames"].mean()
-        drops_oa = oasis["dropped_frames"].mean()
-        drop_pct_rt = 100 * drops_rt / total_frames
-        drop_pct_oa = 100 * drops_oa / total_frames
-
-        fps_rt = base["effective_fps"].mean()
-
-        ate_mean_rt = base["absolute_translational_error.mean"].mean()
-        ate_mean_oa = oasis["absolute_translational_error.mean"].mean()
-        ate_max_rt  = base["absolute_translational_error.max"].mean()
-        ate_max_oa  = oasis["absolute_translational_error.max"].mean()
-
-        imp_mean = (1 - ate_mean_oa / ate_mean_rt) * 100
-        imp_max  = (1 - ate_max_oa  / ate_max_rt) * 100
-
-        fov = df_fov[(df_fov["dataset"] == d) & (df_fov["run_type"] == oasis_tag)]
-        m_mean, m_std = fov["fov_width"].mean(), fov["fov_width"].std()
-        mask = "--" if np.isnan(m_mean) else f"${m_mean:.2f} \\pm {m_std:.2f}$"
-
-        row_tex = (
-            f"{d} & {total_frames} & "
-            f"{drops_rt} ({drop_pct_rt:.2f}\\%) & {fps_rt:.2f} & "
-            f"{mask} & {bold(f'{drops_oa} ({drop_pct_oa:.2f}\\%)', drops_oa < drops_rt)} & "
-            f"{bold(f'{ate_mean_rt:.5f}', ate_mean_rt < ate_mean_oa)} & "
-            f"{bold(f'{ate_mean_oa:.5f}', ate_mean_oa < ate_mean_rt)} & "
-            f"{bold(f'{ate_max_rt:.5f}', ate_max_rt < ate_max_oa)} & "
-            f"{bold(f'{ate_max_oa:.5f}', ate_max_oa < ate_max_rt)} & "
-            f"{bold(f'{imp_mean:.1f}\\%', True)} & {bold(f'{imp_max:.1f}\\%', True)} \\\\"
-        )
-        rows_tex.append(row_tex)
-
-        agg["bl_drop"].append(drops_rt)
-        agg["bl_drop_pct"].append(drop_pct_rt)
-        agg["fps"].append(fps_rt)
-        if not np.isnan(m_mean):
-            agg["mask_mean"].append(m_mean)
-            agg["mask_std"].append(m_std)
-        agg["ate_rt"].append(ate_mean_rt)
-        agg["ate_oa"].append(ate_mean_oa)
-        agg["amax_rt"].append(ate_max_rt)
-        agg["amax_oa"].append(ate_max_oa)
-        agg["imp_mean"].append(imp_mean)
-        agg["imp_max"].append(imp_max)
-
-    def avg(x): return float(np.mean(x)) if x else float('nan')
-    avg_row = (
-        f"\\textbf{{Average}} & -- & "
-        f"{avg(agg['bl_drop']):.1f} ({avg(agg['bl_drop_pct']):.1f}\\%) & "
-        f"{avg(agg['fps']):.2f} & "
-        f"${avg(agg['mask_mean']):.2f} \\pm {avg(agg['mask_std']):.2f}$\" & "
-        f"\\textbf{{0 (0.00\\%)}} & "
-        f"{avg(agg['ate_rt']):.5f} & "
-        f"\\textbf{{{avg(agg['ate_oa']):.5f}}} & "
-        f"{avg(agg['amax_rt']):.5f} & "
-        f"\\textbf{{{avg(agg['amax_oa']):.5f}}} & "
-        f"\\textbf{{{avg(agg['imp_mean']):.1f}\\%}} & "
-        f"\\textbf{{{avg(agg['imp_max']):.1f}\\%}} \\\\"
-    )
-
-    header = r"""\begin{table}[htbp]
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{l|c|cc|cc|cc|cc|cc}
-\hline
-\multirow{2}{*}{\textbf{Dataset}} &
-\multicolumn{3}{c|}{\textbf{Realtime Baseline}} &
-\multicolumn{2}{c|}{\textbf{OASIS}} &
-\multicolumn{2}{c|}{\textbf{Mean ATE (m)}} &
-\multicolumn{2}{c|}{\textbf{Max ATE (m)}} &
-\multicolumn{2}{c}{\textbf{Improvement (\%)}} \\
-\cline{2-12}
- & \textbf{Frames} & \textbf{Dropped (\%)} & \textbf{FPS} &
- \textbf{Mask (Mean ± Std)} & \textbf{Dropped (\%)} &
- \textbf{Realtime} & \textbf{OASIS} &
- \textbf{Realtime} & \textbf{OASIS} &
- \textbf{Mean ATE} & \textbf{Max ATE} \\
-\hline
-"""
-    footer = r"""\hline
-\end{tabular}}
-\caption{Comparison of Realtime Baseline (deadlines) and OASIS on EuRoC MAV datasets. Canonical frame counts are used to compute dropped-frame percentages; bold values denote better performance.}
-\label{tab:super_table_results}
-\end{table}
-"""
-    tex = header + "\n".join(rows_tex) + "\n\\hline\n" + avg_row + "\n\\hline\n" + footer
-    with open(out_file, "w") as fh: 
-        fh.write(tex)
-        print(f"LaTeX table written to {out_file}")
-
-# ─────────────────────────────────────────────────────────────────────────────
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python3 generate_tables.py <log_dir>  [save] [show]")
+        print("Usage: python3 script.py <processed data path> [save]")
         sys.exit(1)
 
-    log_dir, save_plots = sys.argv[1], len(sys.argv) > 2 and sys.argv[2].lower()=="save"
-    show_plots = len(sys.argv) > 3 and sys.argv[3].lower()=="show"
-    rows, rows_fov = [], []
+    processing_dir = sys.argv[1]
+    # Check for the optional "save" flag.
+    save_plots = False
+    if len(sys.argv) > 2 and sys.argv[2].lower() == "save":
+        save_plots = True
 
-    for fname in os.listdir(log_dir):
-        path = os.path.join(log_dir, fname)
-        m = primary.match(fname) or fallback.match(fname)
-        if not m:
+    # Regex to match file names of the form:
+    # {platform}_{dataset}_{run_type}_{sensor_type}_{trial}_{mask_size}.txt
+    pattern = re.compile(
+        r'^(?P<platform>[^_]+)_'
+        r'(?P<dataset>[^_]+)_'
+        r'(?P<run_type>.+?)(?=_[^_]+_[^_]+_\d+(?:_\d+)?\.txt)_'
+        r'(?P<sensor_type>[^_]+_[^_]+)_'
+        r'(?P<trial>\d+)(?:_(?P<mask_size>\d+))?\.txt$'
+    )
+
+    data = []
+    data_fov = []  # Will hold cellManager FOV Mask data.
+    for file in os.listdir(processing_dir):
+        match = pattern.match(file)
+        if not match:
+            print(f"Skipping file not matching pattern: {file}")
             continue
-        g = m.groupdict()
-        ## 
-        # Use this to filter out and generate a table you want!
-        # Filter out the data we don't want to consider for this table
-        if g["platform"].lower() != "jetson":           # keep Jetson only
-            continue
-        if g["run_type"] not in {"deadlines", "oasis"}: # keep wanted configs
-            continue
-        g["sensor_type"] = g.get("sensor_type") or DEFAULT_SENSOR
-
-        max_e = extract_max(path)
-        mean_e= extract_mean(path)
-        if max_e is None:
+        
+        groups = match.groupdict()
+        file_path = os.path.join(processing_dir, file)
+        max_error_value = extract_max_error_value(file_path)
+        mean_error_value = extract_mean_error_value(file_path)
+        
+        if max_error_value is None:
+            print(f"Error value not found or invalid in file: {file}")
             continue
 
-        print(f"✔ using {fname}")                       # ← NEW diagnostics line
+        map_complexity = extract_map_complexity(file_path)
+        timing_info = extract_timing_info(file_path)
 
-        comp = extract_complexity(path)
-        time = extract_timing(path)
-        frames, drops, fps = extract_fps_block(path)
+        row = {
+            "platform": groups["platform"],
+            "dataset": groups["dataset"],
+            "run_type": groups["run_type"],
+            "sensor_type": groups["sensor_type"],
+            "mask_size": groups.get("mask_size", None),
+            "absolute_translational_error.max": max_error_value,
+            "absolute_translational_error.mean": mean_error_value,
+            "KFs in map": map_complexity["KFs in map"],
+            "MPs in map": map_complexity["MPs in map"],
+            "Average Time": timing_info["Average Time"],
+            "Std Dev": timing_info["Std Dev"]
+        }
+        data.append(row)
 
-        rows.append({
-            "platform":g["platform"], "dataset":g["dataset"], "run_type":g["run_type"],
-            "sensor_type":g["sensor_type"], "trial":g["trial"],
-            "mask_size":g.get("mask_size"),
-            "absolute_translational_error.max":max_e,
-            "absolute_translational_error.mean":mean_e,
-            "KFs in map":comp["KFs in map"], "MPs in map":comp["MPs in map"],
-            "Average Time":time["Average Time"], "Std Dev":time["Std Dev"],
-            "frames_processed":frames, "dropped_frames":drops, "effective_fps":fps
-        })
+        # Extract cellManager FOV Mask Data (if any)
+        fov_list = extract_fov_mask_data(file_path)
+        for fov in fov_list:
+            ts, width, height = fov
+            row_fov = {
+                "platform": groups["platform"],
+                "dataset": groups["dataset"],
+                "run_type": groups["run_type"],
+                "sensor_type": groups["sensor_type"],
+                "trial": groups["trial"],
+                "mask_size": groups.get("mask_size", None),
+                "cellmanager_timestamp": ts,
+                "fov_width": width,
+                "fov_height": height
+            }
+            data_fov.append(row_fov)
+    
+    df = pd.DataFrame(data)
+    df_fov = pd.DataFrame(data_fov)
 
-        for ts,w,h in extract_fov_mask(path):
-            rows_fov.append({**{k:g[k] for k in ["platform","dataset","run_type",
-                                                 "sensor_type","trial","mask_size"]},
-                             "cellmanager_timestamp":ts,"fov_width":w,"fov_height":h})
+    fixed_platform = "jetson"
+    fixed_sensor_type = "stereo_imu"
+    fixed_run_type = ["normal", "deadlines", "oasis"]
+    valid_datasets = {"MH01", "MH02", "MH03", "MH04", "MH05"}
 
-    df, df_fov = pd.DataFrame(rows), pd.DataFrame(rows_fov)
+    df_f = df[df["platform"] == fixed_platform]
+    df_f = df_f[df_f["sensor_type"] == fixed_sensor_type]
+    df_f = df_f[df_f["dataset"].isin(valid_datasets)]
+
+    for fixed_run in fixed_run_type:
+        print(f"Table for {fixed_platform}, {fixed_run}, for {fixed_sensor_type}")
+        df_f_run = df_f[df_f["run_type"] == fixed_run]
+        grouped_max = df_f_run.groupby("dataset")["absolute_translational_error.max"].mean().reset_index()
+        grouped_mean = df_f_run.groupby("dataset")["absolute_translational_error.mean"].mean().reset_index()
+
+        for _, row in grouped_max.iterrows():
+            print(f"Dataset: {row['dataset']}, Average absolute_translational_error.max: {row['absolute_translational_error.max']}")
+        for _, row in grouped_mean.iterrows():
+            print(f"Dataset: {row['dataset']}, Average absolute_translational_error.mean: {row['absolute_translational_error.mean']}")
+
+    print("Unique mask_size values:", df_f["mask_size"].unique())
+
+    df_mask = df_f[df_f["mask_size"].notnull()].copy()
+
+    # Plot ATE Error Mean and Max vs Mask Size for each dataset.
+    for dataset in valid_datasets:
+        df_dataset = df_mask[df_mask["dataset"] == dataset].copy()
+        if df_dataset.empty:
+            print(f"No data points with mask_size available for dataset {dataset} plotting.")
+            continue
+        df_dataset.loc[:, "mask_size"] = df_dataset["mask_size"].astype(int)
+        
+        # Plot ATE Error Mean vs Mask Size.
+        plt.figure()
+        plt.scatter(df_dataset["mask_size"], df_dataset["absolute_translational_error.mean"], label="Raw Data")
+        group_stats = df_dataset.groupby("mask_size")["absolute_translational_error.mean"].agg(["mean", "std"]).reset_index()
+        plt.errorbar(group_stats["mask_size"], group_stats["mean"], yerr=group_stats["std"], fmt='-o', color='red', label="Mean ± STD")
+        plt.xlabel("Mask Size (cells^2)")
+        plt.ylabel("ATE Error Mean (m)")
+        plt.title(f"ATE Error Mean vs Mask Size for {dataset}")
+        plt.legend()
+        plt.grid(True)
+        if save_plots:
+            filename = f"{dataset}_ate_error_mean_vs_mask_size.png"
+            plt.savefig(filename)
+            plt.close()
+            print(f"Saved plot to {filename}")
+        else:
+            plt.show()
+
+        print(f"\nLaTeX Table for ATE Error Mean vs Mask Size for {dataset}:")
+        print(group_stats.to_latex(index=False, float_format="%.3f"))
+
+        # Plot ATE Error Max vs Mask Size.
+        plt.figure()
+        plt.scatter(df_dataset["mask_size"], df_dataset["absolute_translational_error.max"])
+        group_stats_max = df_dataset.groupby("mask_size")["absolute_translational_error.max"].agg(["mean", "std"]).reset_index()
+        plt.errorbar(group_stats_max["mask_size"], group_stats_max["mean"], yerr=group_stats_max["std"], fmt='-o', color='red', label="Mean ± STD")
+        plt.xlabel("Mask Size (cells^2)")
+        plt.ylabel("ATE Error Max (m)")
+        plt.title(f"Max ATE Error vs Mask Size for {dataset}")
+        plt.legend()
+        plt.grid(True)
+        if save_plots:
+            filename = f"{dataset}_ate_error_max_vs_mask_size.png"
+            plt.savefig(filename)
+            plt.close()
+            print(f"Saved plot to {filename}")
+        else:
+            plt.show()
+
+        print(f"\nLaTeX Table for Max ATE Error vs Mask Size for {dataset}:")
+        print(group_stats_max.to_latex(index=False, float_format="%.3f"))
+
+    # Plot Timing vs Mask Size for each dataset.
+    for dataset in valid_datasets:
+        df_dataset = df_mask[df_mask["dataset"] == dataset].copy()
+        if df_dataset.empty:
+            print(f"No timing data available for dataset {dataset} plotting.")
+            continue
+        df_dataset.loc[:, "mask_size"] = df_dataset["mask_size"].astype(int)
+        
+        plt.figure()
+        plt.scatter(df_dataset["mask_size"], df_dataset["Average Time"], label="Raw Timing Data")
+        group_stats_time = df_dataset.groupby("mask_size")["Average Time"].agg(["mean", "std"]).reset_index()
+        plt.errorbar(group_stats_time["mask_size"], group_stats_time["mean"], yerr=group_stats_time["std"], fmt='-o', color='red', label="Mean ± STD")
+        plt.xlabel("Mask Size (cells^2)")
+        plt.ylabel("Average Time")
+        plt.title(f"Average Timing vs Mask Size for {dataset}")
+        plt.grid(True)
+        plt.legend()
+        if save_plots:
+            filename = f"{dataset}_timing_vs_mask_size.png"
+            plt.savefig(filename)
+            plt.close()
+            print(f"Saved plot to {filename}")
+        else:
+            plt.show()
+
+        print(f"\nLaTeX Table for Average Timing vs Mask Size for {dataset}:")
+        print(group_stats_time.to_latex(index=False, float_format="%.3f"))
+
+    # Plot Map Complexity vs Mask Size for each dataset.
+    for dataset in valid_datasets:
+        df_dataset = df_mask[df_mask["dataset"] == dataset].copy()
+        if df_dataset.empty:
+            print(f"No map complexity data available for dataset {dataset} plotting.")
+            continue
+        df_dataset.loc[:, "mask_size"] = df_dataset["mask_size"].astype(int)
+        
+        # Plot KFs in map vs Mask Size.
+        plt.figure()
+        plt.scatter(df_dataset["mask_size"], df_dataset["KFs in map"], label="Raw KFs Data")
+        group_stats_kf = df_dataset.groupby("mask_size")["KFs in map"].agg(["mean", "std"]).reset_index()
+        plt.errorbar(group_stats_kf["mask_size"], group_stats_kf["mean"], yerr=group_stats_kf["std"], fmt='-o', color='red', label="Mean ± STD")
+        plt.xlabel("Mask Size (cells^2)")
+        plt.ylabel("KFs in Map")
+        plt.title(f"KFs in Map vs Mask Size for {dataset}")
+        plt.grid(True)
+        plt.legend()
+        if save_plots:
+            filename = f"{dataset}_kfs_in_map_vs_mask_size.png"
+            plt.savefig(filename)
+            plt.close()
+            print(f"Saved plot to {filename}")
+        else:
+            plt.show()
+
+        print(f"\nLaTeX Table for KFs in Map vs Mask Size for {dataset}:")
+        print(group_stats_kf.to_latex(index=False, float_format="%.3f"))
+        
+        # Plot MPs in map vs Mask Size.
+        plt.figure()
+        plt.scatter(df_dataset["mask_size"], df_dataset["MPs in map"], label="Raw MPs Data")
+        group_stats_mps = df_dataset.groupby("mask_size")["MPs in map"].agg(["mean", "std"]).reset_index()
+        plt.errorbar(group_stats_mps["mask_size"], group_stats_mps["mean"], yerr=group_stats_mps["std"], fmt='-o', color='red', label="Mean ± STD")
+        plt.xlabel("Mask Size (cells^2)")
+        plt.ylabel("MPs in Map")
+        plt.title(f"MPs in Map vs Mask Size for {dataset}")
+        plt.grid(True)
+        plt.legend()
+        if save_plots:
+            filename = f"{dataset}_mps_in_map_vs_mask_size.png"
+            plt.savefig(filename)
+            plt.close()
+            print(f"Saved plot to {filename}")
+        else:
+            plt.show()
+
+        print(f"\nLaTeX Table for MPs in Map vs Mask Size for {dataset}:")
+        print(group_stats_mps.to_latex(index=False, float_format="%.3f"))
 
     if not df_fov.empty:
-        # --- iterate over all datasets that actually appear in the frame ---
-        for dataset, df_dataset in df_fov.groupby("dataset", sort=True):
-            if df_dataset.empty:        # shouldn’t occur, but keeps the old guard
+        # Plot only one mask dimension (fov_width) for each dataset.
+        for dataset in valid_datasets:
+            df_dataset = df_fov[df_fov["dataset"] == dataset]
+            if df_dataset.empty:
                 print(f"No FOV Mask data available for dataset {dataset}.")
                 continue
-
-            out_csv = f"{df_fov['platform'][0]}_{dataset}_fov_mask_width.csv"
-
-            # 1. Order rows by timestamp so indices increase chronologically
-            df_tmp = (
-                df_dataset
-                .sort_values("cellmanager_timestamp", kind="mergesort")  # stable sort
-                .reset_index(drop=True)
+            
+            # Calculate average and std for fov_width.
+            avg_fov_width = df_dataset["fov_width"].mean()
+            std_fov_width = df_dataset["fov_width"].std()
+            
+            # Create a LaTeX table with the calculated values.
+            latex_table = (
+                "\\begin{tabular}{ll}\n"
+                f"Dataset & {dataset} \\\\\n"
+                f"Average FOV Width & {avg_fov_width:.3f} \\\\\n"
+                f"Std Dev & {std_fov_width:.3f} \\\\\n"
+                "\\end{tabular}"
             )
-
-            # 2. Build a mapping:  timestamp  →  dense index (0,1,2,…)
-            unique_ts = df_tmp["cellmanager_timestamp"].drop_duplicates()
-            ts_to_idx = {ts: idx for idx, ts in enumerate(unique_ts)}
-
-            # 3. Apply mapping to create the new column
-            df_tmp.insert(0, "frame_index", df_tmp["cellmanager_timestamp"].map(ts_to_idx))
-
-            # 4. Rename + export the three columns pgfplots needs
-            (df_tmp
-                .rename(columns={"cellmanager_timestamp": "timestamp"})
-                .loc[:, ["frame_index", "timestamp", "fov_width"]]
-                .to_csv(out_csv, index=False, float_format="%.6f")
-            )
-
-            print(f"Saved CSV to {out_csv}")
-
-            out_csv_stats = f"{df_fov['platform'][0]}_{dataset}_fov_mask_width_stats.csv"
-
-            # statistics for the cell manager
-            df_stats = (
-                df_tmp
-                .groupby("frame_index")                       # collapse duplicates
-                .agg(timestamp=("frame_index", "first"),        # identical within group
-                    fov_mean =("fov_width", "mean"),
-                    fov_std  =("fov_width", "std"))
-                .reset_index(drop=True)                       # throw away frame_index
-                .loc[:, ["timestamp", "fov_mean", "fov_std"]] # keep just these three
-            )
-            df_stats.to_csv(out_csv_stats, index=False, float_format="%3.3f")
-            print(f"Saved stats CSV to {out_csv_stats}")
-
-    # ───────── produce LaTeX table ─────────────────────────────────────────
-    if not df.empty:
-        produce_latex(df, df_fov)
+            print(f"\nLaTeX Table for FOV Width for {dataset}:")
+            print(latex_table)
+            
+            # Plot fov_width over time.
+            plt.figure()
+            plt.plot(df_dataset["cellmanager_timestamp"], df_dataset["fov_width"], 'o-', label="FOV Width")
+            plt.xlabel("Timestamp")
+            plt.ylabel("FOV Mask Width (cells)")
+            plt.title(f"FOV Mask Width over Time for {dataset}")
+            plt.legend()
+            plt.grid(True)
+            if save_plots:
+                filename = f"{dataset}_fov_mask_width.png"
+                plt.savefig(filename)
+                plt.close()
+                print(f"Saved plot to {filename}")
+            else:
+                plt.show()
 
 if __name__ == "__main__":
     main()
