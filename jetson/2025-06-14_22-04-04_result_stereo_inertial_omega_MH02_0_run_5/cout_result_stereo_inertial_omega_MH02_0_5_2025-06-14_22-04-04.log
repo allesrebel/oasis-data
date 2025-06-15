@@ -1,0 +1,1717 @@
+num_seq = 1
+file name: dataset-MH02_stereo_imu
+Loading images for sequence 0...LOADED!
+Loading IMU for sequence 0...LOADED!
+
+-------
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Built with REGISTER_TIMES
+Git Commit Hash: 48ed9a3
+
+Build Type: Release
+
+Compiled with C++ version: 201703
+
+Input sensor was set to: Stereo-Inertial
+Loading settings from ./Examples/Stereo-Inertial/EuRoC_omega.yaml
+	-Loaded camera 1
+	-Loaded camera 2
+	-Loaded image info
+	-Loaded IMU calibration
+	-Loaded ORB settings
+	-Loaded viewer settings
+	-Loaded Atlas settings
+omegaSLAM enabled!
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 458.65399169921875 457.29598999023438 367.21499633789062 248.375 ]
+	-Camera 1 distortion parameters: [  -0.28340810537338257 0.073959067463874817 0.00019359000725671649 1.7618711353861727e-05 ]
+	-Camera 2 parameters (Pinhole: [ 457.58700561523438 456.13400268554688 379.99899291992188 255.23800659179688 ]
+	-Camera 1 distortion parameters: [  -0.2836836576461792 0.074512839317321777 -0.00010473000293131918 -3.555907096597366e-05 ]
+	-Original image size: [ 752 , 480 ]
+	-Current image size: [ 752 , 480 ]
+	-Camera 1 parameters after rectification: [  456.71499633789062 456.71499633789062 364.52615356445312 257.268798828125 ]
+	-Sequence FPS: 20
+	-Stereo baseline: 0.11007784307003021
+	-Stereo depth threshold : 60
+	-Gyro noise: 0.00016999999934341758
+	-Accelerometer noise: 0.0020000000949949026
+	-Gyro walk: 1.9392999092815444e-05
+	-Accelerometer walk: 0.0030000000260770321
+	-IMU frequency: 200
+	-Features per image: 1200
+	-ORB scale factor: 1.2000000476837158
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+SLAM Started at System Time: 1749938650.84814
+not IMU meas
+not IMU meas
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+not enough acceleration
+First KF:0; Map init KF:0
+New Map created with 191 points
+Active map: 0
+Omega SLAM Dropping frame 1403636859.1516664
+Omega SLAM Dropping frame 1403636859.2016666
+Omega SLAM Dropping frame 1403636859.2516665
+Omega SLAM Dropping frame 1403636859.4516664
+Omega SLAM Dropping frame 1403636859.5016665
+Omega SLAM Dropping frame 1403636859.5516665
+Omega SLAM Dropping frame 1403636859.9516664
+Omega SLAM Dropping frame 1403636860.0016665
+Omega SLAM Dropping frame 1403636860.0516665
+Omega SLAM Dropping frame 1403636860.2016666
+Omega SLAM Dropping frame 1403636860.2516665
+Omega SLAM Dropping frame 1403636860.3016665
+Omega SLAM Dropping frame 1403636860.7516665
+Omega SLAM Dropping frame 1403636860.8016665
+Omega SLAM Dropping frame 1403636860.8516665
+Omega SLAM Dropping frame 1403636861.0016665
+Omega SLAM Dropping frame 1403636861.0516665
+Omega SLAM Dropping frame 1403636861.1016665
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 8
+mnInitialFrameId = 0
+25 Frames set to lost
+not IMU meas
+not enough acceleration
+First KF:8; Map init KF:0
+New Map created with 537 points
+Active map: 0
+Omega SLAM Dropping frame 1403636861.5516665
+Omega SLAM Dropping frame 1403636861.6016665
+Omega SLAM Dropping frame 1403636861.6516664
+Omega SLAM Dropping frame 1403636862.2516665
+Omega SLAM Dropping frame 1403636862.3016665
+Omega SLAM Dropping frame 1403636862.3516665
+Omega SLAM Dropping frame 1403636862.5016665
+Omega SLAM Dropping frame 1403636862.5516665
+Omega SLAM Dropping frame 1403636862.6016665
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 35
+mnInitialFrameId = 32
+44 Frames set to lost
+not IMU meas
+First KF:12; Map init KF:8
+New Map created with 495 points
+Active map: 0
+Omega SLAM Dropping frame 1403636862.8516665
+Omega SLAM Dropping frame 1403636862.9016666
+Omega SLAM Dropping frame 1403636862.9516664
+Omega SLAM Dropping frame 1403636863.2516665
+Omega SLAM Dropping frame 1403636863.3016665
+Omega SLAM Dropping frame 1403636863.3516665
+Omega SLAM Dropping frame 1403636863.5016665
+Omega SLAM Dropping frame 1403636863.5516665
+Omega SLAM Dropping frame 1403636863.6016665
+Fail to track local map!
+IMU is not or recently initialized. Reseting active map...
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 55
+mnInitialFrameId = 53
+54 Frames set to lost
+not IMU meas
+First KF:15; Map init KF:12
+New Map created with 297 points
+Active map: 0
+Omega SLAM Dropping frame 1403636863.9516664
+Omega SLAM Dropping frame 1403636864.0016665
+Omega SLAM Dropping frame 1403636864.0516665
+Omega SLAM Dropping frame 1403636864.3016665
+Omega SLAM Dropping frame 1403636864.3516665
+Omega SLAM Dropping frame 1403636864.4016666
+Omega SLAM Dropping frame 1403636864.8516665
+Omega SLAM Dropping frame 1403636864.9016666
+Omega SLAM Dropping frame 1403636864.9516664
+Omega SLAM Dropping frame 1403636865.4016666
+Omega SLAM Dropping frame 1403636865.4516664
+Omega SLAM Dropping frame 1403636865.5016665
+Omega SLAM Dropping frame 1403636865.7016666
+Omega SLAM Dropping frame 1403636865.7516665
+Omega SLAM Dropping frame 1403636865.8016665
+Omega SLAM Dropping frame 1403636866.3016665
+Omega SLAM Dropping frame 1403636866.3516665
+Omega SLAM Dropping frame 1403636866.4016666
+Omega SLAM Dropping frame 1403636867.2016666
+Omega SLAM Dropping frame 1403636867.2516665
+Omega SLAM Dropping frame 1403636867.3016665
+Omega SLAM Dropping frame 1403636867.4516664
+Omega SLAM Dropping frame 1403636867.5016665
+Omega SLAM Dropping frame 1403636867.5516665
+Omega SLAM Dropping frame 1403636868.0516665
+Omega SLAM Dropping frame 1403636868.1016665
+Omega SLAM Dropping frame 1403636868.1516664
+Omega SLAM Dropping frame 1403636868.3016665
+Omega SLAM Dropping frame 1403636868.3516665
+Omega SLAM Dropping frame 1403636868.4016666
+Omega SLAM Dropping frame 1403636868.7016666
+Omega SLAM Dropping frame 1403636868.7516665
+Omega SLAM Dropping frame 1403636868.8016665
+Omega SLAM Dropping frame 1403636868.9516664
+Omega SLAM Dropping frame 1403636869.0016665
+Omega SLAM Dropping frame 1403636869.0516665
+Omega SLAM Dropping frame 1403636869.2016666
+Omega SLAM Dropping frame 1403636869.2516665
+Omega SLAM Dropping frame 1403636869.3016665
+Omega SLAM Dropping frame 1403636869.4016666
+Omega SLAM Dropping frame 1403636869.4516664
+Omega SLAM Dropping frame 1403636869.5016665
+Omega SLAM Dropping frame 1403636869.6016665
+Omega SLAM Dropping frame 1403636869.6516664
+Omega SLAM Dropping frame 1403636869.7016666
+Omega SLAM Dropping frame 1403636869.8516665
+Omega SLAM Dropping frame 1403636869.9016666
+Omega SLAM Dropping frame 1403636869.9516664
+Omega SLAM Dropping frame 1403636870.1016665
+Omega SLAM Dropping frame 1403636870.1516664
+start VIBA 1
+end VIBA 1
+Omega SLAM Dropping frame 1403636870.3516665
+Omega SLAM Dropping frame 1403636870.4016666
+Omega SLAM Dropping frame 1403636870.4516664
+Omega SLAM Dropping frame 1403636870.7516665
+Omega SLAM Dropping frame 1403636870.8016665
+Omega SLAM Dropping frame 1403636870.8516665
+Omega SLAM Dropping frame 1403636871.0016665
+Omega SLAM Dropping frame 1403636871.0516665
+Omega SLAM Dropping frame 1403636871.1016665
+Omega SLAM Dropping frame 1403636871.3016665
+Omega SLAM Dropping frame 1403636871.3516665
+Omega SLAM Dropping frame 1403636871.4016666
+Omega SLAM Dropping frame 1403636871.5516665
+Omega SLAM Dropping frame 1403636871.6016665
+Omega SLAM Dropping frame 1403636871.6516664
+Omega SLAM Dropping frame 1403636871.8516665
+Omega SLAM Dropping frame 1403636871.9016666
+Omega SLAM Dropping frame 1403636871.9516664
+Omega SLAM Dropping frame 1403636872.2016666
+Omega SLAM Dropping frame 1403636872.2516665
+Omega SLAM Dropping frame 1403636872.3016665
+Omega SLAM Dropping frame 1403636872.5016665
+Omega SLAM Dropping frame 1403636872.5516665
+Omega SLAM Dropping frame 1403636872.6016665
+Omega SLAM Dropping frame 1403636872.7516665
+Omega SLAM Dropping frame 1403636872.8016665
+Omega SLAM Dropping frame 1403636872.8516665
+Omega SLAM Dropping frame 1403636873.0016665
+Omega SLAM Dropping frame 1403636873.0516665
+Omega SLAM Dropping frame 1403636873.1016665
+Omega SLAM Dropping frame 1403636873.2516665
+Omega SLAM Dropping frame 1403636873.3016665
+Omega SLAM Dropping frame 1403636873.3516665
+Omega SLAM Dropping frame 1403636873.5016665
+Omega SLAM Dropping frame 1403636873.5516665
+Omega SLAM Dropping frame 1403636873.6016665
+Omega SLAM Dropping frame 1403636873.7516665
+Omega SLAM Dropping frame 1403636873.8016665
+Omega SLAM Dropping frame 1403636873.8516665
+Omega SLAM Dropping frame 1403636874.0016665
+Omega SLAM Dropping frame 1403636874.0516665
+Omega SLAM Dropping frame 1403636874.1016665
+Omega SLAM Dropping frame 1403636874.2016666
+Omega SLAM Dropping frame 1403636874.2516665
+Omega SLAM Dropping frame 1403636874.3016665
+Omega SLAM Dropping frame 1403636874.4516664
+Omega SLAM Dropping frame 1403636874.5016665
+Omega SLAM Dropping frame 1403636874.5516665
+Omega SLAM Dropping frame 1403636874.7016666
+Omega SLAM Dropping frame 1403636874.7516665
+Omega SLAM Dropping frame 1403636874.8016665
+Omega SLAM Dropping frame 1403636875.0016665
+Omega SLAM Dropping frame 1403636875.0516665
+Omega SLAM Dropping frame 1403636875.1016665
+Omega SLAM Dropping frame 1403636878.9516664
+Omega SLAM Dropping frame 1403636879.0016665
+Omega SLAM Dropping frame 1403636879.0516665
+Omega SLAM Dropping frame 1403636879.1516664
+Omega SLAM Dropping frame 1403636879.2016666
+Omega SLAM Dropping frame 1403636879.2516665
+start VIBA 2
+Omega SLAM Dropping frame 1403636880.1516664
+end VIBA 2
+Omega SLAM Dropping frame 1403636880.2016666
+Omega SLAM Dropping frame 1403636880.2516665
+Omega SLAM Dropping frame 1403636880.8516665
+Omega SLAM Dropping frame 1403636880.9016666
+Omega SLAM Dropping frame 1403636880.9516664
+Omega SLAM Dropping frame 1403636881.8016665
+Omega SLAM Dropping frame 1403636881.8516665
+Omega SLAM Dropping frame 1403636881.9016666
+Omega SLAM Dropping frame 1403636882.3516665
+Omega SLAM Dropping frame 1403636882.4016666
+Omega SLAM Dropping frame 1403636882.4516664
+Omega SLAM Dropping frame 1403636883.4016666
+Omega SLAM Dropping frame 1403636883.4516664
+Omega SLAM Dropping frame 1403636883.5016665
+Omega SLAM Dropping frame 1403636883.7516665
+Omega SLAM Dropping frame 1403636883.8016665
+Omega SLAM Dropping frame 1403636883.8516665
+Omega SLAM Dropping frame 1403636884.0016665
+Omega SLAM Dropping frame 1403636884.0516665
+Omega SLAM Dropping frame 1403636884.1016665
+Omega SLAM Dropping frame 1403636884.2516665
+Omega SLAM Dropping frame 1403636884.3016665
+Omega SLAM Dropping frame 1403636884.3516665
+Omega SLAM Dropping frame 1403636884.5016665
+Omega SLAM Dropping frame 1403636884.5516665
+Omega SLAM Dropping frame 1403636884.6016665
+Omega SLAM Dropping frame 1403636884.7016666
+Omega SLAM Dropping frame 1403636884.7516665
+Omega SLAM Dropping frame 1403636884.8016665
+Omega SLAM Dropping frame 1403636884.9016666
+Omega SLAM Dropping frame 1403636884.9516664
+Omega SLAM Dropping frame 1403636885.0016665
+Omega SLAM Dropping frame 1403636885.1016665
+Omega SLAM Dropping frame 1403636885.1516664
+Omega SLAM Dropping frame 1403636885.2016666
+Omega SLAM Dropping frame 1403636885.3016665
+Omega SLAM Dropping frame 1403636885.3516665
+Omega SLAM Dropping frame 1403636885.4016666
+Omega SLAM Dropping frame 1403636885.5016665
+Omega SLAM Dropping frame 1403636885.5516665
+Omega SLAM Dropping frame 1403636885.6016665
+Omega SLAM Dropping frame 1403636885.7016666
+Omega SLAM Dropping frame 1403636885.7516665
+Omega SLAM Dropping frame 1403636885.8016665
+Omega SLAM Dropping frame 1403636885.9016666
+Omega SLAM Dropping frame 1403636885.9516664
+Omega SLAM Dropping frame 1403636886.0016665
+Omega SLAM Dropping frame 1403636886.1016665
+Omega SLAM Dropping frame 1403636886.1516664
+Omega SLAM Dropping frame 1403636886.2016666
+Omega SLAM Dropping frame 1403636886.3016665
+Omega SLAM Dropping frame 1403636886.3516665
+Omega SLAM Dropping frame 1403636886.4016666
+Omega SLAM Dropping frame 1403636886.5016665
+Omega SLAM Dropping frame 1403636886.5516665
+Omega SLAM Dropping frame 1403636886.6016665
+Omega SLAM Dropping frame 1403636886.7016666
+Omega SLAM Dropping frame 1403636886.7516665
+Omega SLAM Dropping frame 1403636886.8016665
+Omega SLAM Dropping frame 1403636886.9016666
+Omega SLAM Dropping frame 1403636886.9516664
+Omega SLAM Dropping frame 1403636887.0016665
+Omega SLAM Dropping frame 1403636887.1016665
+Omega SLAM Dropping frame 1403636887.1516664
+Omega SLAM Dropping frame 1403636887.2016666
+Omega SLAM Dropping frame 1403636887.3016665
+Omega SLAM Dropping frame 1403636887.3516665
+Omega SLAM Dropping frame 1403636887.4016666
+Omega SLAM Dropping frame 1403636887.5016665
+Omega SLAM Dropping frame 1403636887.5516665
+Omega SLAM Dropping frame 1403636887.6016665
+Omega SLAM Dropping frame 1403636887.7016666
+Omega SLAM Dropping frame 1403636887.7516665
+Omega SLAM Dropping frame 1403636887.8016665
+Omega SLAM Dropping frame 1403636887.9016666
+Omega SLAM Dropping frame 1403636887.9516664
+Omega SLAM Dropping frame 1403636888.0016665
+Omega SLAM Dropping frame 1403636888.1016665
+Omega SLAM Dropping frame 1403636888.1516664
+Omega SLAM Dropping frame 1403636888.2016666
+Omega SLAM Dropping frame 1403636888.3016665
+Omega SLAM Dropping frame 1403636888.3516665
+Omega SLAM Dropping frame 1403636888.4016666
+Omega SLAM Dropping frame 1403636888.5016665
+Omega SLAM Dropping frame 1403636888.5516665
+Omega SLAM Dropping frame 1403636888.6016665
+Omega SLAM Dropping frame 1403636888.7016666
+Omega SLAM Dropping frame 1403636888.7516665
+Omega SLAM Dropping frame 1403636888.8016665
+Omega SLAM Dropping frame 1403636888.9016666
+Omega SLAM Dropping frame 1403636888.9516664
+Omega SLAM Dropping frame 1403636889.0016665
+Omega SLAM Dropping frame 1403636889.1016665
+Omega SLAM Dropping frame 1403636889.1516664
+Omega SLAM Dropping frame 1403636889.2016666
+Omega SLAM Dropping frame 1403636889.3016665
+Omega SLAM Dropping frame 1403636889.3516665
+Omega SLAM Dropping frame 1403636889.4016666
+Omega SLAM Dropping frame 1403636889.5016665
+Omega SLAM Dropping frame 1403636889.5516665
+Omega SLAM Dropping frame 1403636889.6016665
+Omega SLAM Dropping frame 1403636889.7016666
+Omega SLAM Dropping frame 1403636889.7516665
+Omega SLAM Dropping frame 1403636889.8016665
+Omega SLAM Dropping frame 1403636889.9016666
+Omega SLAM Dropping frame 1403636889.9516664
+Omega SLAM Dropping frame 1403636890.0016665
+Omega SLAM Dropping frame 1403636890.1016665
+Omega SLAM Dropping frame 1403636890.1516664
+Omega SLAM Dropping frame 1403636890.2016666
+Omega SLAM Dropping frame 1403636890.3016665
+Omega SLAM Dropping frame 1403636890.3516665
+Omega SLAM Dropping frame 1403636890.4016666
+Omega SLAM Dropping frame 1403636890.5016665
+Omega SLAM Dropping frame 1403636890.5516665
+Omega SLAM Dropping frame 1403636890.6016665
+Omega SLAM Dropping frame 1403636890.7016666
+Omega SLAM Dropping frame 1403636890.7516665
+Omega SLAM Dropping frame 1403636890.8016665
+Omega SLAM Dropping frame 1403636890.9016666
+Omega SLAM Dropping frame 1403636890.9516664
+Omega SLAM Dropping frame 1403636891.0016665
+Omega SLAM Dropping frame 1403636891.1016665
+Omega SLAM Dropping frame 1403636891.1516664
+Omega SLAM Dropping frame 1403636891.2016666
+Omega SLAM Dropping frame 1403636891.3016665
+Omega SLAM Dropping frame 1403636891.3516665
+Omega SLAM Dropping frame 1403636891.4016666
+Omega SLAM Dropping frame 1403636891.5016665
+Omega SLAM Dropping frame 1403636891.5516665
+Omega SLAM Dropping frame 1403636891.6016665
+Omega SLAM Dropping frame 1403636891.7016666
+Omega SLAM Dropping frame 1403636891.7516665
+Omega SLAM Dropping frame 1403636891.8016665
+Omega SLAM Dropping frame 1403636891.9016666
+Omega SLAM Dropping frame 1403636891.9516664
+Omega SLAM Dropping frame 1403636892.0016665
+Omega SLAM Dropping frame 1403636892.1016665
+Omega SLAM Dropping frame 1403636892.1516664
+Omega SLAM Dropping frame 1403636892.2016666
+Omega SLAM Dropping frame 1403636892.3016665
+Omega SLAM Dropping frame 1403636892.3516665
+Omega SLAM Dropping frame 1403636892.4016666
+Omega SLAM Dropping frame 1403636892.5016665
+Omega SLAM Dropping frame 1403636892.5516665
+Omega SLAM Dropping frame 1403636892.6016665
+Omega SLAM Dropping frame 1403636892.7016666
+Omega SLAM Dropping frame 1403636892.7516665
+Omega SLAM Dropping frame 1403636892.8016665
+Omega SLAM Dropping frame 1403636892.9016666
+Omega SLAM Dropping frame 1403636892.9516664
+Omega SLAM Dropping frame 1403636893.0016665
+Omega SLAM Dropping frame 1403636893.1016665
+Omega SLAM Dropping frame 1403636893.1516664
+Omega SLAM Dropping frame 1403636893.2016666
+Omega SLAM Dropping frame 1403636893.3016665
+Omega SLAM Dropping frame 1403636893.3516665
+Omega SLAM Dropping frame 1403636893.4016666
+Omega SLAM Dropping frame 1403636893.5016665
+Omega SLAM Dropping frame 1403636893.5516665
+Omega SLAM Dropping frame 1403636893.6016665
+Omega SLAM Dropping frame 1403636893.7016666
+Omega SLAM Dropping frame 1403636893.7516665
+Omega SLAM Dropping frame 1403636893.8016665
+Omega SLAM Dropping frame 1403636893.9016666
+Omega SLAM Dropping frame 1403636893.9516664
+Omega SLAM Dropping frame 1403636894.0016665
+Omega SLAM Dropping frame 1403636894.1016665
+Omega SLAM Dropping frame 1403636894.1516664
+Omega SLAM Dropping frame 1403636894.2016666
+Omega SLAM Dropping frame 1403636894.3016665
+Omega SLAM Dropping frame 1403636894.3516665
+Omega SLAM Dropping frame 1403636894.4016666
+Omega SLAM Dropping frame 1403636894.5016665
+Omega SLAM Dropping frame 1403636894.5516665
+Omega SLAM Dropping frame 1403636894.6016665
+Omega SLAM Dropping frame 1403636894.7016666
+Omega SLAM Dropping frame 1403636894.7516665
+Omega SLAM Dropping frame 1403636894.8016665
+Omega SLAM Dropping frame 1403636894.9016666
+Omega SLAM Dropping frame 1403636894.9516664
+Omega SLAM Dropping frame 1403636895.0016665
+Omega SLAM Dropping frame 1403636895.1016665
+Omega SLAM Dropping frame 1403636895.1516664
+Omega SLAM Dropping frame 1403636895.2016666
+Omega SLAM Dropping frame 1403636895.3016665
+Omega SLAM Dropping frame 1403636895.3516665
+Omega SLAM Dropping frame 1403636895.4016666
+Omega SLAM Dropping frame 1403636895.5016665
+Omega SLAM Dropping frame 1403636895.5516665
+Omega SLAM Dropping frame 1403636895.6016665
+Omega SLAM Dropping frame 1403636895.7016666
+Omega SLAM Dropping frame 1403636895.7516665
+Omega SLAM Dropping frame 1403636895.8016665
+Omega SLAM Dropping frame 1403636895.9016666
+Omega SLAM Dropping frame 1403636895.9516664
+Omega SLAM Dropping frame 1403636896.0016665
+Omega SLAM Dropping frame 1403636896.1016665
+Omega SLAM Dropping frame 1403636896.1516664
+Omega SLAM Dropping frame 1403636896.2016666
+Omega SLAM Dropping frame 1403636896.3016665
+Omega SLAM Dropping frame 1403636896.3516665
+Omega SLAM Dropping frame 1403636896.4016666
+Omega SLAM Dropping frame 1403636896.5016665
+Omega SLAM Dropping frame 1403636896.5516665
+Omega SLAM Dropping frame 1403636896.6016665
+Omega SLAM Dropping frame 1403636896.7016666
+Omega SLAM Dropping frame 1403636896.7516665
+Omega SLAM Dropping frame 1403636896.8016665
+Omega SLAM Dropping frame 1403636896.9016666
+Omega SLAM Dropping frame 1403636896.9516664
+Omega SLAM Dropping frame 1403636897.0016665
+Omega SLAM Dropping frame 1403636897.1016665
+Omega SLAM Dropping frame 1403636897.1516664
+Omega SLAM Dropping frame 1403636897.2016666
+Omega SLAM Dropping frame 1403636897.3516665
+Omega SLAM Dropping frame 1403636897.4016666
+Omega SLAM Dropping frame 1403636897.4516664
+Omega SLAM Dropping frame 1403636897.9516664
+Omega SLAM Dropping frame 1403636898.0016665
+Omega SLAM Dropping frame 1403636898.0516665
+Omega SLAM Dropping frame 1403636898.2016666
+Omega SLAM Dropping frame 1403636898.2516665
+Omega SLAM Dropping frame 1403636898.3016665
+Omega SLAM Dropping frame 1403636898.4516664
+Omega SLAM Dropping frame 1403636898.5016665
+Omega SLAM Dropping frame 1403636898.5516665
+Omega SLAM Dropping frame 1403636898.7016666
+Omega SLAM Dropping frame 1403636898.7516665
+Omega SLAM Dropping frame 1403636898.8016665
+Omega SLAM Dropping frame 1403636898.9516664
+Omega SLAM Dropping frame 1403636899.0016665
+Omega SLAM Dropping frame 1403636899.0516665
+Omega SLAM Dropping frame 1403636899.8516665
+Omega SLAM Dropping frame 1403636899.9016666
+Omega SLAM Dropping frame 1403636899.9516664
+Omega SLAM Dropping frame 1403636900.1016665
+Omega SLAM Dropping frame 1403636900.1516664
+Omega SLAM Dropping frame 1403636900.2016666
+Omega SLAM Dropping frame 1403636900.3516665
+Omega SLAM Dropping frame 1403636900.4016666
+Omega SLAM Dropping frame 1403636900.4516664
+Omega SLAM Dropping frame 1403636900.6016665
+Omega SLAM Dropping frame 1403636900.6516664
+Omega SLAM Dropping frame 1403636900.7016666
+Omega SLAM Dropping frame 1403636900.8516665
+Omega SLAM Dropping frame 1403636900.9016666
+Omega SLAM Dropping frame 1403636900.9516664
+Omega SLAM Dropping frame 1403636901.1016665
+Omega SLAM Dropping frame 1403636901.1516664
+Omega SLAM Dropping frame 1403636901.2016666
+Omega SLAM Dropping frame 1403636901.3016665
+Omega SLAM Dropping frame 1403636901.3516665
+Omega SLAM Dropping frame 1403636901.4016666
+Omega SLAM Dropping frame 1403636901.5516665
+Omega SLAM Dropping frame 1403636901.6016665
+Omega SLAM Dropping frame 1403636901.6516664
+Omega SLAM Dropping frame 1403636901.8016665
+Omega SLAM Dropping frame 1403636901.8516665
+Omega SLAM Dropping frame 1403636901.9016666
+Omega SLAM Dropping frame 1403636902.0016665
+Omega SLAM Dropping frame 1403636902.0516665
+Omega SLAM Dropping frame 1403636902.1016665
+Omega SLAM Dropping frame 1403636902.2016666
+Omega SLAM Dropping frame 1403636902.2516665
+Omega SLAM Dropping frame 1403636902.3016665
+Omega SLAM Dropping frame 1403636902.4016666
+Omega SLAM Dropping frame 1403636902.4516664
+Omega SLAM Dropping frame 1403636902.5016665
+Omega SLAM Dropping frame 1403636902.6516664
+Omega SLAM Dropping frame 1403636902.7016666
+Omega SLAM Dropping frame 1403636902.7516665
+Omega SLAM Dropping frame 1403636902.9016666
+Omega SLAM Dropping frame 1403636902.9516664
+Omega SLAM Dropping frame 1403636903.0016665
+Omega SLAM Dropping frame 1403636903.1016665
+Omega SLAM Dropping frame 1403636903.1516664
+Omega SLAM Dropping frame 1403636903.2016666
+Omega SLAM Dropping frame 1403636903.3516665
+Omega SLAM Dropping frame 1403636903.4016666
+Omega SLAM Dropping frame 1403636903.4516664
+Omega SLAM Dropping frame 1403636903.6016665
+Omega SLAM Dropping frame 1403636903.6516664
+Omega SLAM Dropping frame 1403636903.7016666
+Omega SLAM Dropping frame 1403636903.8516665
+Omega SLAM Dropping frame 1403636903.9016666
+Omega SLAM Dropping frame 1403636903.9516664
+Omega SLAM Dropping frame 1403636904.1016665
+Omega SLAM Dropping frame 1403636904.1516664
+Omega SLAM Dropping frame 1403636904.2016666
+Omega SLAM Dropping frame 1403636904.3016665
+Omega SLAM Dropping frame 1403636904.3516665
+Omega SLAM Dropping frame 1403636904.4016666
+Omega SLAM Dropping frame 1403636904.5516665
+Omega SLAM Dropping frame 1403636904.6016665
+Omega SLAM Dropping frame 1403636904.6516664
+Omega SLAM Dropping frame 1403636904.8016665
+Omega SLAM Dropping frame 1403636904.8516665
+Omega SLAM Dropping frame 1403636904.9016666
+Omega SLAM Dropping frame 1403636905.0516665
+Omega SLAM Dropping frame 1403636905.1016665
+Omega SLAM Dropping frame 1403636905.1516664
+Omega SLAM Dropping frame 1403636905.3016665
+Omega SLAM Dropping frame 1403636905.3516665
+Omega SLAM Dropping frame 1403636905.4016666
+Omega SLAM Dropping frame 1403636905.5516665
+Omega SLAM Dropping frame 1403636905.6016665
+Omega SLAM Dropping frame 1403636905.6516664
+Omega SLAM Dropping frame 1403636905.8016665
+Omega SLAM Dropping frame 1403636905.8516665
+Omega SLAM Dropping frame 1403636905.9016666
+Omega SLAM Dropping frame 1403636906.0516665
+Omega SLAM Dropping frame 1403636906.1016665
+Omega SLAM Dropping frame 1403636906.1516664
+Omega SLAM Dropping frame 1403636906.2516665
+Omega SLAM Dropping frame 1403636906.3016665
+Omega SLAM Dropping frame 1403636906.3516665
+Omega SLAM Dropping frame 1403636906.6516664
+Omega SLAM Dropping frame 1403636906.7016666
+Omega SLAM Dropping frame 1403636906.7516665
+Omega SLAM Dropping frame 1403636906.9016666
+Omega SLAM Dropping frame 1403636906.9516664
+Omega SLAM Dropping frame 1403636907.0016665
+Omega SLAM Dropping frame 1403636907.1516664
+Omega SLAM Dropping frame 1403636907.2016666
+Omega SLAM Dropping frame 1403636907.2516665
+Omega SLAM Dropping frame 1403636907.4016666
+Omega SLAM Dropping frame 1403636907.4516664
+Omega SLAM Dropping frame 1403636907.5016665
+Omega SLAM Dropping frame 1403636907.6516664
+Omega SLAM Dropping frame 1403636907.7016666
+Omega SLAM Dropping frame 1403636907.7516665
+Omega SLAM Dropping frame 1403636907.9016666
+Omega SLAM Dropping frame 1403636907.9516664
+Omega SLAM Dropping frame 1403636908.0016665
+Omega SLAM Dropping frame 1403636908.1516664
+Omega SLAM Dropping frame 1403636908.2016666
+Omega SLAM Dropping frame 1403636908.2516665
+Omega SLAM Dropping frame 1403636908.4016666
+Omega SLAM Dropping frame 1403636908.4516664
+Omega SLAM Dropping frame 1403636908.5016665
+Omega SLAM Dropping frame 1403636908.6016665
+Omega SLAM Dropping frame 1403636908.6516664
+Omega SLAM Dropping frame 1403636908.7016666
+Omega SLAM Dropping frame 1403636908.8516665
+Omega SLAM Dropping frame 1403636908.9016666
+Omega SLAM Dropping frame 1403636908.9516664
+Omega SLAM Dropping frame 1403636909.1016665
+Omega SLAM Dropping frame 1403636909.1516664
+Omega SLAM Dropping frame 1403636909.2016666
+Omega SLAM Dropping frame 1403636909.3016665
+Omega SLAM Dropping frame 1403636909.3516665
+Omega SLAM Dropping frame 1403636909.4016666
+Omega SLAM Dropping frame 1403636909.5516665
+Omega SLAM Dropping frame 1403636909.6016665
+Omega SLAM Dropping frame 1403636909.6516664
+Omega SLAM Dropping frame 1403636909.8016665
+Omega SLAM Dropping frame 1403636909.8516665
+Omega SLAM Dropping frame 1403636909.9016666
+Omega SLAM Dropping frame 1403636910.1016665
+Omega SLAM Dropping frame 1403636910.1516664
+Omega SLAM Dropping frame 1403636910.2016666
+Omega SLAM Dropping frame 1403636910.3516665
+Omega SLAM Dropping frame 1403636910.4016666
+Omega SLAM Dropping frame 1403636910.4516664
+Omega SLAM Dropping frame 1403636910.6016665
+Omega SLAM Dropping frame 1403636910.6516664
+Omega SLAM Dropping frame 1403636910.7016666
+Omega SLAM Dropping frame 1403636910.8016665
+Omega SLAM Dropping frame 1403636910.8516665
+Omega SLAM Dropping frame 1403636910.9016666
+Omega SLAM Dropping frame 1403636911.1516664
+Omega SLAM Dropping frame 1403636911.2016666
+Omega SLAM Dropping frame 1403636911.2516665
+Omega SLAM Dropping frame 1403636911.4016666
+Omega SLAM Dropping frame 1403636911.4516664
+Omega SLAM Dropping frame 1403636911.5016665
+Omega SLAM Dropping frame 1403636911.6016665
+Omega SLAM Dropping frame 1403636911.6516664
+Omega SLAM Dropping frame 1403636911.7016666
+Omega SLAM Dropping frame 1403636911.8016665
+Omega SLAM Dropping frame 1403636911.8516665
+Omega SLAM Dropping frame 1403636911.9016666
+Omega SLAM Dropping frame 1403636912.0516665
+Omega SLAM Dropping frame 1403636912.1016665
+Omega SLAM Dropping frame 1403636912.1516664
+Omega SLAM Dropping frame 1403636912.3016665
+Omega SLAM Dropping frame 1403636912.3516665
+Omega SLAM Dropping frame 1403636912.4016666
+Omega SLAM Dropping frame 1403636912.5016665
+Omega SLAM Dropping frame 1403636912.5516665
+Omega SLAM Dropping frame 1403636912.6016665
+Omega SLAM Dropping frame 1403636912.7516665
+Omega SLAM Dropping frame 1403636912.8016665
+Omega SLAM Dropping frame 1403636912.8516665
+Omega SLAM Dropping frame 1403636912.9516664
+Omega SLAM Dropping frame 1403636913.0016665
+Omega SLAM Dropping frame 1403636913.0516665
+Omega SLAM Dropping frame 1403636913.2016666
+Omega SLAM Dropping frame 1403636913.2516665
+Omega SLAM Dropping frame 1403636913.3016665
+Omega SLAM Dropping frame 1403636913.4016666
+Omega SLAM Dropping frame 1403636913.4516664
+Omega SLAM Dropping frame 1403636913.5016665
+Omega SLAM Dropping frame 1403636913.6516664
+Omega SLAM Dropping frame 1403636913.7016666
+Omega SLAM Dropping frame 1403636913.7516665
+Omega SLAM Dropping frame 1403636913.8516665
+Omega SLAM Dropping frame 1403636913.9016666
+Omega SLAM Dropping frame 1403636913.9516664
+Omega SLAM Dropping frame 1403636914.0516665
+Omega SLAM Dropping frame 1403636914.1016665
+Omega SLAM Dropping frame 1403636914.1516664
+Omega SLAM Dropping frame 1403636914.3016665
+Omega SLAM Dropping frame 1403636914.3516665
+Omega SLAM Dropping frame 1403636914.4016666
+Omega SLAM Dropping frame 1403636914.5516665
+Omega SLAM Dropping frame 1403636914.6016665
+Omega SLAM Dropping frame 1403636914.6516664
+Omega SLAM Dropping frame 1403636914.7516665
+Omega SLAM Dropping frame 1403636914.8016665
+Omega SLAM Dropping frame 1403636914.8516665
+Omega SLAM Dropping frame 1403636914.9516664
+Omega SLAM Dropping frame 1403636915.0016665
+Omega SLAM Dropping frame 1403636915.0516665
+Omega SLAM Dropping frame 1403636915.2016666
+Omega SLAM Dropping frame 1403636915.2516665
+Omega SLAM Dropping frame 1403636915.3016665
+Omega SLAM Dropping frame 1403636915.4516664
+Omega SLAM Dropping frame 1403636915.5016665
+Omega SLAM Dropping frame 1403636915.5516665
+Omega SLAM Dropping frame 1403636915.8016665
+Omega SLAM Dropping frame 1403636915.8516665
+Omega SLAM Dropping frame 1403636915.9016666
+Omega SLAM Dropping frame 1403636916.0016665
+Omega SLAM Dropping frame 1403636916.0516665
+Omega SLAM Dropping frame 1403636916.1016665
+Omega SLAM Dropping frame 1403636916.2516665
+Omega SLAM Dropping frame 1403636916.3016665
+Omega SLAM Dropping frame 1403636916.3516665
+Omega SLAM Dropping frame 1403636916.4516664
+Omega SLAM Dropping frame 1403636916.5016665
+Omega SLAM Dropping frame 1403636916.5516665
+Omega SLAM Dropping frame 1403636916.9016666
+Omega SLAM Dropping frame 1403636916.9516664
+Omega SLAM Dropping frame 1403636917.0016665
+Omega SLAM Dropping frame 1403636917.1516664
+Omega SLAM Dropping frame 1403636917.2016666
+Omega SLAM Dropping frame 1403636917.2516665
+Omega SLAM Dropping frame 1403636917.8516665
+Omega SLAM Dropping frame 1403636917.9016666
+Omega SLAM Dropping frame 1403636917.9516664
+Omega SLAM Dropping frame 1403636918.1016665
+Omega SLAM Dropping frame 1403636918.1516664
+Omega SLAM Dropping frame 1403636918.2016666
+Omega SLAM Dropping frame 1403636918.3516665
+Omega SLAM Dropping frame 1403636918.4016666
+Omega SLAM Dropping frame 1403636918.4516664
+Omega SLAM Dropping frame 1403636918.6016665
+Omega SLAM Dropping frame 1403636918.6516664
+Omega SLAM Dropping frame 1403636918.7016666
+Omega SLAM Dropping frame 1403636919.1516664
+Omega SLAM Dropping frame 1403636919.2016666
+Omega SLAM Dropping frame 1403636919.2516665
+Omega SLAM Dropping frame 1403636919.4016666
+Omega SLAM Dropping frame 1403636919.4516664
+Omega SLAM Dropping frame 1403636919.5016665
+Omega SLAM Dropping frame 1403636919.7016666
+Omega SLAM Dropping frame 1403636919.7516665
+Omega SLAM Dropping frame 1403636919.8016665
+Omega SLAM Dropping frame 1403636919.9016666
+Omega SLAM Dropping frame 1403636919.9516664
+Omega SLAM Dropping frame 1403636920.0016665
+Omega SLAM Dropping frame 1403636920.1516664
+Omega SLAM Dropping frame 1403636920.2016666
+Omega SLAM Dropping frame 1403636920.2516665
+Omega SLAM Dropping frame 1403636920.3516665
+Omega SLAM Dropping frame 1403636920.4016666
+Omega SLAM Dropping frame 1403636920.4516664
+Omega SLAM Dropping frame 1403636920.6016665
+Omega SLAM Dropping frame 1403636920.6516664
+Omega SLAM Dropping frame 1403636920.7016666
+Omega SLAM Dropping frame 1403636920.8516665
+Omega SLAM Dropping frame 1403636920.9016666
+Omega SLAM Dropping frame 1403636920.9516664
+Omega SLAM Dropping frame 1403636921.0516665
+Omega SLAM Dropping frame 1403636921.1016665
+Omega SLAM Dropping frame 1403636921.1516664
+Omega SLAM Dropping frame 1403636921.2516665
+Omega SLAM Dropping frame 1403636921.3016665
+Omega SLAM Dropping frame 1403636921.3516665
+Omega SLAM Dropping frame 1403636921.5016665
+Omega SLAM Dropping frame 1403636921.5516665
+Omega SLAM Dropping frame 1403636921.6016665
+Omega SLAM Dropping frame 1403636921.9016666
+Omega SLAM Dropping frame 1403636921.9516664
+Omega SLAM Dropping frame 1403636922.0016665
+Omega SLAM Dropping frame 1403636922.2016666
+Omega SLAM Dropping frame 1403636922.2516665
+Omega SLAM Dropping frame 1403636922.3016665
+Omega SLAM Dropping frame 1403636922.4516664
+Omega SLAM Dropping frame 1403636922.5016665
+Omega SLAM Dropping frame 1403636922.5516665
+Omega SLAM Dropping frame 1403636923.1016665
+Omega SLAM Dropping frame 1403636923.1516664
+Omega SLAM Dropping frame 1403636923.2016666
+Omega SLAM Dropping frame 1403636923.7016666
+Omega SLAM Dropping frame 1403636923.7516665
+Omega SLAM Dropping frame 1403636923.8016665
+Omega SLAM Dropping frame 1403636923.9516664
+Omega SLAM Dropping frame 1403636924.0016665
+Omega SLAM Dropping frame 1403636924.0516665
+Omega SLAM Dropping frame 1403636924.1516664
+Omega SLAM Dropping frame 1403636924.2016666
+Omega SLAM Dropping frame 1403636924.2516665
+Omega SLAM Dropping frame 1403636924.4016666
+Omega SLAM Dropping frame 1403636924.4516664
+Omega SLAM Dropping frame 1403636924.5016665
+Omega SLAM Dropping frame 1403636924.7516665
+Omega SLAM Dropping frame 1403636924.8016665
+Omega SLAM Dropping frame 1403636924.8516665
+Omega SLAM Dropping frame 1403636925.0016665
+Omega SLAM Dropping frame 1403636925.0516665
+Omega SLAM Dropping frame 1403636925.1016665
+Omega SLAM Dropping frame 1403636925.7016666
+Omega SLAM Dropping frame 1403636925.7516665
+Omega SLAM Dropping frame 1403636925.8016665
+Omega SLAM Dropping frame 1403636925.9016666
+Omega SLAM Dropping frame 1403636925.9516664
+Omega SLAM Dropping frame 1403636926.0016665
+Omega SLAM Dropping frame 1403636926.3516665
+Omega SLAM Dropping frame 1403636926.4016666
+Omega SLAM Dropping frame 1403636926.4516664
+Omega SLAM Dropping frame 1403636926.6016665
+Omega SLAM Dropping frame 1403636926.6516664
+Omega SLAM Dropping frame 1403636926.7016666
+Omega SLAM Dropping frame 1403636926.8516665
+Omega SLAM Dropping frame 1403636926.9016666
+Omega SLAM Dropping frame 1403636926.9516664
+Omega SLAM Dropping frame 1403636927.7516665
+Omega SLAM Dropping frame 1403636927.8016665
+Omega SLAM Dropping frame 1403636927.8516665
+Omega SLAM Dropping frame 1403636928.0016665
+Omega SLAM Dropping frame 1403636928.0516665
+Omega SLAM Dropping frame 1403636928.1016665
+Omega SLAM Dropping frame 1403636928.4516664
+Omega SLAM Dropping frame 1403636928.5016665
+Omega SLAM Dropping frame 1403636928.5516665
+Omega SLAM Dropping frame 1403636928.7016666
+Omega SLAM Dropping frame 1403636928.7516665
+Omega SLAM Dropping frame 1403636928.8016665
+Omega SLAM Dropping frame 1403636928.9516664
+Omega SLAM Dropping frame 1403636929.0016665
+Omega SLAM Dropping frame 1403636929.0516665
+Omega SLAM Dropping frame 1403636929.2516665
+Omega SLAM Dropping frame 1403636929.3016665
+Omega SLAM Dropping frame 1403636929.3516665
+Omega SLAM Dropping frame 1403636929.5016665
+Omega SLAM Dropping frame 1403636929.5516665
+Omega SLAM Dropping frame 1403636929.6016665
+Omega SLAM Dropping frame 1403636929.7516665
+Omega SLAM Dropping frame 1403636929.8016665
+Omega SLAM Dropping frame 1403636929.8516665
+Omega SLAM Dropping frame 1403636929.9516664
+Omega SLAM Dropping frame 1403636930.0016665
+Omega SLAM Dropping frame 1403636930.0516665
+Omega SLAM Dropping frame 1403636930.2016666
+Omega SLAM Dropping frame 1403636930.2516665
+Omega SLAM Dropping frame 1403636930.3016665
+Omega SLAM Dropping frame 1403636930.4516664
+Omega SLAM Dropping frame 1403636930.5016665
+Omega SLAM Dropping frame 1403636930.5516665
+Omega SLAM Dropping frame 1403636930.7016666
+Omega SLAM Dropping frame 1403636930.7516665
+Omega SLAM Dropping frame 1403636930.8016665
+Omega SLAM Dropping frame 1403636930.9516664
+Omega SLAM Dropping frame 1403636931.0016665
+Omega SLAM Dropping frame 1403636931.0516665
+Omega SLAM Dropping frame 1403636931.4516664
+Omega SLAM Dropping frame 1403636931.5016665
+Omega SLAM Dropping frame 1403636931.5516665
+Omega SLAM Dropping frame 1403636931.7516665
+Omega SLAM Dropping frame 1403636931.8016665
+Omega SLAM Dropping frame 1403636931.8516665
+Omega SLAM Dropping frame 1403636932.0016665
+Omega SLAM Dropping frame 1403636932.0516665
+Omega SLAM Dropping frame 1403636932.1016665
+Omega SLAM Dropping frame 1403636932.2516665
+Omega SLAM Dropping frame 1403636932.3016665
+Omega SLAM Dropping frame 1403636932.3516665
+Omega SLAM Dropping frame 1403636932.5016665
+Omega SLAM Dropping frame 1403636932.5516665
+Omega SLAM Dropping frame 1403636932.6016665
+Omega SLAM Dropping frame 1403636933.4516664
+Omega SLAM Dropping frame 1403636933.5016665
+Omega SLAM Dropping frame 1403636933.5516665
+Omega SLAM Dropping frame 1403636933.7016666
+Omega SLAM Dropping frame 1403636933.7516665
+Omega SLAM Dropping frame 1403636933.8016665
+Omega SLAM Dropping frame 1403636933.9516664
+Omega SLAM Dropping frame 1403636934.0016665
+Omega SLAM Dropping frame 1403636934.0516665
+Omega SLAM Dropping frame 1403636935.0016665
+Omega SLAM Dropping frame 1403636935.0516665
+Omega SLAM Dropping frame 1403636935.1016665
+Omega SLAM Dropping frame 1403636935.3016665
+Omega SLAM Dropping frame 1403636935.3516665
+Omega SLAM Dropping frame 1403636935.4016666
+Omega SLAM Dropping frame 1403636935.5516665
+Omega SLAM Dropping frame 1403636935.6016665
+Omega SLAM Dropping frame 1403636935.6516664
+Omega SLAM Dropping frame 1403636935.7516665
+Omega SLAM Dropping frame 1403636935.8016665
+Omega SLAM Dropping frame 1403636935.8516665
+Omega SLAM Dropping frame 1403636936.1516664
+Omega SLAM Dropping frame 1403636936.2016666
+Omega SLAM Dropping frame 1403636936.2516665
+Omega SLAM Dropping frame 1403636936.4516664
+Omega SLAM Dropping frame 1403636936.5016665
+Omega SLAM Dropping frame 1403636936.5516665
+Omega SLAM Dropping frame 1403636936.7016666
+Omega SLAM Dropping frame 1403636936.7516665
+Omega SLAM Dropping frame 1403636936.8016665
+Omega SLAM Dropping frame 1403636936.9516664
+Omega SLAM Dropping frame 1403636937.0016665
+Omega SLAM Dropping frame 1403636937.0516665
+Omega SLAM Dropping frame 1403636937.1516664
+Omega SLAM Dropping frame 1403636937.2016666
+Omega SLAM Dropping frame 1403636937.2516665
+Omega SLAM Dropping frame 1403636937.4016666
+Omega SLAM Dropping frame 1403636937.4516664
+Omega SLAM Dropping frame 1403636937.5016665
+Omega SLAM Dropping frame 1403636937.6016665
+Omega SLAM Dropping frame 1403636937.6516664
+Omega SLAM Dropping frame 1403636937.7016666
+Omega SLAM Dropping frame 1403636937.8516665
+Omega SLAM Dropping frame 1403636937.9016666
+Omega SLAM Dropping frame 1403636937.9516664
+Omega SLAM Dropping frame 1403636938.1016665
+Omega SLAM Dropping frame 1403636938.1516664
+Omega SLAM Dropping frame 1403636938.2016666
+Omega SLAM Dropping frame 1403636938.6516664
+Omega SLAM Dropping frame 1403636938.7016666
+Omega SLAM Dropping frame 1403636938.7516665
+Omega SLAM Dropping frame 1403636939.1016665
+Omega SLAM Dropping frame 1403636939.1516664
+Omega SLAM Dropping frame 1403636939.2016666
+Omega SLAM Dropping frame 1403636939.3516665
+Omega SLAM Dropping frame 1403636939.4016666
+Omega SLAM Dropping frame 1403636939.4516664
+Omega SLAM Dropping frame 1403636939.6016665
+Omega SLAM Dropping frame 1403636939.6516664
+Omega SLAM Dropping frame 1403636939.7016666
+Omega SLAM Dropping frame 1403636939.8516665
+Omega SLAM Dropping frame 1403636939.9016666
+Omega SLAM Dropping frame 1403636939.9516664
+Omega SLAM Dropping frame 1403636940.1016665
+Omega SLAM Dropping frame 1403636940.1516664
+Omega SLAM Dropping frame 1403636940.2016666
+Omega SLAM Dropping frame 1403636940.3516665
+Omega SLAM Dropping frame 1403636940.4016666
+Omega SLAM Dropping frame 1403636940.4516664
+Omega SLAM Dropping frame 1403636940.6016665
+Omega SLAM Dropping frame 1403636940.6516664
+Omega SLAM Dropping frame 1403636940.7016666
+Omega SLAM Dropping frame 1403636940.8516665
+Omega SLAM Dropping frame 1403636940.9016666
+Omega SLAM Dropping frame 1403636940.9516664
+Omega SLAM Dropping frame 1403636941.1016665
+Omega SLAM Dropping frame 1403636941.1516664
+Omega SLAM Dropping frame 1403636941.2016666
+Omega SLAM Dropping frame 1403636941.3516665
+Omega SLAM Dropping frame 1403636941.4016666
+Omega SLAM Dropping frame 1403636941.4516664
+Omega SLAM Dropping frame 1403636941.6016665
+Omega SLAM Dropping frame 1403636941.6516664
+Omega SLAM Dropping frame 1403636941.7016666
+Omega SLAM Dropping frame 1403636941.8516665
+Omega SLAM Dropping frame 1403636941.9016666
+Omega SLAM Dropping frame 1403636941.9516664
+Omega SLAM Dropping frame 1403636942.1016665
+Omega SLAM Dropping frame 1403636942.1516664
+Omega SLAM Dropping frame 1403636942.2016666
+Omega SLAM Dropping frame 1403636942.3516665
+Omega SLAM Dropping frame 1403636942.4016666
+Omega SLAM Dropping frame 1403636942.4516664
+Omega SLAM Dropping frame 1403636942.6016665
+Omega SLAM Dropping frame 1403636942.6516664
+Omega SLAM Dropping frame 1403636942.7016666
+Omega SLAM Dropping frame 1403636942.8516665
+Omega SLAM Dropping frame 1403636942.9016666
+Omega SLAM Dropping frame 1403636942.9516664
+Omega SLAM Dropping frame 1403636943.1016665
+Omega SLAM Dropping frame 1403636943.1516664
+Omega SLAM Dropping frame 1403636943.2016666
+Omega SLAM Dropping frame 1403636943.3516665
+Omega SLAM Dropping frame 1403636943.4016666
+Omega SLAM Dropping frame 1403636943.4516664
+Omega SLAM Dropping frame 1403636943.6016665
+Omega SLAM Dropping frame 1403636943.6516664
+Omega SLAM Dropping frame 1403636943.7016666
+Omega SLAM Dropping frame 1403636943.8016665
+Omega SLAM Dropping frame 1403636943.8516665
+Omega SLAM Dropping frame 1403636943.9016666
+Omega SLAM Dropping frame 1403636944.3016665
+Omega SLAM Dropping frame 1403636944.3516665
+Omega SLAM Dropping frame 1403636944.4016666
+Omega SLAM Dropping frame 1403636944.8016665
+Omega SLAM Dropping frame 1403636944.8516665
+Omega SLAM Dropping frame 1403636944.9016666
+Omega SLAM Dropping frame 1403636945.0516665
+Omega SLAM Dropping frame 1403636945.1016665
+Omega SLAM Dropping frame 1403636945.1516664
+Omega SLAM Dropping frame 1403636945.2516665
+Omega SLAM Dropping frame 1403636945.3016665
+Omega SLAM Dropping frame 1403636945.3516665
+Omega SLAM Dropping frame 1403636945.4516664
+Omega SLAM Dropping frame 1403636945.5016665
+Omega SLAM Dropping frame 1403636945.5516665
+Omega SLAM Dropping frame 1403636945.9016666
+Omega SLAM Dropping frame 1403636945.9516664
+Omega SLAM Dropping frame 1403636946.0016665
+Omega SLAM Dropping frame 1403636946.1516664
+Omega SLAM Dropping frame 1403636946.2016666
+Omega SLAM Dropping frame 1403636946.2516665
+Omega SLAM Dropping frame 1403636946.4016666
+Omega SLAM Dropping frame 1403636946.4516664
+Omega SLAM Dropping frame 1403636946.5016665
+Omega SLAM Dropping frame 1403636946.6516664
+Omega SLAM Dropping frame 1403636946.7016666
+Omega SLAM Dropping frame 1403636946.7516665
+Omega SLAM Dropping frame 1403636947.1016665
+Omega SLAM Dropping frame 1403636947.1516664
+Omega SLAM Dropping frame 1403636947.2016666
+Omega SLAM Dropping frame 1403636947.5016665
+Omega SLAM Dropping frame 1403636947.5516665
+Omega SLAM Dropping frame 1403636947.6016665
+Omega SLAM Dropping frame 1403636947.7516665
+Omega SLAM Dropping frame 1403636947.8016665
+Omega SLAM Dropping frame 1403636947.8516665
+Omega SLAM Dropping frame 1403636948.0016665
+Omega SLAM Dropping frame 1403636948.0516665
+Omega SLAM Dropping frame 1403636948.1016665
+Omega SLAM Dropping frame 1403636948.2516665
+Omega SLAM Dropping frame 1403636948.3016665
+Omega SLAM Dropping frame 1403636948.3516665
+Omega SLAM Dropping frame 1403636948.5016665
+Omega SLAM Dropping frame 1403636948.5516665
+Omega SLAM Dropping frame 1403636948.6016665
+Omega SLAM Dropping frame 1403636948.7516665
+Omega SLAM Dropping frame 1403636948.8016665
+Omega SLAM Dropping frame 1403636948.8516665
+Omega SLAM Dropping frame 1403636949.1516664
+Omega SLAM Dropping frame 1403636949.2016666
+Omega SLAM Dropping frame 1403636949.2516665
+Omega SLAM Dropping frame 1403636949.3516665
+Omega SLAM Dropping frame 1403636949.4016666
+Omega SLAM Dropping frame 1403636949.4516664
+Omega SLAM Dropping frame 1403636949.6016665
+Omega SLAM Dropping frame 1403636949.6516664
+Omega SLAM Dropping frame 1403636949.7016666
+Omega SLAM Dropping frame 1403636949.8516665
+Omega SLAM Dropping frame 1403636949.9016666
+Omega SLAM Dropping frame 1403636949.9516664
+Omega SLAM Dropping frame 1403636950.1016665
+Omega SLAM Dropping frame 1403636950.1516664
+Omega SLAM Dropping frame 1403636950.2016666
+Omega SLAM Dropping frame 1403636950.3516665
+Omega SLAM Dropping frame 1403636950.4016666
+Omega SLAM Dropping frame 1403636950.4516664
+Omega SLAM Dropping frame 1403636950.7016666
+Omega SLAM Dropping frame 1403636950.7516665
+Omega SLAM Dropping frame 1403636950.8016665
+Omega SLAM Dropping frame 1403636950.9516664
+Omega SLAM Dropping frame 1403636951.0016665
+Omega SLAM Dropping frame 1403636951.0516665
+Omega SLAM Dropping frame 1403636951.2516665
+Omega SLAM Dropping frame 1403636951.3016665
+Omega SLAM Dropping frame 1403636951.3516665
+Omega SLAM Dropping frame 1403636951.5016665
+Omega SLAM Dropping frame 1403636951.5516665
+Omega SLAM Dropping frame 1403636951.6016665
+Omega SLAM Dropping frame 1403636951.7516665
+Omega SLAM Dropping frame 1403636951.8016665
+Omega SLAM Dropping frame 1403636951.8516665
+Omega SLAM Dropping frame 1403636952.0016665
+Omega SLAM Dropping frame 1403636952.0516665
+Omega SLAM Dropping frame 1403636952.1016665
+Omega SLAM Dropping frame 1403636952.2516665
+Omega SLAM Dropping frame 1403636952.3016665
+Omega SLAM Dropping frame 1403636952.3516665
+Omega SLAM Dropping frame 1403636952.5016665
+Omega SLAM Dropping frame 1403636952.5516665
+Omega SLAM Dropping frame 1403636952.6016665
+Omega SLAM Dropping frame 1403636952.7516665
+Omega SLAM Dropping frame 1403636952.8016665
+Omega SLAM Dropping frame 1403636952.8516665
+Omega SLAM Dropping frame 1403636953.1516664
+Omega SLAM Dropping frame 1403636953.2016666
+Omega SLAM Dropping frame 1403636953.2516665
+Omega SLAM Dropping frame 1403636953.3516665
+Omega SLAM Dropping frame 1403636953.4016666
+Omega SLAM Dropping frame 1403636953.4516664
+Omega SLAM Dropping frame 1403636953.6016665
+Omega SLAM Dropping frame 1403636953.6516664
+Omega SLAM Dropping frame 1403636953.7016666
+Omega SLAM Dropping frame 1403636953.9016666
+Omega SLAM Dropping frame 1403636953.9516664
+Omega SLAM Dropping frame 1403636954.0016665
+Omega SLAM Dropping frame 1403636954.1516664
+Omega SLAM Dropping frame 1403636954.2016666
+Omega SLAM Dropping frame 1403636954.2516665
+Omega SLAM Dropping frame 1403636954.3516665
+Omega SLAM Dropping frame 1403636954.4016666
+Omega SLAM Dropping frame 1403636954.4516664
+Omega SLAM Dropping frame 1403636954.6016665
+Omega SLAM Dropping frame 1403636954.6516664
+Omega SLAM Dropping frame 1403636954.7016666
+Omega SLAM Dropping frame 1403636954.8516665
+Omega SLAM Dropping frame 1403636954.9016666
+Omega SLAM Dropping frame 1403636954.9516664
+Omega SLAM Dropping frame 1403636955.1016665
+Omega SLAM Dropping frame 1403636955.1516664
+Omega SLAM Dropping frame 1403636955.2016666
+Omega SLAM Dropping frame 1403636955.3516665
+Omega SLAM Dropping frame 1403636955.4016666
+Omega SLAM Dropping frame 1403636955.4516664
+Omega SLAM Dropping frame 1403636955.6016665
+Omega SLAM Dropping frame 1403636955.6516664
+Omega SLAM Dropping frame 1403636955.7016666
+Omega SLAM Dropping frame 1403636955.8016665
+Omega SLAM Dropping frame 1403636955.8516665
+Omega SLAM Dropping frame 1403636955.9016666
+Omega SLAM Dropping frame 1403636956.2016666
+Omega SLAM Dropping frame 1403636956.2516665
+Omega SLAM Dropping frame 1403636956.3016665
+Omega SLAM Dropping frame 1403636957.5516665
+Omega SLAM Dropping frame 1403636957.6016665
+Omega SLAM Dropping frame 1403636957.6516664
+Omega SLAM Dropping frame 1403636958.6016665
+Omega SLAM Dropping frame 1403636958.6516664
+Omega SLAM Dropping frame 1403636958.7016666
+Omega SLAM Dropping frame 1403636958.8516665
+Omega SLAM Dropping frame 1403636958.9016666
+Omega SLAM Dropping frame 1403636958.9516664
+Omega SLAM Dropping frame 1403636959.1016665
+Omega SLAM Dropping frame 1403636959.1516664
+Omega SLAM Dropping frame 1403636959.2016666
+Omega SLAM Dropping frame 1403636959.3516665
+Omega SLAM Dropping frame 1403636959.4016666
+Omega SLAM Dropping frame 1403636959.4516664
+Omega SLAM Dropping frame 1403636959.7016666
+Omega SLAM Dropping frame 1403636959.7516665
+Omega SLAM Dropping frame 1403636959.8016665
+Omega SLAM Dropping frame 1403636959.9516664
+Omega SLAM Dropping frame 1403636960.0016665
+Omega SLAM Dropping frame 1403636960.0516665
+Omega SLAM Dropping frame 1403636960.1516664
+Omega SLAM Dropping frame 1403636960.2016666
+Omega SLAM Dropping frame 1403636960.2516665
+Omega SLAM Dropping frame 1403636960.4016666
+Omega SLAM Dropping frame 1403636960.4516664
+Omega SLAM Dropping frame 1403636960.5016665
+Omega SLAM Dropping frame 1403636960.6516664
+Omega SLAM Dropping frame 1403636960.7016666
+Omega SLAM Dropping frame 1403636960.7516665
+Omega SLAM Dropping frame 1403636963.2016666
+Omega SLAM Dropping frame 1403636963.2516665
+Omega SLAM Dropping frame 1403636963.3016665
+Omega SLAM Dropping frame 1403636963.4516664
+Omega SLAM Dropping frame 1403636963.5016665
+Omega SLAM Dropping frame 1403636963.5516665
+Omega SLAM Dropping frame 1403636963.7016666
+Omega SLAM Dropping frame 1403636963.7516665
+Omega SLAM Dropping frame 1403636963.8016665
+Omega SLAM Dropping frame 1403636963.9516664
+Omega SLAM Dropping frame 1403636964.0016665
+Omega SLAM Dropping frame 1403636964.0516665
+Omega SLAM Dropping frame 1403636964.1516664
+Omega SLAM Dropping frame 1403636964.2016666
+Omega SLAM Dropping frame 1403636964.2516665
+Omega SLAM Dropping frame 1403636964.3516665
+Omega SLAM Dropping frame 1403636964.4016666
+Omega SLAM Dropping frame 1403636964.4516664
+Omega SLAM Dropping frame 1403636964.6016665
+Omega SLAM Dropping frame 1403636964.6516664
+Omega SLAM Dropping frame 1403636964.7016666
+Omega SLAM Dropping frame 1403636965.6016665
+Omega SLAM Dropping frame 1403636965.6516664
+Omega SLAM Dropping frame 1403636965.7016666
+Omega SLAM Dropping frame 1403636966.1016665
+Omega SLAM Dropping frame 1403636966.1516664
+Omega SLAM Dropping frame 1403636966.2016666
+Omega SLAM Dropping frame 1403636966.3516665
+Omega SLAM Dropping frame 1403636966.4016666
+Omega SLAM Dropping frame 1403636966.4516664
+Omega SLAM Dropping frame 1403636966.6516664
+Omega SLAM Dropping frame 1403636966.7016666
+Omega SLAM Dropping frame 1403636966.7516665
+Omega SLAM Dropping frame 1403636966.9016666
+Omega SLAM Dropping frame 1403636966.9516664
+Omega SLAM Dropping frame 1403636967.0016665
+Omega SLAM Dropping frame 1403636967.1016665
+Omega SLAM Dropping frame 1403636967.1516664
+Omega SLAM Dropping frame 1403636967.2016666
+Omega SLAM Dropping frame 1403636967.3516665
+Omega SLAM Dropping frame 1403636967.4016666
+Omega SLAM Dropping frame 1403636967.4516664
+Omega SLAM Dropping frame 1403636967.5516665
+Omega SLAM Dropping frame 1403636967.6016665
+Omega SLAM Dropping frame 1403636967.6516664
+Omega SLAM Dropping frame 1403636967.7516665
+Omega SLAM Dropping frame 1403636967.8016665
+Omega SLAM Dropping frame 1403636967.8516665
+Omega SLAM Dropping frame 1403636967.9516664
+Omega SLAM Dropping frame 1403636968.0016665
+Omega SLAM Dropping frame 1403636968.0516665
+Omega SLAM Dropping frame 1403636968.1516664
+Omega SLAM Dropping frame 1403636968.2016666
+Omega SLAM Dropping frame 1403636968.2516665
+Omega SLAM Dropping frame 1403636968.3516665
+Omega SLAM Dropping frame 1403636968.4016666
+Omega SLAM Dropping frame 1403636968.4516664
+Omega SLAM Dropping frame 1403636968.5516665
+Omega SLAM Dropping frame 1403636968.6016665
+Omega SLAM Dropping frame 1403636968.6516664
+Omega SLAM Dropping frame 1403636968.8016665
+Omega SLAM Dropping frame 1403636968.8516665
+Omega SLAM Dropping frame 1403636968.9016666
+Omega SLAM Dropping frame 1403636969.0016665
+Omega SLAM Dropping frame 1403636969.0516665
+Omega SLAM Dropping frame 1403636969.1016665
+Omega SLAM Dropping frame 1403636969.2516665
+Omega SLAM Dropping frame 1403636969.3016665
+Omega SLAM Dropping frame 1403636969.3516665
+Omega SLAM Dropping frame 1403636969.5016665
+Omega SLAM Dropping frame 1403636969.5516665
+Omega SLAM Dropping frame 1403636969.6016665
+Omega SLAM Dropping frame 1403636969.7516665
+Omega SLAM Dropping frame 1403636969.8016665
+Omega SLAM Dropping frame 1403636969.8516665
+Omega SLAM Dropping frame 1403636969.9516664
+Omega SLAM Dropping frame 1403636970.0016665
+Omega SLAM Dropping frame 1403636970.0516665
+Omega SLAM Dropping frame 1403636970.2516665
+Omega SLAM Dropping frame 1403636970.3016665
+Omega SLAM Dropping frame 1403636970.3516665
+Omega SLAM Dropping frame 1403636970.5516665
+Omega SLAM Dropping frame 1403636970.6016665
+Omega SLAM Dropping frame 1403636970.6516664
+Omega SLAM Dropping frame 1403636970.8016665
+Omega SLAM Dropping frame 1403636970.8516665
+Omega SLAM Dropping frame 1403636970.9016666
+Omega SLAM Dropping frame 1403636971.0516665
+Omega SLAM Dropping frame 1403636971.1016665
+Omega SLAM Dropping frame 1403636971.1516664
+Omega SLAM Dropping frame 1403636971.4516664
+Omega SLAM Dropping frame 1403636971.5016665
+Omega SLAM Dropping frame 1403636971.5516665
+Omega SLAM Dropping frame 1403636971.8516665
+Omega SLAM Dropping frame 1403636971.9016666
+Omega SLAM Dropping frame 1403636971.9516664
+Omega SLAM Dropping frame 1403636972.0516665
+Omega SLAM Dropping frame 1403636972.1016665
+Omega SLAM Dropping frame 1403636972.1516664
+Omega SLAM Dropping frame 1403636972.3516665
+Omega SLAM Dropping frame 1403636972.4016666
+Omega SLAM Dropping frame 1403636972.4516664
+Omega SLAM Dropping frame 1403636972.6016665
+Omega SLAM Dropping frame 1403636972.6516664
+Omega SLAM Dropping frame 1403636972.7016666
+Omega SLAM Dropping frame 1403636972.8516665
+Omega SLAM Dropping frame 1403636972.9016666
+Omega SLAM Dropping frame 1403636972.9516664
+Omega SLAM Dropping frame 1403636973.3016665
+Omega SLAM Dropping frame 1403636973.3516665
+Omega SLAM Dropping frame 1403636973.4016666
+Omega SLAM Dropping frame 1403636973.5516665
+Omega SLAM Dropping frame 1403636973.6016665
+Omega SLAM Dropping frame 1403636973.6516664
+Omega SLAM Dropping frame 1403636973.8016665
+Omega SLAM Dropping frame 1403636973.8516665
+Omega SLAM Dropping frame 1403636973.9016666
+Omega SLAM Dropping frame 1403636974.0016665
+Omega SLAM Dropping frame 1403636974.0516665
+Omega SLAM Dropping frame 1403636974.1016665
+Omega SLAM Dropping frame 1403636975.4516664
+Omega SLAM Dropping frame 1403636975.5016665
+Omega SLAM Dropping frame 1403636975.5516665
+Omega SLAM Dropping frame 1403636975.7016666
+Omega SLAM Dropping frame 1403636975.7516665
+Omega SLAM Dropping frame 1403636975.8016665
+Omega SLAM Dropping frame 1403636975.9516664
+Omega SLAM Dropping frame 1403636976.0016665
+Omega SLAM Dropping frame 1403636976.0516665
+Omega SLAM Dropping frame 1403636976.8516665
+Omega SLAM Dropping frame 1403636976.9016666
+Omega SLAM Dropping frame 1403636976.9516664
+Omega SLAM Dropping frame 1403636977.1016665
+Omega SLAM Dropping frame 1403636977.1516664
+Omega SLAM Dropping frame 1403636977.2016666
+Omega SLAM Dropping frame 1403636977.3516665
+Omega SLAM Dropping frame 1403636977.4016666
+Omega SLAM Dropping frame 1403636977.4516664
+Omega SLAM Dropping frame 1403636977.6016665
+Omega SLAM Dropping frame 1403636977.6516664
+Omega SLAM Dropping frame 1403636977.7016666
+Omega SLAM Dropping frame 1403636977.8016665
+Omega SLAM Dropping frame 1403636977.8516665
+Omega SLAM Dropping frame 1403636977.9016666
+Omega SLAM Dropping frame 1403636978.0516665
+Omega SLAM Dropping frame 1403636978.1016665
+Omega SLAM Dropping frame 1403636978.1516664
+Omega SLAM Dropping frame 1403636978.3016665
+Omega SLAM Dropping frame 1403636978.3516665
+Omega SLAM Dropping frame 1403636978.4016666
+Omega SLAM Dropping frame 1403636978.7016666
+Omega SLAM Dropping frame 1403636978.7516665
+Omega SLAM Dropping frame 1403636978.8016665
+Omega SLAM Dropping frame 1403636978.9516664
+Omega SLAM Dropping frame 1403636979.0016665
+Omega SLAM Dropping frame 1403636979.0516665
+Omega SLAM Dropping frame 1403636979.2016666
+Omega SLAM Dropping frame 1403636979.2516665
+Omega SLAM Dropping frame 1403636979.3016665
+Omega SLAM Dropping frame 1403636979.5016665
+Omega SLAM Dropping frame 1403636979.5516665
+Omega SLAM Dropping frame 1403636979.6016665
+Omega SLAM Dropping frame 1403636979.7516665
+Omega SLAM Dropping frame 1403636979.8016665
+Omega SLAM Dropping frame 1403636979.8516665
+Omega SLAM Dropping frame 1403636980.0516665
+Omega SLAM Dropping frame 1403636980.1016665
+Omega SLAM Dropping frame 1403636980.1516664
+Omega SLAM Dropping frame 1403636980.3016665
+Omega SLAM Dropping frame 1403636980.3516665
+Omega SLAM Dropping frame 1403636980.4016666
+Omega SLAM Dropping frame 1403636980.5516665
+Omega SLAM Dropping frame 1403636980.6016665
+Omega SLAM Dropping frame 1403636980.6516664
+Omega SLAM Dropping frame 1403636980.8016665
+Omega SLAM Dropping frame 1403636980.8516665
+Omega SLAM Dropping frame 1403636980.9016666
+Omega SLAM Dropping frame 1403636981.0516665
+Omega SLAM Dropping frame 1403636981.1016665
+Omega SLAM Dropping frame 1403636981.1516664
+Omega SLAM Dropping frame 1403636981.4516664
+Omega SLAM Dropping frame 1403636981.5016665
+Omega SLAM Dropping frame 1403636981.5516665
+Omega SLAM Dropping frame 1403636981.7516665
+Omega SLAM Dropping frame 1403636981.8016665
+Omega SLAM Dropping frame 1403636981.8516665
+Omega SLAM Dropping frame 1403636982.2016666
+Omega SLAM Dropping frame 1403636982.2516665
+Omega SLAM Dropping frame 1403636982.3016665
+Omega SLAM Dropping frame 1403636982.6516664
+Omega SLAM Dropping frame 1403636982.7016666
+Omega SLAM Dropping frame 1403636982.7516665
+Omega SLAM Dropping frame 1403636982.9016666
+Omega SLAM Dropping frame 1403636982.9516664
+Omega SLAM Dropping frame 1403636983.0016665
+Omega SLAM Dropping frame 1403636983.1516664
+Omega SLAM Dropping frame 1403636983.2016666
+Omega SLAM Dropping frame 1403636983.2516665
+Omega SLAM Dropping frame 1403636983.4016666
+Omega SLAM Dropping frame 1403636983.4516664
+Omega SLAM Dropping frame 1403636983.5016665
+Omega SLAM Dropping frame 1403636983.6016665
+Omega SLAM Dropping frame 1403636983.6516664
+Omega SLAM Dropping frame 1403636983.7016666
+Omega SLAM Dropping frame 1403636983.8516665
+Omega SLAM Dropping frame 1403636983.9016666
+Omega SLAM Dropping frame 1403636983.9516664
+Omega SLAM Dropping frame 1403636984.1016665
+Omega SLAM Dropping frame 1403636984.1516664
+Omega SLAM Dropping frame 1403636984.2016666
+Omega SLAM Dropping frame 1403636984.3516665
+Omega SLAM Dropping frame 1403636984.4016666
+Omega SLAM Dropping frame 1403636984.4516664
+Omega SLAM Dropping frame 1403636984.6016665
+Omega SLAM Dropping frame 1403636984.6516664
+Omega SLAM Dropping frame 1403636984.7016666
+Omega SLAM Dropping frame 1403636984.8016665
+Omega SLAM Dropping frame 1403636984.8516665
+Omega SLAM Dropping frame 1403636984.9016666
+Omega SLAM Dropping frame 1403636985.0516665
+Omega SLAM Dropping frame 1403636985.1016665
+Omega SLAM Dropping frame 1403636985.1516664
+Omega SLAM Dropping frame 1403636985.3016665
+Omega SLAM Dropping frame 1403636985.3516665
+Omega SLAM Dropping frame 1403636985.4016666
+Omega SLAM Dropping frame 1403636985.6516664
+Omega SLAM Dropping frame 1403636985.7016666
+Omega SLAM Dropping frame 1403636985.7516665
+Omega SLAM Dropping frame 1403636986.1016665
+Omega SLAM Dropping frame 1403636986.1516664
+Omega SLAM Dropping frame 1403636986.2016666
+Omega SLAM Dropping frame 1403636986.5016665
+Omega SLAM Dropping frame 1403636986.5516665
+Omega SLAM Dropping frame 1403636986.6016665
+Omega SLAM Dropping frame 1403636986.7516665
+Omega SLAM Dropping frame 1403636986.8016665
+Omega SLAM Dropping frame 1403636986.8516665
+Omega SLAM Dropping frame 1403636987.0016665
+Omega SLAM Dropping frame 1403636987.0516665
+Omega SLAM Dropping frame 1403636987.1016665
+Omega SLAM Dropping frame 1403636987.2516665
+Omega SLAM Dropping frame 1403636987.3016665
+Omega SLAM Dropping frame 1403636987.3516665
+Omega SLAM Dropping frame 1403636987.5016665
+Omega SLAM Dropping frame 1403636987.5516665
+Omega SLAM Dropping frame 1403636987.6016665
+Omega SLAM Dropping frame 1403636987.7516665
+Omega SLAM Dropping frame 1403636987.8016665
+Omega SLAM Dropping frame 1403636987.8516665
+Omega SLAM Dropping frame 1403636988.0016665
+Omega SLAM Dropping frame 1403636988.0516665
+Omega SLAM Dropping frame 1403636988.1016665
+Omega SLAM Dropping frame 1403636988.2516665
+Omega SLAM Dropping frame 1403636988.3016665
+Omega SLAM Dropping frame 1403636988.3516665
+Omega SLAM Dropping frame 1403636988.5016665
+Omega SLAM Dropping frame 1403636988.5516665
+Omega SLAM Dropping frame 1403636988.6016665
+Omega SLAM Dropping frame 1403636988.7516665
+Omega SLAM Dropping frame 1403636988.8016665
+Omega SLAM Dropping frame 1403636988.8516665
+Omega SLAM Dropping frame 1403636989.0016665
+Omega SLAM Dropping frame 1403636989.0516665
+Omega SLAM Dropping frame 1403636989.1016665
+Omega SLAM Dropping frame 1403636989.2016666
+Omega SLAM Dropping frame 1403636989.2516665
+Omega SLAM Dropping frame 1403636989.3016665
+Omega SLAM Dropping frame 1403636989.6016665
+Omega SLAM Dropping frame 1403636989.6516664
+Omega SLAM Dropping frame 1403636989.7016666
+Omega SLAM Dropping frame 1403636989.8516665
+Omega SLAM Dropping frame 1403636989.9016666
+Omega SLAM Dropping frame 1403636989.9516664
+Omega SLAM Dropping frame 1403636990.1016665
+Omega SLAM Dropping frame 1403636990.1516664
+Omega SLAM Dropping frame 1403636990.2016666
+Omega SLAM Dropping frame 1403636990.3016665
+Omega SLAM Dropping frame 1403636990.3516665
+Omega SLAM Dropping frame 1403636990.4016666
+Omega SLAM Dropping frame 1403636990.5516665
+Omega SLAM Dropping frame 1403636990.6016665
+Omega SLAM Dropping frame 1403636990.6516664
+Omega SLAM Dropping frame 1403636990.8016665
+Omega SLAM Dropping frame 1403636990.8516665
+Omega SLAM Dropping frame 1403636990.9016666
+Omega SLAM Dropping frame 1403636991.0016665
+Omega SLAM Dropping frame 1403636991.0516665
+Omega SLAM Dropping frame 1403636991.1016665
+Omega SLAM Dropping frame 1403636991.2016666
+Omega SLAM Dropping frame 1403636991.2516665
+Omega SLAM Dropping frame 1403636991.3016665
+Omega SLAM Dropping frame 1403636991.4016666
+Omega SLAM Dropping frame 1403636991.4516664
+Omega SLAM Dropping frame 1403636991.5016665
+Omega SLAM Dropping frame 1403636991.6016665
+Omega SLAM Dropping frame 1403636991.6516664
+Omega SLAM Dropping frame 1403636991.7016666
+Omega SLAM Dropping frame 1403636991.8516665
+Omega SLAM Dropping frame 1403636991.9016666
+Omega SLAM Dropping frame 1403636991.9516664
+Omega SLAM Dropping frame 1403636992.2016666
+Omega SLAM Dropping frame 1403636992.2516665
+Omega SLAM Dropping frame 1403636992.3016665
+Omega SLAM Dropping frame 1403636992.4516664
+Omega SLAM Dropping frame 1403636992.5016665
+Omega SLAM Dropping frame 1403636992.5516665
+Omega SLAM Dropping frame 1403636992.7016666
+Omega SLAM Dropping frame 1403636992.7516665
+Omega SLAM Dropping frame 1403636992.8016665
+Omega SLAM Dropping frame 1403636992.9516664
+Omega SLAM Dropping frame 1403636993.0016665
+Omega SLAM Dropping frame 1403636993.0516665
+Omega SLAM Dropping frame 1403636993.9516664
+Omega SLAM Dropping frame 1403636994.0016665
+Omega SLAM Dropping frame 1403636994.0516665
+Omega SLAM Dropping frame 1403636994.2016666
+Omega SLAM Dropping frame 1403636994.2516665
+Omega SLAM Dropping frame 1403636994.3016665
+Omega SLAM Dropping frame 1403636994.4516664
+Omega SLAM Dropping frame 1403636994.5016665
+Omega SLAM Dropping frame 1403636994.5516665
+Omega SLAM Dropping frame 1403636994.9516664
+Omega SLAM Dropping frame 1403636995.0016665
+Omega SLAM Dropping frame 1403636995.0516665
+Omega SLAM Dropping frame 1403636995.2516665
+Omega SLAM Dropping frame 1403636995.3016665
+Omega SLAM Dropping frame 1403636995.3516665
+Omega SLAM Dropping frame 1403636995.5016665
+Omega SLAM Dropping frame 1403636995.5516665
+Omega SLAM Dropping frame 1403636995.6016665
+Omega SLAM Dropping frame 1403636995.7516665
+Omega SLAM Dropping frame 1403636995.8016665
+Omega SLAM Dropping frame 1403636995.8516665
+Omega SLAM Dropping frame 1403636996.0016665
+Omega SLAM Dropping frame 1403636996.0516665
+Omega SLAM Dropping frame 1403636996.1016665
+Omega SLAM Dropping frame 1403636996.2516665
+Omega SLAM Dropping frame 1403636996.3016665
+Omega SLAM Dropping frame 1403636996.3516665
+Omega SLAM Dropping frame 1403636996.5016665
+Omega SLAM Dropping frame 1403636996.5516665
+Omega SLAM Dropping frame 1403636996.6016665
+Omega SLAM Dropping frame 1403636997.4016666
+Omega SLAM Dropping frame 1403636997.4516664
+Omega SLAM Dropping frame 1403636997.5016665
+Omega SLAM Dropping frame 1403636997.6516664
+Omega SLAM Dropping frame 1403636997.7016666
+Omega SLAM Dropping frame 1403636997.7516665
+Omega SLAM Dropping frame 1403636997.9016666
+Omega SLAM Dropping frame 1403636997.9516664
+Omega SLAM Dropping frame 1403636998.0016665
+Omega SLAM Dropping frame 1403636998.1516664
+Omega SLAM Dropping frame 1403636998.2016666
+Omega SLAM Dropping frame 1403636998.2516665
+Omega SLAM Dropping frame 1403636998.3516665
+Omega SLAM Dropping frame 1403636998.4016666
+Omega SLAM Dropping frame 1403636998.4516664
+Omega SLAM Dropping frame 1403636998.5516665
+Omega SLAM Dropping frame 1403636998.6016665
+Omega SLAM Dropping frame 1403636998.6516664
+Omega SLAM Dropping frame 1403636998.8516665
+Omega SLAM Dropping frame 1403636998.9016666
+Omega SLAM Dropping frame 1403636998.9516664
+Omega SLAM Dropping frame 1403636999.1016665
+Omega SLAM Dropping frame 1403636999.1516664
+Omega SLAM Dropping frame 1403636999.2016666
+Omega SLAM Dropping frame 1403636999.3516665
+Omega SLAM Dropping frame 1403636999.4016666
+Omega SLAM Dropping frame 1403636999.4516664
+Omega SLAM Dropping frame 1403636999.6016665
+Omega SLAM Dropping frame 1403636999.6516664
+Omega SLAM Dropping frame 1403636999.7016666
+Omega SLAM Dropping frame 1403636999.8516665
+Omega SLAM Dropping frame 1403636999.9016666
+Omega SLAM Dropping frame 1403636999.9516664
+Omega SLAM Dropping frame 1403637000.1016665
+Omega SLAM Dropping frame 1403637000.1516664
+Omega SLAM Dropping frame 1403637000.2016666
+Omega SLAM Dropping frame 1403637000.3516665
+Omega SLAM Dropping frame 1403637000.4016666
+Omega SLAM Dropping frame 1403637000.4516664
+Omega SLAM Dropping frame 1403637000.5516665
+Omega SLAM Dropping frame 1403637000.6016665
+Omega SLAM Dropping frame 1403637000.6516664
+Omega SLAM Dropping frame 1403637000.7516665
+Omega SLAM Dropping frame 1403637000.8016665
+Omega SLAM Dropping frame 1403637000.8516665
+Omega SLAM Dropping frame 1403637000.9516664
+Omega SLAM Dropping frame 1403637001.0016665
+Omega SLAM Dropping frame 1403637001.0516665
+Omega SLAM Dropping frame 1403637001.1516664
+Omega SLAM Dropping frame 1403637001.2016666
+Omega SLAM Dropping frame 1403637001.2516665
+Omega SLAM Dropping frame 1403637001.3516665
+Omega SLAM Dropping frame 1403637001.4016666
+Omega SLAM Dropping frame 1403637001.4516664
+Omega SLAM Dropping frame 1403637001.6016665
+Omega SLAM Dropping frame 1403637001.6516664
+Omega SLAM Dropping frame 1403637001.7016666
+Omega SLAM Dropping frame 1403637001.8016665
+Omega SLAM Dropping frame 1403637001.8516665
+Omega SLAM Dropping frame 1403637001.9016666
+Omega SLAM Dropping frame 1403637002.0016665
+Omega SLAM Dropping frame 1403637002.0516665
+Omega SLAM Dropping frame 1403637002.1016665
+Omega SLAM Dropping frame 1403637002.2016666
+Omega SLAM Dropping frame 1403637002.2516665
+Omega SLAM Dropping frame 1403637002.3016665
+Omega SLAM Dropping frame 1403637002.4016666
+Omega SLAM Dropping frame 1403637002.4516664
+Omega SLAM Dropping frame 1403637002.5016665
+Omega SLAM Dropping frame 1403637002.6516664
+Omega SLAM Dropping frame 1403637002.7016666
+Omega SLAM Dropping frame 1403637002.7516665
+Omega SLAM Dropping frame 1403637002.8516665
+Omega SLAM Dropping frame 1403637002.9016666
+Omega SLAM Dropping frame 1403637002.9516664
+Omega SLAM Dropping frame 1403637003.1016665
+Omega SLAM Dropping frame 1403637003.1516664
+Omega SLAM Dropping frame 1403637003.2016666
+Omega SLAM Dropping frame 1403637003.3016665
+Omega SLAM Dropping frame 1403637003.3516665
+Omega SLAM Dropping frame 1403637003.4016666
+Omega SLAM Dropping frame 1403637003.5516665
+Omega SLAM Dropping frame 1403637003.6016665
+Omega SLAM Dropping frame 1403637003.6516664
+Omega SLAM Dropping frame 1403637003.7516665
+Omega SLAM Dropping frame 1403637003.8016665
+Omega SLAM Dropping frame 1403637003.8516665
+Omega SLAM Dropping frame 1403637003.9516664
+Omega SLAM Dropping frame 1403637004.0016665
+Omega SLAM Dropping frame 1403637004.0516665
+Omega SLAM Dropping frame 1403637004.2016666
+Omega SLAM Dropping frame 1403637004.2516665
+Omega SLAM Dropping frame 1403637004.3016665
+Omega SLAM Dropping frame 1403637004.4016666
+Omega SLAM Dropping frame 1403637004.4516664
+Omega SLAM Dropping frame 1403637004.5016665
+Omega SLAM Dropping frame 1403637004.6516664
+Omega SLAM Dropping frame 1403637004.7016666
+Omega SLAM Dropping frame 1403637004.7516665
+Omega SLAM Dropping frame 1403637004.9016666
+Omega SLAM Dropping frame 1403637004.9516664
+Omega SLAM Dropping frame 1403637005.0016665
+Omega SLAM Dropping frame 1403637005.1516664
+Omega SLAM Dropping frame 1403637005.2016666
+Omega SLAM Dropping frame 1403637005.2516665
+Omega SLAM Dropping frame 1403637005.4016666
+Omega SLAM Dropping frame 1403637005.4516664
+Omega SLAM Dropping frame 1403637005.5016665
+Omega SLAM Dropping frame 1403637005.6516664
+Omega SLAM Dropping frame 1403637005.7016666
+Omega SLAM Dropping frame 1403637005.7516665
+Omega SLAM Dropping frame 1403637005.9016666
+Omega SLAM Dropping frame 1403637005.9516664
+Omega SLAM Dropping frame 1403637006.0016665
+Omega SLAM Dropping frame 1403637006.1516664
+Omega SLAM Dropping frame 1403637006.2016666
+Omega SLAM Dropping frame 1403637006.2516665
+Omega SLAM Dropping frame 1403637006.5016665
+Omega SLAM Dropping frame 1403637006.5516665
+Omega SLAM Dropping frame 1403637006.6016665
+Omega SLAM Dropping frame 1403637007.4516664
+Omega SLAM Dropping frame 1403637007.5016665
+Omega SLAM Dropping frame 1403637007.5516665
+Omega SLAM Dropping frame 1403637007.8516665
+Omega SLAM Dropping frame 1403637007.9016666
+Omega SLAM Dropping frame 1403637007.9516664
+Omega SLAM Dropping frame 1403637008.1016665
+Omega SLAM Dropping frame 1403637008.1516664
+Omega SLAM Dropping frame 1403637008.2016666
+Omega SLAM Dropping frame 1403637008.4016666
+Omega SLAM Dropping frame 1403637008.4516664
+Omega SLAM Dropping frame 1403637008.5016665
+Omega SLAM Dropping frame 1403637008.7016666
+Omega SLAM Dropping frame 1403637008.7516665
+Omega SLAM Dropping frame 1403637008.8016665
+Omega SLAM Dropping frame 1403637009.0016665
+Omega SLAM Dropping frame 1403637009.0516665
+Omega SLAM Dropping frame 1403637009.1016665
+Omega SLAM Dropping frame 1403637009.8016665
+Omega SLAM Dropping frame 1403637009.8516665
+Omega SLAM Dropping frame 1403637009.9016666
+Omega SLAM Dropping frame 1403637010.0016665
+Omega SLAM Dropping frame 1403637010.0516665
+Omega SLAM Dropping frame 1403637010.1016665
+Omega SLAM Dropping frame 1403637010.2016666
+Omega SLAM Dropping frame 1403637010.2516665
+Omega SLAM Dropping frame 1403637010.3016665
+Omega SLAM Dropping frame 1403637010.4016666
+Omega SLAM Dropping frame 1403637010.4516664
+Omega SLAM Dropping frame 1403637010.5016665
+Omega SLAM Dropping frame 1403637010.6016665
+Shutdown
+SLAM Finished at System Time: 1749938841.69102
+
+ TIME STATS in ms (mean$\pm$std)
+OpenCV version: 4.8.1
+---------------------------
+Tracking
+
+ORB Extraction: 22.469$\pm$2.319
+Stereo Matching: 7.9505$\pm$2.6593
+IMU Preintegration: 0.33575$\pm$0.18655
+Pose Prediction: 0.43734$\pm$1.2586
+LM Track: 20.995$\pm$6.9449
+New KF decision: 0.40285$\pm$0.41523
+Total Tracking: 30.638$\pm$27.957
+
+
+
+Local Mapping
+
+KF Insertion: 17.738$\pm$5.9967
+MP Culling: 0.59032$\pm$0.22358
+MP Creation: 50.224$\pm$18.672
+LBA: 155.29$\pm$60.097
+KF Culling: 15.539$\pm$12.048
+Total Local Mapping: 236.8$\pm$93.758
+---------------------------
+
+LBA complexity (mean$\pm$std)
+LBA Edges: 1644.8$\pm$584.79
+LBA KF optimized: 5.5882$\pm$2.1978
+LBA KF fixed: 1$\pm$0
+LBA MP: nan$\pm$nan
+
+LBA executions: 375
+LBA aborts: 0
+---------------------------
+
+Map complexity
+KFs in map: 120
+MPs in map: 9379
+---------------------------
+
+Place Recognition (mean$\pm$std)
+Database Query: 1.6774$\pm$0.90936
+SE3 estimation: 14.557$\pm$18.815
+Total Place Recognition: 13.008$\pm$18.427
+
+
+Loop Closing (mean$\pm$std)
+Loop Fusion: nan$\pm$nan
+Essential Graph: nan$\pm$nan
+Total Loop Closing: nan$\pm$nan
+
+Num exec: 0
+Number of KFs: nan$\pm$nan
+
+Map Merging (mean$\pm$std)
+Merge Maps: nan$\pm$nan
+Welding BA: nan$\pm$nan
+Optimization Ess.: nan$\pm$nan
+Total Map Merging: nan$\pm$nan
+
+Num exec: 0
+Number of KFs: nan$\pm$nan
+Number of MPs: nan$\pm$nan
+
+Full GBA (mean$\pm$std)
+GBA: nan$\pm$nan
+Map Update: nan$\pm$nan
+Total Full GBA: nan$\pm$nan
+
+Num exec: 0
+Num abort: 0
+Number of KFs: nan$\pm$nan
+Number of MPs: nan$\pm$nan
+
+Saving trajectory to f_dataset-MH02_stereo_imu.txt ...
+There are 1 maps in the atlas
+  Map 0 has 120 KFs
+
+End of saving trajectory to f_dataset-MH02_stereo_imu.txt ...
+
+Saving keyframe trajectory to kf_dataset-MH02_stereo_imu.txt ...
