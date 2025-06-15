@@ -1,0 +1,37 @@
+\begin{table}[htbp]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l|c|cc|cc|cc|cc|cc}
+\hline
+\multirow{2}{*}{\textbf{Dataset}} &
+\multicolumn{3}{c|}{\textbf{Realtime Baseline}} &
+\multicolumn{2}{c|}{\textbf{OASIS}} &
+\multicolumn{2}{c|}{\textbf{Mean ATE (m)}} &
+\multicolumn{2}{c|}{\textbf{Max ATE (m)}} &
+\multicolumn{2}{c}{\textbf{Improvement (\%)}} \\
+\cline{2-12}
+ & \textbf{Frames} & \textbf{Dropped (\%)} & \textbf{FPS} &
+ \textbf{Mask (Mean ± Std)} & \textbf{Dropped (\%)} &
+ \textbf{Realtime} & \textbf{OASIS} &
+ \textbf{Realtime} & \textbf{OASIS} &
+ \textbf{Mean ATE} & \textbf{Max ATE} \\
+\hline
+MH01 & 3682 & 943.1 (25.61\%) & 15.83 & $12.23 \pm 4.51$ & \textbf{0.0 (0.00\%)} & \textbf{0.06805} & 0.07001 & 0.27469 & \textbf{0.18119} & \textbf{-2.9\%} & \textbf{34.0\%} \\
+MH02 & 3040 & 848.9 (27.92\%) & 15.36 & $14.37 \pm 5.38$ & \textbf{0.0 (0.00\%)} & 0.07195 & \textbf{0.04817} & 0.33743 & \textbf{0.13826} & \textbf{33.0\%} & \textbf{59.0\%} \\
+MH03 & 2700 & 52.3 (1.94\%) & 19.70 & $18.64 \pm 4.37$ & \textbf{0.0 (0.00\%)} & 0.07155 & \textbf{0.04998} & 1.53252 & \textbf{0.12712} & \textbf{30.1\%} & \textbf{91.7\%} \\
+MH04 & 2033 & 147.5 (7.26\%) & 18.79 & $18.35 \pm 4.34$ & \textbf{0.0 (0.00\%)} & 0.07345 & \textbf{0.06078} & 0.50904 & \textbf{0.20357} & \textbf{17.3\%} & \textbf{60.0\%} \\
+MH05 & 2273 & 113.2 (4.98\%) & 19.17 & $19.29 \pm 3.94$ & \textbf{0.0 (0.00\%)} & 0.10554 & \textbf{0.05956} & 0.25416 & \textbf{0.15856} & \textbf{43.6\%} & \textbf{37.6\%} \\
+V101 & 2912 & 236.1 (8.11\%) & 18.67 & $18.51 \pm 4.37$ & \textbf{0.0 (0.00\%)} & 0.05487 & \textbf{0.02746} & 0.44819 & \textbf{0.06578} & \textbf{49.9\%} & \textbf{85.3\%} \\
+V102 & 1710 & 328.6 (19.22\%) & 16.77 & $16.69 \pm 4.61$ & \textbf{0.0 (0.00\%)} & 0.06395 & \textbf{0.05821} & 0.14220 & \textbf{0.12282} & \textbf{9.0\%} & \textbf{13.6\%} \\
+V103 & 2149 & 174.9 (8.14\%) & 18.61 & $18.96 \pm 4.02$ & \textbf{0.0 (0.00\%)} & 0.10260 & \textbf{0.04890} & 0.84995 & \textbf{0.12019} & \textbf{52.3\%} & \textbf{85.9\%} \\
+V201 & 2280 & 207.0 (9.08\%) & 18.56 & $14.00 \pm 4.80$ & \textbf{0.0 (0.00\%)} & 0.22014 & \textbf{0.05833} & 5.13288 & \textbf{0.10164} & \textbf{73.5\%} & \textbf{98.0\%} \\
+V202 & 2348 & 178.2 (7.59\%) & 18.78 & $15.59 \pm 4.95$ & \textbf{0.0 (0.00\%)} & 0.06498 & \textbf{0.05642} & 0.39721 & \textbf{0.12036} & \textbf{13.2\%} & \textbf{69.7\%} \\
+V203 & 1922 & 119.3 (6.21\%) & 18.88 & $19.46 \pm 3.77$ & \textbf{0.0 (0.00\%)} & 0.07924 & \textbf{0.06357} & 0.33233 & \textbf{0.17238} & \textbf{19.8\%} & \textbf{48.1\%} \\
+\hline
+\textbf{Average} & -- & 304.5 (11.5\%) & 18.10 & $16.92 \pm 4.46$" & \textbf{0 (0.00\%)} & 0.08876 & \textbf{0.05467} & 0.92824 & \textbf{0.13744} & \textbf{30.8\%} & \textbf{62.1\%} \\
+\hline
+\hline
+\end{tabular}}
+\caption{Comparison of Realtime Baseline (deadlines) and OASIS on EuRoC MAV datasets. Canonical frame counts are used to compute dropped-frame percentages; bold values denote better performance.}
+\label{tab:super_table_results}
+\end{table}
