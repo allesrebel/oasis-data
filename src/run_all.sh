@@ -171,7 +171,7 @@ for scene in "${scenes[@]}"; do
     column_names=$(IFS=,; echo "${plot_order[*]}")
 
     # --- Evaluate error over time, passing explicit names ---
-    eet_args=( "$gt" "${all_files[@]}" --trajectory_names "$column_names" --csv )
+    eet_args=( "$gt" "${all_files[@]}" --trajectory_names "$column_names" )
 
     echo "Running evaluation with explicit names: ${column_names}"
     python3 evaluate_error_over_time.py "${eet_args[@]}"
