@@ -15,4 +15,4 @@ COPY ORB_SLAM3 /root/ORB_SLAM3
 COPY oasis-data /root/oasis-data
 
 # Perform dependency install
-RUN python3 -m pip install -r /root/oasis-data/src/requirements.txt
+RUN python3 -m pip install numpy pandas matplotlib
