@@ -142,13 +142,13 @@ def produce_latex(df: pd.DataFrame, df_fov: pd.DataFrame,
 
         row_tex = (
             f"{d} & {total_frames} & "
-            f"{drops_rt} ({drop_pct_rt:.2f}\\%) & {fps_rt:.2f} & "
-            f"{mask} & {bold(f'{drops_oa} ({drop_pct_oa:.2f}\\%)', drops_oa < drops_rt)} & "
+            f"{drops_rt} ({drop_pct_rt:.2f}%) & {fps_rt:.2f} & "
+            f"{mask} & {bold(f'{drops_oa} ({drop_pct_oa:.2f}%)', drops_oa < drops_rt)} & "
             f"{bold(f'{ate_mean_rt:.5f}', ate_mean_rt < ate_mean_oa)} & "
             f"{bold(f'{ate_mean_oa:.5f}', ate_mean_oa < ate_mean_rt)} & "
             f"{bold(f'{ate_max_rt:.5f}', ate_max_rt < ate_max_oa)} & "
             f"{bold(f'{ate_max_oa:.5f}', ate_max_oa < ate_max_rt)} & "
-            f"{bold(f'{imp_mean:.1f}\\%', True)} & {bold(f'{imp_max:.1f}\\%', True)} \\\\"
+            f"{bold(f'{imp_mean:.1f}%', True)} & {bold(f'{imp_max:.1f}%', True)}"
         )
         rows_tex.append(row_tex)
 
@@ -429,14 +429,16 @@ def main():
         g = m.groupdict()
 
         if g["run_type"] == "fov":
+            # filter out fov
+            continue
             ms = g.get("mask_size")
             g["run_type"] = f"fov_{ms}" if ms else "fov"
         ## 
         # Use this to filter out and generate a table you want!
         # Filter out the data we don't want to consider for this table
-        # if g["platform"].lower() != "intel":           # keep Jetson only
-        #     continue
-        if g["run_type"] not in {"normal_stress", "deadlines_stress", "oasis_stress"}: # keep wanted configs
+        if g["platform"].lower() == "intel":# keep Jetson only
+            continue
+        if g["run_type"] not in {"deadlines", "oasis"}:
             continue
         # if g["run_type"] not in {"omega", "omega_deadlines", "pid", "pid_deadlines", "fov_4", "fov_6", "oasis"}: # keep wanted configs
         #     continue
@@ -477,14 +479,14 @@ def main():
     #     produce_latex_alt(df, df_fov)
 
     # # ───────── produce LaTeX table ─────────────────────────────────────────
-    # if not df.empty:
-    #     print(sorted(df["run_type"].unique()))
-    #     produce_latex(df, df_fov)
-    
-    # ───────── produce LaTeX table ─────────────────────────────────────────
     if not df.empty:
         print(sorted(df["run_type"].unique()))
-        produce_latex_stress(df, out_file="stress.tex")
+        produce_latex(df, df_fov)
+    
+    # ───────── produce LaTeX table ─────────────────────────────────────────
+    #if not df.empty:
+    #    print(sorted(df["run_type"].unique()))
+    #    produce_latex_stress(df, out_file="stress.tex")
     
 
 if __name__ == "__main__":
