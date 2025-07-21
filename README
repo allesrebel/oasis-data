@@ -1,0 +1,79 @@
+DOI: 10.5281/zenodo.16197736
+
+This artifact contains the output produced from running OASIS on the EuRoC Dataset as well as the scripts needed to process the output into the plots and figures in the final paper. To produce these outputs, please look at the instructions contained in 10.5281/zenodo.16199258. 10.5281/zenodo.16199258 will allow you to produce your own outputs, that can be passed into the analysis scripts to produce your own tables from your own data. 
+
+This analysis is done utilizing "evaluate_ate_scale.py" and the ground truth information from the EuRoC MAV dataset (https://journals.sagepub.com/doi/10.1177/0278364915620033) which is already contained within 10.5281/zenodo.16199258 via ORBSLAM3's evaluation folder.
+
+# Repository Information
+This copy was created on 7/20/2025, from https://github.com/allesrebel/oasis-data, commit 0b08ea7b54c88337d7cea3424365709301193add
+
+# The directory structure
+	data-analysis/ - an output folder containing the results of running code in src
+	intel/ - all the raw data trials done on a desktop machine
+	jetson/ - all the raw data for trials done on the jetson dev kit
+	src/ - python scripts to parse the raw data into images and tables for paper
+
+# Required Software
+To process the data into the figures and tables used in the final paper. the following software is required to be installed and available in the shell path:
+- Bash 5.2.x
+- Python 3.x
+
+The required packages for python need to be installed:
+- Matplotlib
+- Numpy
+- Pandas
+- (and their dependencies)
+
+## Using DockerHub image to process
+A container can be used to process the data, if the base image supports your computer's architecture:
+https://hub.docker.com/layers/library/ubuntu/jammy-20250714/images/sha256-da5fdf346e5313bef2a3dd2476c0251d48103213a5e3a0cb3afbb8909f3cf50f
+
+An example using ubuntu:jammy (above):
+"sudo docker pull ubuntu:jammy"
+"docker run -it ubuntu:jammy"
+"cd $HOME"
+<Download+extract Artifacts> 
+
+For convenience a container built using the above instructions is provided on docker hub at: 
+
+## Installing Packages via Pip
+For convenience, inside the 'src' directory there is a 'requirements.txt'; utilize "python3 -m pip install -r <artifact dir>/src/requirements.txt" to install all the packages needed for data processing.
+
+# Manual Reproduction Steps
+To reproduce the tables and figures from the paper, using the existing data contained in this artifact perform the following steps:
+	1. Move the root directory of this artifact to the $HOME directory, renamed to 'oasis-data', "mv <this artifact> $HOME/oasis-data"
+	2. Navigate to the location of the 'evaluation' directory of 10.5281/zenodo.16199258 "cd %ORBSLAM3ROOT/evaluation"
+	3. Process the dataset into tables found in the final paper with "$HOME/oasis-data/src/run-all.sh"
+
+The resulting CSV files contains all the data from the runs processed for ATE (using evaluate_ate_scale.py), compatible with Pgfplots LaTeX package. One such CSV file could be: 'intel_MH01_trajectory_errors_wide.csv'. This indicates the results from the 'intel' platform, for dataset 'MH01' was processed. The CSV contains the average ATE of all the variants detected grouped by variant. Variants are the different configurations of ORBSLAM3. For variant information please look at README for 10.5281/zenodo.16199258.
+
+# DockerHub Image Instructions
+1. Pull the docker image from dockerhub: 
+docker pull allesrebel/oasis-analysis:latest
+
+2. Run the container
+docker run -it allesrebel/oasis-analysis
+
+3. Execute 'run.sh' to reproduce the figures in the paper
+./run.sh
+
+4. Examine results in home folder
+
+# Additional Notes for Reuse
+If you use to do this with other platforms beyond the ones given, simply place the results into a folder in "$HOME/oasis-data/<new platform>", and modify line 12 of "$HOME/oasis-data/src/run_all.sh" to include <new platform>. Upon rerun of script, additional trajectory error csv files will be generated with the <new platform> prefix.
+
+# Original data collection information
+This artifact contains trials performed on an Intel Platform with the following specifications:
+10-core Intel Core i7-6950X CPU
+64 GB 256-bit DDR4 RAM
+
+As well as on a Nvidia Jetson AGX Orin:
+8-core Arm Cortex-A78AE CPU
+16 GB 128-bit LPDDR5 RAM
+
+With dataset pulled directly from the EuRoC MAV dataset: https://journals.sagepub.com/doi/10.1177/0278364915620033
+Note: Alternatively you can pull from: https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets
+
+## Additional scripts
+
+Additional scripts are also provided to produce images; such as trajectory path plotted, or pdfs. 
